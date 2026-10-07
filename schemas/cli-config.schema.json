@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/shynloc/workbuddy-open-platform-devkit/schemas/cli-config.schema.json",
+  "title": "WB-OPDK CLI Connector Config",
+  "description": "DERIVED schema for WorkBuddy Connector cli.json. It intentionally stays permissive around evolving CLI fields; scripts/validate_connector.py enforces current cross-field/version rules.",
+  "type": "object",
+  "properties": {
+    "runtime": {
+      "oneOf": [
+        {"type": "string"},
+        {
+          "type": "object",
+          "properties": {
+            "type": {"type": "string"},
+            "version": {"type": "string"}
+          },
+          "additionalProperties": true
+        }
+      ]
+    },
+    "init": {"$ref": "#/$defs/platformCommand"},
+    "auth": {"$ref": "#/$defs/platformCommand"},
+    "unAuth": {"$ref": "#/$defs/platformCommand"},
+    "status": {"$ref": "#/$defs/platformCommand"},
+    "statusMatch": {"type": "string"},
+    "statusMatchJson": {"type": ["object", "string"]},
+    "authUrlDomain": {"type": "string"},
+    "authSuppressBrowser": {"type": "boolean"},
+    "authWaitForExit": {"type": "boolean"},
+    "authQrModal": {"type": ["object", "boolean"]},
+    "authDeviceFlow": {"type": ["object", "boolean"]},
+    "versionCheck": {"type": ["object", "string"]},
+    "npmRegistry": {"type": "string"},
+    "npmRegistries": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "env": {
+      "type": "object",
+      "additionalProperties": {"type": "string"}
+    }
+  },
+  "$defs": {
+    "platformCommand": {
+      "oneOf": [
+        {"type": "string"},
+        {
+          "type": "object",
+          "properties": {
+            "darwin": {"type": "string"},
+            "linux": {"type": "string"},
+            "win32": {"type": "string"}
+          },
+          "additionalProperties": true
+        }
+      ]
+    }
+  },
+  "additionalProperties": true
+}
