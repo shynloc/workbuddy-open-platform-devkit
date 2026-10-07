@@ -3,7 +3,7 @@ title: WorkBuddy Product Type Decision Tree
 knowledge_type: DERIVED
 official_sources:
   - workbuddy-open-platform-overview
-last_verified: 2026-10-07
+last_verified: 2026-10-08
 status: VERIFIED
 ---
 
@@ -28,8 +28,11 @@ WorkBuddy 开放平台当前面向生态开发者提供 Skill、Expert、Expert 
 ### Buddy App
 当目标是面向一个行业或工作领域提供完整的 AI Harness：工作模式、场景、专家、技能、连接器、模型配置等组合体验时，做 Buddy App。
 
+### Hardware
+当产品是智能眼镜、车机或其他硬件终端，需要通过 OAuth 2.1 调用 WorkBuddy 本地助理、云端任务、ACP 或会话产物时，走 **Hardware Access（第三方应用的一种）+ Open API**。
+
 ### Third-party App / Open API
-当你的独立网站、移动 App、硬件或 SaaS 需要调用 WorkBuddy 的本地助理、云端任务、ACP 或会话产物时，走第三方应用与 Open API。
+当你的独立网站、移动 App 或 SaaS 需要调用 WorkBuddy 能力时，走第三方应用与 Open API。
 
 ## 组合不是冲突
 
