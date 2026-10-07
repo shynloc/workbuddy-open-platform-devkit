@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse, zipfile
 from pathlib import Path
 
-SKIP_NAMES={".DS_Store","Thumbs.db"}
+SKIP_NAMES={".DS_Store","Thumbs.db","release-manifest.json"}
 SKIP_PARTS={"__pycache__",".git",".idea",".vscode"}
 SKIP_SUFFIX={".pyc",".log"}
 
