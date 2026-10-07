@@ -9,7 +9,7 @@ official_sources:
   - workbuddy-connector
   - workbuddy-buddy-app
   - workbuddy-third-party-app
-last_verified: 2026-10-07
+last_verified: 2026-10-08
 status: VERIFIED
 ---
 
@@ -24,7 +24,8 @@ status: VERIFIED
 | Expert Team | 多角色协作与主理人编排 | plugin.json + settings + 多 agents + avatars |
 | Connector | 外部系统/账号/数据/操作能力接入 | connector-meta + MCP/CLI + icon + Skill |
 | Buddy App | 垂直行业 AI Harness | 平台配置 + modes/scenes/market/connectors/models |
-| Third-party App | 外部网站/App/硬件接入 WorkBuddy | 应用注册 + OAuth 2.1 + Open API |
+| Hardware Access | 智能眼镜、车机等硬件接入 WorkBuddy；属于第三方应用类型 | 应用注册 + OAuth 2.1 + Open API |
+| Third-party App | 外部网站/App/SaaS 接入 WorkBuddy | 应用注册 + OAuth 2.1 + Open API |
 | Open API | WorkBuddy 对外能力接口 | OAuth、Local Assistant、Cloud Task、ACP、Artifacts 等 |
 
 ## 组合关系
