@@ -47,6 +47,7 @@ nav:
       - Specification: 30-expert-team/specification.md
       - Orchestration: 30-expert-team/orchestration.md
       - Dependencies: 30-expert-team/dependencies.md
+      - settings.json 状态: 30-expert-team/settings-json.md
   - Connector:
       - Specification: 40-connector/specification.md
       - MCP: 40-connector/mcp-guide.md
@@ -64,6 +65,7 @@ nav:
       - Third-party App: 60-open-api/third-party-app.md
       - OAuth 2.1: 60-open-api/oauth-2.1.md
       - Capability Map: 60-open-api/capability-map.md
+      - Endpoint Quick Reference: 60-open-api/endpoints-quick-reference.md
   - Release Engineering:
       - Requirement Intake: 70-release-engineering/requirement-intake.md
       - Package Validation: 70-release-engineering/package-validation.md
@@ -77,5 +79,6 @@ nav:
       - Design a Buddy App: 80-recipes/design-a-buddy-app.md
   - Sources:
       - Source Policy: sources/source-policy.md
+      - Known Inconsistencies: sources/known-inconsistencies.md
       - Update Log: sources/update-log.md
   - Changelog: CHANGELOG.md
