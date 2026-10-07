@@ -4,11 +4,14 @@
 
 ## 2026-10-08
 
-### Expert Team：Lead 设置文件名
+### Expert Team：Lead 设置文件名 — 已由真实平台解析裁决
 
-- 官方 Expert Team 页面基础结构写：`settings.json`（复数），说明为“设置主理人（必须）”。
-- 同页官方可下载模板 `trading-team.zip` 实际包含：`setting.json`（单数）。
-- 该官方模板中的实际内容：
+上游仍存在文档/模板差异：
+
+- 官方 Expert Team 页面基础结构：`settings.json`（复数），并标注为必须；
+- 同页官方可下载 `trading-team.zip`：历史上实际包含 `setting.json`（单数）。
+
+官方下载模板中的内容：
 
 ```json
 {
@@ -16,17 +19,28 @@
 }
 ```
 
-本次审计证据：
+官方模板审计证据：
 
-- 官方 `trading-team.zip` SHA256：`4935e7b86b7d32c47d03bb7c70c24adc29a41dc7d74fb9a97596e6d5a3e04345`
+- `trading-team.zip` SHA256：`4935e7b86b7d32c47d03bb7c70c24adc29a41dc7d74fb9a97596e6d5a3e04345`
 - `trading-team/setting.json` SHA256：`168767b04cffdc12b5c9f6b61d6a110208d58c3e0a1699dffa6e61a8091ca23b`
 
-处理原则：
+#### Real platform observation — 2026-10-08
 
-1. WB-OPDK Validator 接受 `setting.json` 或 `settings.json`，但不允许两者同时存在；
-2. 当前 starter template 跟随官方可下载模板，使用 `setting.json`；
-3. 如果使用 `setting.json`，`agent` 必须等于 `agentName/teamInfo.leadAgent`；
-4. 发布当天仍应以开放平台实际解析结果为最终裁决。
+真实候选 `ai-editorial-team-v1.0.0.zip` 仅提供 `setting.json` 时，WorkBuddy 开放平台解析失败：
+
+```text
+settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下提供 settings.json）
+```
+
+因此当前执行规则已经明确：
+
+1. **Team plugin root 必须使用 `settings.json`（复数）**；
+2. 不再把 `setting.json` 视为可接受 fallback；
+3. WB-OPDK Starter / Validator / Candidate 已全部改为 `settings.json`；
+4. `settings.json` 当前使用官方模板已知的 `{"agent":"<lead>"}` 结构；
+5. 官方 downloadable ZIP 应视为与当前 parser 不一致的上游资产，等待官方更新。
+
+这是一条 `OFFICIAL page + OBSERVED runtime` 双重支持的规则。
 
 ### Expert Team：tags 数量
 
