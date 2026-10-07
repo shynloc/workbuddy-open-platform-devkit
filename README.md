@@ -3,6 +3,8 @@
 > **一个面向 AI Agent 与开发者的 WorkBuddy 开放平台工程知识库与开发工具包。**  
 > 基于 **WorkBuddy 开放平台官方文档** 进行整理、工程化和持续校验；官方文档始终是平台规则的最高可信上游。
 
+[![KB CI](https://github.com/shynloc/workbuddy-open-platform-devkit/actions/workflows/kb-ci.yml/badge.svg)](https://github.com/shynloc/workbuddy-open-platform-devkit/actions/workflows/kb-ci.yml)
+[![Source Watch](https://github.com/shynloc/workbuddy-open-platform-devkit/actions/workflows/source-watch.yml/badge.svg)](https://github.com/shynloc/workbuddy-open-platform-devkit/actions/workflows/source-watch.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Source](https://img.shields.io/badge/Upstream-WorkBuddy%20Official-19c37d)](https://open.workbuddy.cn/docs/what-is-open-platform)
 
@@ -68,6 +70,30 @@ Skill / Expert / Expert Team / Connector / Buddy App / Open API
 | Recipes | Skill / Expert / Team / MCP→Connector / Buddy App |
 | Templates | Brief、Source Metadata、Release Handoff、Submission QA |
 | Maintenance | 官方来源检查脚本、KB metadata validator |
+
+## Quick Start — 开发者
+
+复制对应 Starter，再运行 Validator：
+
+```bash
+python3 scripts/validate_skill.py path/to/skill
+python3 scripts/validate_expert.py path/to/expert
+python3 scripts/validate_expert_team.py path/to/team
+python3 scripts/validate_connector.py path/to/connector
+python3 scripts/pack_release.py path/to/package --out dist/release.zip
+```
+
+模板入口：
+
+- `90-templates/skill-template/`
+- `90-templates/expert-template/`
+- `90-templates/expert-team-template/`
+- `90-templates/connector-mcp-token-template/`
+- `90-templates/connector-mcp-oauth-template/`
+- `90-templates/connector-cli-template/`
+- `90-templates/buddy-app-template/`
+
+CI 会自动执行 KB metadata 校验、Starter smoke test 与 HTML 文档构建。
 
 ## 给 AI Agent：从这里开始
 
