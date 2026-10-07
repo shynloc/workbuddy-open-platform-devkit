@@ -1,0 +1,44 @@
+schema_version: 1
+
+asset:
+  type: expert
+  name: ai-content-editor
+  version: 1.0.0
+  commit: null
+
+environment:
+  observed_at: "2026-10-08"
+  workbuddy_version: null
+  platform: "WorkBuddy Open Platform"
+  publisher_type: personal
+  notes:
+    - "Prepared as a real Expert validation candidate from WB-OPDK templates and current official documentation."
+
+stages:
+  local_validation:
+    status: pending
+    at: null
+    notes:
+      - "Candidate Build CI must pass before this stage is changed to pass."
+  platform_parse:
+    status: not-run
+    at: null
+    notes: []
+  runtime_test:
+    status: not-run
+    at: null
+    notes: []
+  platform_review:
+    status: not-run
+    at: null
+    notes: []
+  published:
+    status: not-run
+    at: null
+    notes: []
+
+evidence: []
+
+observations: []
+
+status: candidate
