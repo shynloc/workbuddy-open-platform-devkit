@@ -59,3 +59,15 @@ hash 变化
 官方模板本身可能含 `.DS_Store` / `__MACOSX` 等打包垃圾文件。它们是官方 ZIP 的实际内容，但不是推荐的发布包结构。
 
 WB-OPDK 的 `pack_release.py` 会清理此类文件。
+
+## Runtime compatibility note — Expert Team
+
+2026-10-08 的真实 WorkBuddy Platform Parse 已确认：
+
+- 官方页面：`settings.json`
+- 官方历史下载模板：`setting.json`
+- 当前真实 Parser：要求 `settings.json`
+
+因此 Official Template Audit 的职责是**记录官方 ZIP 实际内容与变化**，不代表官方 ZIP 中的每个文件都必然与当前 Runtime 兼容。
+
+WB-OPDK Starter / Validator 已以当前 Parser 行为为准改为 `settings.json`，同时保留官方模板 hash 作为上游差异证据。
