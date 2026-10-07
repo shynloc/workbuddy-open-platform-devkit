@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "registry": "sources/official-sources.yaml",
+  "verified_at": "2026-10-07",
+  "sources": [
+    {
+      "id": "workbuddy-open-platform-overview",
+      "url": "https://open.workbuddy.cn/docs/what-is-open-platform",
+      "status": 200,
+      "html_sha256": "1d7f85698c93c1884a7e002c6c076a7d44710c2012f50776609305e3aa9704e7",
+      "text_sha256": "6186dea3ac912ccc0900303d595a8e3712ce0e0630f36f21222ee5f9d5463717",
+      "visible_text_bytes": 1197,
+      "last_modified": null,
+      "etag": "\"dw2ea06aa82dw4\""
+    },
+    {
+      "id": "workbuddy-onboarding",
+      "url": "https://open.workbuddy.cn/docs/onboarding",
+      "status": 200,
+      "html_sha256": "496fd6a2f14f896c5478103cf447141578a669d359a54444e1faa6ab7dcc17de",
+      "text_sha256": "183beab0067427d62a5267cf1eb8afe448626914daa4f634f3cbb1954f6301a9",
+      "visible_text_bytes": 4411,
+      "last_modified": null,
+      "etag": "\"xa0udc3g3p2nny\""
+    },
+    {
+      "id": "workbuddy-skill",
+      "url": "https://open.workbuddy.cn/docs/skill",
+      "status": 200,
+      "html_sha256": "383dae13ad7f3fdc1c19683a892360147223bcfd2d9239b9442c118a5e64093d",
+      "text_sha256": "5a693512c41c6fae64af4e70db79fc7e00b51d2f7cea1f4040da7795579d9ac2",
+      "visible_text_bytes": 3564,
+      "last_modified": null,
+      "etag": "\"tntd0jrpgh2urw\""
+    },
+    {
+      "id": "workbuddy-expert",
+      "url": "https://open.workbuddy.cn/docs/expert",
+      "status": 200,
+      "html_sha256": "92f778f89082460ddc143474028cd06fc27dbe8da109303c5601d251b310e606",
+      "text_sha256": "3750f170637228eaa38e78cd1b3260db22a1df3c2a21b442a2bd567bfd7d575c",
+      "visible_text_bytes": 15103,
+      "last_modified": null,
+      "etag": "\"y4o65ss1rw418g\""
+    },
+    {
+      "id": "workbuddy-expert-team",
+      "url": "https://open.workbuddy.cn/docs/expert-team",
+      "status": 200,
+      "html_sha256": "8c7d9556b159a2137cae4492f787954539b96515717a54f065d224629b76bc2f",
+      "text_sha256": "ea7e5e2e8f89e24c49902a96276aabed91685539389a8fe0395b4b6cb6b7d03d",
+      "visible_text_bytes": 20515,
+      "last_modified": null,
+      "etag": "\"dcp93x7it94c0y\""
+    },
+    {
+      "id": "workbuddy-connector",
+      "url": "https://open.workbuddy.cn/docs/connector",
+      "status": 200,
+      "html_sha256": "4a2f7011d941f011793cf18a5daad5914983bd68cbbee008cd14b4b069b947f4",
+      "text_sha256": "3cb0ee209a9685e07eab868d6aa6b18194255f85a141767d1a3934ec9e9a2a50",
+      "visible_text_bytes": 20367,
+      "last_modified": null,
+      "etag": "\"u8iwkryrwu48ax\""
+    },
+    {
+      "id": "workbuddy-buddy-app",
+      "url": "https://open.workbuddy.cn/docs/buddy-app",
+      "status": 200,
+      "html_sha256": "d8aecd58fe26aaaf2ac0fad1dfa3e4e99d36260cd0aa2f96229f5f560af6935f",
+      "text_sha256": "68a8df2830e14c201e20836f09fe3c4f490a5471193423fca1b9a4264f484d7c",
+      "visible_text_bytes": 12513,
+      "last_modified": null,
+      "etag": "\"sb3y351mcb498v\""
+    },
+    {
+      "id": "workbuddy-third-party-app",
+      "url": "https://open.workbuddy.cn/docs/third-party-app",
+      "status": 200,
+      "html_sha256": "ce715da2e56cfca53f4d61345b961ccc79b4135c61c69402407f7f19bb6f7684",
+      "text_sha256": "4214954a219afde4e721b3864ab0fbe8c87b0e95b213f653bb9ebdf929bc9f98",
+      "visible_text_bytes": 7355,
+      "last_modified": null,
+      "etag": "\"itb0ri1w3c2z80\""
+    },
+    {
+      "id": "workbuddy-openapi",
+      "url": "https://open.workbuddy.cn/docs/openapi",
+      "status": 200,
+      "html_sha256": "602c5dccd8a71cf16f71b2e1652df5196c1674b32b0089afde0d7c8e8e2c8811",
+      "text_sha256": "3da943df2f004cbfef53702e7440ba031deef5ca8d9e6ed43a3c967e37f35bfd",
+      "visible_text_bytes": 34574,
+      "last_modified": null,
+      "etag": "\"q4ftx0a2bh6xky\""
+    },
+    {
+      "id": "workbuddy-contact",
+      "url": "https://open.workbuddy.cn/docs/contact",
+      "status": 200,
+      "html_sha256": "4e6a180a0f86007c3e5ef702457d98bdcef5f3a30138462d2d47cf5e9f528752",
+      "text_sha256": "b127e31eeba5127a49095348cea81072e6d2954e8c4853989c22e9859d8a2b12",
+      "visible_text_bytes": 330,
+      "last_modified": null,
+      "etag": "\"osk1qha5ab2cw1\""
+    }
+  ]
+}
