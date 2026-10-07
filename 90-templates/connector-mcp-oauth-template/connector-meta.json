@@ -1,0 +1,20 @@
+{
+  "name": "服务名称",
+  "name_zh": "服务名称",
+  "name_en": "Service Name",
+  "description": "Connect to the service through MCP OAuth.",
+  "description_zh": "通过 MCP OAuth 安全连接并使用该服务。",
+  "description_en": "Connect to the service securely through MCP OAuth.",
+  "source": "your-service-oauth",
+  "type": "mcp",
+  "version": "1.0.0",
+  "examples_zh": [
+    "帮我查询最近的数据",
+    "帮我创建一个新项目"
+  ],
+  "examples_en": [
+    "Show me the latest data",
+    "Create a new project"
+  ],
+  "minWorkbuddyVersion": "4.24.0"
+}
