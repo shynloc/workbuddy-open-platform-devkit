@@ -13,9 +13,13 @@ IMPACT=ROOT/"sources"/"source-impact-map.json"
 
 DATE_RE=re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
+EXCLUDED_TOP_LEVEL={"80-recipes","90-templates"}
+
 def iter_kb_markdown():
     for top in ROOT.iterdir():
         if not top.is_dir() or not re.fullmatch(r"\d{2}-.+",top.name):
+            continue
+        if top.name in EXCLUDED_TOP_LEVEL:
             continue
         for p in top.rglob("*.md"):
             yield p
