@@ -4,7 +4,7 @@ asset:
   type: expert
   name: ai-content-editor
   version: 1.0.0
-  commit: null
+  commit: "101ae547fd861dee7f20b364de36498f94541969"
 
 environment:
   observed_at: "2026-10-08"
@@ -16,10 +16,12 @@ environment:
 
 stages:
   local_validation:
-    status: pending
-    at: null
+    status: pass
+    at: "2026-10-08"
     notes:
-      - "Candidate Build CI must pass before this stage is changed to pass."
+      - "Candidate Builds workflow completed successfully."
+      - "Passed validate_asset_schemas.py, validate_expert.py, and release_check.py."
+      - "Release candidate ZIP, release manifest, and submission notes were generated."
   platform_parse:
     status: not-run
     at: null
@@ -37,8 +39,23 @@ stages:
     at: null
     notes: []
 
-evidence: []
+evidence:
+  - type: url
+    description: "GitHub Actions Candidate Builds run completed successfully."
+    ref: "https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/37669725863"
+    sha256: null
+  - type: artifact
+    description: "Candidate build artifact: workbuddy-v1-candidates, artifact id 11504640834, digest sha256:98b7c2cf2417a0eb7a5f93c7f5f7edf67b79e2255d36060c2f4726d3c1f36cd3."
+    ref: "https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/37669725863"
+    sha256: "98b7c2cf2417a0eb7a5f93c7f5f7edf67b79e2255d36060c2f4726d3c1f36cd3"
 
-observations: []
+observations:
+  - knowledge_type: OBSERVED
+    summary: "The AI Content Editor candidate passes the current WB-OPDK schema, Expert validator, release manifest validation, and packaging pipeline."
+    affects:
+      - "20-expert/"
+      - "90-templates/expert-template/"
+      - "scripts/validate_expert.py"
+    action: "Proceed to WorkBuddy Platform Parse; do not claim platform compatibility before upload."
 
 status: candidate
