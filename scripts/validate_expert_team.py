@@ -90,25 +90,20 @@ def main():
     if cat and not any(cat.startswith(x) for x in CATEGORY_PREFIXES):
         errs.append(f"unknown categoryId: {cat}")
 
-    # Official docs currently say settings.json, while the official trading-team.zip
-    # currently contains setting.json with {"agent": "<lead>"}. Accept either one
-    # but never both; see sources/known-inconsistencies.md.
-    singular=root/"setting.json"
-    plural=root/"settings.json"
-    if singular.is_file() and plural.is_file():
-        errs.append("both setting.json and settings.json exist; upstream naming is inconsistent, package must choose one")
-    elif singular.is_file():
-        setting=load_json(singular,errs,"setting.json")
-        if setting.get("agent")!=lead:
-            errs.append(f"setting.json agent must equal lead agent: expected {lead!r}, got {setting.get('agent')!r}")
-    elif plural.is_file():
-        settings=load_json(plural,errs,"settings.json")
-        # Public docs do not currently expose a schema. If an agent field is
-        # present, at least enforce consistency with the lead.
-        if "agent" in settings and settings.get("agent")!=lead:
-            errs.append(f"settings.json agent must equal lead agent: expected {lead!r}, got {settings.get('agent')!r}")
+    # Current WorkBuddy Open Platform parser requires settings.json (plural)
+    # at the plugin root. The official downloadable trading-team.zip historically
+    # used setting.json (singular), but a real 2026-10-08 platform parse rejected
+    # that package with: "settings.json 不存在或无法读取".
+    settings_path=root/"settings.json"
+    obsolete_path=root/"setting.json"
+    if obsolete_path.is_file():
+        errs.append("obsolete setting.json found; current WorkBuddy parser requires settings.json at plugin root")
+    if not settings_path.is_file():
+        errs.append("missing settings.json at plugin root (required for Team)")
     else:
-        errs.append("missing lead settings file: official docs say settings.json; official trading-team.zip uses setting.json")
+        settings=load_json(settings_path,errs,"settings.json")
+        if settings.get("agent")!=lead:
+            errs.append(f"settings.json agent must equal lead agent: expected {lead!r}, got {settings.get('agent')!r}")
 
     # Team-level market avatar.
     if data.get("avatar"):
