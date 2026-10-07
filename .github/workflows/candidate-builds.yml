@@ -1,0 +1,48 @@
+name: Candidate Builds
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "examples/ai-content-editor/**"
+      - "examples/ai-editorial-team/**"
+      - "scripts/**"
+      - "schemas/**"
+      - "90-templates/**"
+      - ".github/workflows/candidate-builds.yml"
+  workflow_dispatch:
+
+jobs:
+  build-candidates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validation dependencies
+        run: python3 -m pip install -r requirements-dev.txt
+
+      - name: Validate AI Content Editor
+        run: |
+          python3 scripts/validate_asset_schemas.py examples/ai-content-editor
+          python3 scripts/validate_expert.py examples/ai-content-editor
+
+      - name: Validate AI Editorial Team
+        run: |
+          python3 scripts/validate_asset_schemas.py examples/ai-editorial-team
+          python3 scripts/validate_expert_team.py examples/ai-editorial-team
+
+      - name: Build release candidates
+        run: |
+          mkdir -p dist/candidates
+          python3 scripts/release_check.py             examples/ai-content-editor             --dist dist/candidates             --side-effect-review not-applicable
+          python3 scripts/release_check.py             examples/ai-editorial-team             --dist dist/candidates             --side-effect-review not-applicable
+
+      - name: Upload candidate packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: workbuddy-v1-candidates
+          path: dist/candidates/
