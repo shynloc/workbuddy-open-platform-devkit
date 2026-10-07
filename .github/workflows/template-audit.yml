@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "sources/official-templates.json"
+      - "sources/official-template-audit-baseline.json"
       - "scripts/audit_official_templates.py"
       - ".github/workflows/template-audit.yml"
 
@@ -22,11 +23,19 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Audit official template ZIPs
-        run: python3 scripts/audit_official_templates.py
+      - name: Audit official template ZIPs and compare baseline
+        run: |
+          python3 scripts/audit_official_templates.py             --baseline sources/official-template-audit-baseline.json             --fail-on-change
+
+      - name: Generate proposed baseline
+        if: always()
+        run: |
+          python3 scripts/audit_official_templates.py             --write-baseline build/official-template-audit/proposed-baseline.json
 
       - name: Upload audit report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: workbuddy-official-template-audit
+          include-hidden-files: true
           path: build/official-template-audit
