@@ -12,14 +12,17 @@ WB-OPDK 的目标不是复制官方文档，而是把 WorkBuddy 开放平台整�
 - [x] 增加端到端“需求 → 发布包” Recipe
 - [x] 增加一键 Release Check：Validator → Manifest → ZIP
 
-## v0.4 — Source Intelligence
+## v0.4 — Source Intelligence ✅
 
-- [ ] 将 Source Watch 输出升级为章节级 / 语义级 diff
+- [x] Source Watch 支持 visible-text hash + 章节 Heading Fingerprint
 - [x] 自动映射 upstream source → 受影响 KB / Schema / Template / Validator
 - [x] Source change 时生成 Review Artifact（JSON + Markdown）
-- [x] 页面 hash 变化后自动生成 STALE 候选清单
-- [ ] 增加官方文档中文 / 英文版本一致性检查
-- [ ] 官方模板 ZIP 变化时生成关键配置文件 diff
+- [x] 页面变化后自动生成 STALE 候选清单
+- [x] 增加官方中文 / 英文文档技术关键项一致性检查
+- [x] 官方模板 ZIP 变化时生成关键配置文件 diff
+- [x] 官方页面与模板均坚持“检测 → Review → 更新”，不自动覆盖本地 KB
+
+> 语义层面的最终判断仍由人/Agent Review 完成；WB-OPDK 不使用无人审核的自动同步替代官方规范判断。
 
 ## v0.5 — HTML Knowledge Base
 
