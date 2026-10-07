@@ -6,13 +6,17 @@
         "00-platform/overview.md",
         "00-platform/product-map.md",
         "00-platform/capability-decision-tree.md",
+        "70-release-engineering/",
+        "75-operations/",
         "README.md",
-        "START_HERE.md"
+        "START_HERE.md",
+        "COMPATIBILITY.md"
       ]
     },
     "workbuddy-onboarding": {
       "affected": [
         "00-platform/onboarding.md",
+        "05-qualification-compliance/",
         "70-release-engineering/requirement-intake.md"
       ]
     },
@@ -67,16 +71,20 @@
     },
     "workbuddy-third-party-app": {
       "affected": [
+        "55-hardware/",
         "60-open-api/third-party-app.md",
         "60-open-api/oauth-2.1.md",
         "60-open-api/integration-checklist.md",
+        "65-security-governance/",
         "80-recipes/build-third-party-app.md",
         "examples/third-party-oauth-minimal/"
       ]
     },
     "workbuddy-openapi": {
       "affected": [
+        "55-hardware/",
         "60-open-api/",
+        "65-security-governance/",
         "examples/third-party-oauth-minimal/",
         "70-release-engineering/security-checklist.md",
         "sources/known-inconsistencies.md"
@@ -85,6 +93,20 @@
     "workbuddy-contact": {
       "affected": [
         "README.md"
+      ]
+    },
+    "workbuddy-service-categories-individual": {
+      "affected": [
+        "05-qualification-compliance/individual.md",
+        "05-qualification-compliance/subject-and-category-decision.md",
+        "05-qualification-compliance/qualification-gate.md"
+      ]
+    },
+    "workbuddy-service-categories-enterprise": {
+      "affected": [
+        "05-qualification-compliance/enterprise.md",
+        "05-qualification-compliance/subject-and-category-decision.md",
+        "05-qualification-compliance/qualification-gate.md"
       ]
     }
   }
