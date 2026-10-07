@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Lightweight structural validator for WB-OPDK markdown metadata."""
+"""Lightweight structural validator for WB-OPDK knowledge-page metadata."""
 
 from __future__ import annotations
 import re
-import sys
 from pathlib import Path
 
 VALID_TYPES = {"OFFICIAL", "DERIVED", "OBSERVED", "EXPERIMENTAL"}
 VALID_STATUS = {"VERIFIED", "STALE", "DEPRECATED"}
+EXCLUDED_TOP_LEVEL = {"80-recipes", "90-templates"}
 
 
 def frontmatter(text: str):
@@ -29,17 +29,25 @@ def main():
     root = Path(".")
     failures = []
     checked = 0
+
     for path in root.glob("[0-9][0-9]-*/**/*.md"):
+        if path.parts and path.parts[0] in EXCLUDED_TOP_LEVEL:
+            # Recipes and distribution templates have their own schemas and
+            # validators. Do not confuse their YAML with KB metadata.
+            continue
         if path.name == "README.md":
             continue
+
         fm = frontmatter(path.read_text(encoding="utf-8"))
         if fm is None:
-            # Templates/checklists/recipes may intentionally omit metadata.
+            # Operational checklists may intentionally omit KB metadata.
             continue
+
         checked += 1
         for key in ("title", "knowledge_type", "last_verified", "status"):
             if not fm.get(key):
                 failures.append(f"{path}: missing {key}")
+
         if fm.get("knowledge_type") not in VALID_TYPES:
             failures.append(f"{path}: invalid knowledge_type={fm.get('knowledge_type')}")
         if fm.get("status") not in VALID_STATUS:
@@ -49,6 +57,7 @@ def main():
     if failures:
         print("\n".join(failures))
         return 1
+
     print("KB metadata validation passed")
     return 0
 
