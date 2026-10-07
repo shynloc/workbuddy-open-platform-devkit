@@ -1,8 +1,32 @@
 # Known Upstream Inconsistencies
 
-本文件记录 WorkBuddy 官方文档内部、或官方文档与当前平台行为之间的已知差异。目的不是替官方选择答案，而是防止 Agent 静默把冲突内容“合理化”。
+本文件记录 WorkBuddy 官方文档内部、官方文档与官方模板、或官方文档与当前平台行为之间的已知差异。目的不是替官方选择答案，而是防止 Agent 静默把冲突内容“合理化”。
 
 ## 2026-10-07
+
+### Expert Team：Lead 设置文件名
+
+- 官方 Expert Team 页面基础结构写：`settings.json`（复数），说明为“设置主理人（必须）”。
+- 同页官方可下载模板 `trading-team.zip` 实际包含：`setting.json`（单数）。
+- 该官方模板中的实际内容：
+
+```json
+{
+  "agent": "trading-team-lead"
+}
+```
+
+本次审计证据：
+
+- 官方 `trading-team.zip` SHA256：`4935e7b86b7d32c47d03bb7c70c24adc29a41dc7d74fb9a97596e6d5a3e04345`
+- `trading-team/setting.json` SHA256：`168767b04cffdc12b5c9f6b61d6a110208d58c3e0a1699dffa6e61a8091ca23b`
+
+处理原则：
+
+1. WB-OPDK Validator 接受 `setting.json` 或 `settings.json`，但不允许两者同时存在；
+2. 当前 starter template 跟随官方可下载模板，使用 `setting.json`；
+3. 如果使用 `setting.json`，`agent` 必须等于 `agentName/teamInfo.leadAgent`；
+4. 发布当天仍应以开放平台实际解析结果为最终裁决。
 
 ### Expert Team：tags 数量
 
