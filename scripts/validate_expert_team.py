@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse, json, re
 from pathlib import Path
+from _image_utils import validate_avatar
 
 CATEGORY_PREFIXES={f"{i:02d}-" for i in range(1,16)}
 
@@ -37,11 +38,21 @@ def main():
     if data.get("plugin") and data.get("plugin")!=name:
         errs.append("plugin must equal name")
 
+    v=data.get("version","")
+    if v and not re.fullmatch(r"\d+\.\d+\.\d+",v):
+        errs.append(f"version is not semver: {v}")
+
     agents=data.get("agents",[]) or []
     agent_ids={Path(x).stem for x in agents}
     for rel in agents:
-        if not (root/rel).is_file():
+        p=root/rel
+        if not p.is_file():
             errs.append(f"missing agent file: {rel}")
+        else:
+            text=p.read_text(encoding="utf-8",errors="replace")
+            m=re.search(r"(?m)^name:\s*([^\n]+)",text)
+            if m and m.group(1).strip().strip("'\"")!=Path(rel).stem:
+                errs.append(f"Agent MD name must match filename: {rel}")
 
     lead=data.get("agentName")
     team=data.get("teamInfo") or {}
@@ -79,14 +90,20 @@ def main():
     if not (root/"settings.json").is_file():
         errs.append("missing required settings.json; do not invent schema—use current official template")
 
+    # Team-level market avatar.
+    if data.get("avatar"):
+        validate_avatar(root/data["avatar"],"team avatar",errs)
+
+    # Member avatars.
     for m in members:
         av=m.get("avatar")
         if av:
-            p=root/av
-            if not p.is_file():
-                errs.append(f"missing member avatar: {av}")
-            elif p.stat().st_size>500*1024:
-                errs.append(f"member avatar exceeds 500KB: {av}")
+            validate_avatar(root/av,f"member avatar {m.get('id') or av}",errs)
+
+    desc=data.get("displayDescription")
+    zh=desc.get("zh") if isinstance(desc,dict) else None
+    if zh and not (40 <= len(zh) <= 50):
+        errs.append(f"displayDescription.zh length is {len(zh)}, expected 40-50")
 
     if errs:
         print("EXPERT TEAM VALIDATION FAILED")
