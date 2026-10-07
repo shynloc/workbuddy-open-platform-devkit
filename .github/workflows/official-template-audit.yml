@@ -28,3 +28,4 @@ jobs:
         with:
           name: workbuddy-official-template-audit
           path: build/official-template-audit
+          include-hidden-files: true
