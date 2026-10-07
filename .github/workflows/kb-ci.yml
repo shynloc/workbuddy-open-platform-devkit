@@ -23,6 +23,9 @@ jobs:
       - name: Validate KB metadata
         run: python3 scripts/validate_kb.py
 
+      - name: Validate official source registry and impact map
+        run: python3 scripts/validate_source_registry.py
+
       - name: Validate JSON Schemas and representative starters
         run: python3 scripts/validate_schemas.py
 
