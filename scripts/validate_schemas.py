@@ -48,6 +48,7 @@ def main():
     cli=check_schema("cli-config.schema.json")
     token=check_schema("token-schema.schema.json")
     check_schema("release-manifest.schema.json")
+    check_schema("validation-record.schema.json")
 
     ok=True
 
