@@ -41,6 +41,13 @@ nav:
       - 能力决策树: 00-platform/capability-decision-tree.md
       - 术语: 00-platform/terminology.md
 
+  - 资质与类目:
+      - Overview: 05-qualification-compliance/README.md
+      - 主体与类目决策: 05-qualification-compliance/subject-and-category-decision.md
+      - 个人主体: 05-qualification-compliance/individual.md
+      - 非个人主体: 05-qualification-compliance/enterprise.md
+      - Qualification Gate: 05-qualification-compliance/qualification-gate.md
+
   - Skill:
       - Specification: 10-skill/specification.md
       - Frontmatter: 10-skill/frontmatter-reference.md
@@ -82,6 +89,14 @@ nav:
       - Design Assets: 50-buddy-app/design-assets.md
       - Enterprise Distribution: 50-buddy-app/enterprise-distribution.md
 
+  - Hardware:
+      - Overview: 55-hardware/README.md
+      - Architecture: 55-hardware/architecture.md
+      - OAuth & Scopes: 55-hardware/oauth-and-scopes.md
+      - Runtime Paths: 55-hardware/runtime.md
+      - Device Security: 55-hardware/device-security.md
+      - Integration Checklist: 55-hardware/integration-checklist.md
+
   - Open API:
       - Third-party App: 60-open-api/third-party-app.md
       - OAuth 2.1: 60-open-api/oauth-2.1.md
@@ -94,6 +109,15 @@ nav:
       - Integration Checklist: 60-open-api/integration-checklist.md
       - Minimal OAuth Example: examples/third-party-oauth-minimal/README.md
 
+  - Security & Governance:
+      - Overview: 65-security-governance/README.md
+      - Trust Boundaries: 65-security-governance/trust-boundary.md
+      - OAuth Scope Model: 65-security-governance/oauth-scope-model.md
+      - Credential Handling: 65-security-governance/credential-handling.md
+      - Data & Logging: 65-security-governance/data-and-logging.md
+      - Side-effect Policy: 65-security-governance/side-effect-policy.md
+      - Security Release Gate: 65-security-governance/release-security-gate.md
+
   - Release Engineering:
       - Requirement Intake: 70-release-engineering/requirement-intake.md
       - Test Plan: 70-release-engineering/test-plan.md
@@ -104,6 +128,14 @@ nav:
       - Release Manifest: 70-release-engineering/release-manifest.md
       - Release Pipeline: 70-release-engineering/release-pipeline.md
       - Review & Versioning: 70-release-engineering/review-and-versioning.md
+
+  - Operations:
+      - Overview: 75-operations/README.md
+      - Post-release: 75-operations/post-release.md
+      - Versioning & Compatibility: 75-operations/versioning-and-compatibility.md
+      - Rollback & Incident: 75-operations/rollback-and-incident.md
+      - Deprecation: 75-operations/deprecation.md
+      - Support Handoff: 75-operations/support-handoff.md
 
   - Recipes:
       - Build a Skill: 80-recipes/build-a-skill.md
@@ -134,11 +166,6 @@ nav:
       - WeChat Article Skill Case: 95-validation/wechat-article-publishing-skill.md
       - Record Template: 95-validation/record-template.yaml
 
-  - Schemas:
-      - Overview: schemas/README.md
-      - Release Manifest: schemas/release-manifest.schema.json
-      - Validation Record: schemas/validation-record.schema.json
-
   - Maintenance:
       - HTML Knowledge Base: docs-site.md
       - Scripts: scripts/README.md
@@ -149,5 +176,7 @@ nav:
       - Source Snapshot Schema: sources/source-snapshots.schema.json
       - Update Log: sources/update-log.md
 
+  - Compatibility Policy: COMPATIBILITY.md
+  - Notice / Attribution: NOTICE.md
   - Roadmap: ROADMAP.md
   - Changelog: CHANGELOG.md
