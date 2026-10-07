@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/shynloc/workbuddy-open-platform-devkit/schemas/mcp-config.schema.json",
+  "title": "WB-OPDK MCP Connector Config",
+  "description": "DERIVED schema for WorkBuddy Connector mcp.json. It validates stable structural constraints; version-gated semantics are enforced by scripts/validate_connector.py.",
+  "type": "object",
+  "required": ["mcpServers"],
+  "properties": {
+    "mcpServers": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["sse", "streamableHttp", "http", "stdio"]
+          },
+          "url": {
+            "type": "string",
+            "minLength": 1
+          },
+          "command": {
+            "type": "string",
+            "minLength": 1
+          },
+          "args": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {"type": "string"}
+          },
+          "env": {
+            "type": "object",
+            "additionalProperties": {"type": "string"}
+          },
+          "timeout": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "cwd": {"type": "string"},
+          "disabledTools": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "runtime": {"type": ["object", "string"]},
+          "npmRegistry": {"type": "string"},
+          "npmRegistries": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "staticEnv": {
+            "type": "object",
+            "additionalProperties": {"type": "string"}
+          },
+          "staticHeaders": {
+            "type": "object",
+            "additionalProperties": {"type": "string"}
+          },
+          "preAuth": {"type": ["object", "string", "boolean"]}
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {"type": {"enum": ["sse", "streamableHttp", "http"]}},
+              "required": ["type"]
+            },
+            "then": {"required": ["url"]}
+          },
+          {
+            "if": {
+              "properties": {"type": {"const": "stdio"}},
+              "required": ["type"]
+            },
+            "then": {"required": ["command"]}
+          }
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
