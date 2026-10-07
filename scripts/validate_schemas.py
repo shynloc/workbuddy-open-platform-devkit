@@ -29,31 +29,82 @@ def validate(instance,schema,label):
     print("starter OK:",label)
     return True
 
-def skill_frontmatter(path):
+def md_frontmatter(path):
     text=path.read_text("utf-8")
     m=re.match(r"^---\n(.*?)\n---\n",text,re.S)
     if not m:
-        raise ValueError("SKILL.md has no YAML frontmatter")
+        raise ValueError(f"{path} has no YAML frontmatter")
     return yaml.safe_load(m.group(1))
 
 def load_json(path): return json.loads(path.read_text("utf-8"))
 
 def main():
     skill=check_schema("skill-frontmatter.schema.json")
+    agent=check_schema("agent-frontmatter.schema.json")
     expert=check_schema("expert-plugin.schema.json")
     team=check_schema("expert-team-plugin.schema.json")
     connector=check_schema("connector-meta.schema.json")
+    mcp=check_schema("mcp-config.schema.json")
+    cli=check_schema("cli-config.schema.json")
     token=check_schema("token-schema.schema.json")
     check_schema("release-manifest.schema.json")
 
     ok=True
-    ok &= validate(skill_frontmatter(T/"skill-template"/"SKILL.md"),skill,"skill-template")
-    ok &= validate(load_json(T/"expert-template"/".codebuddy-plugin"/"plugin.json"),expert,"expert-template")
-    ok &= validate(load_json(T/"expert-team-template"/".codebuddy-plugin"/"plugin.json"),team,"expert-team-template")
 
-    for name in ["connector-mcp-token-template","connector-mcp-oauth-template","connector-cli-template"]:
-        ok &= validate(load_json(T/name/"connector-meta.json"),connector,name+"/connector-meta.json")
-    ok &= validate(load_json(T/"connector-mcp-token-template"/"token-schema.json"),token,"connector token-schema")
+    # Skill.
+    ok &= validate(md_frontmatter(T/"skill-template"/"SKILL.md"),skill,"skill-template")
+
+    # Expert.
+    ok &= validate(
+        load_json(T/"expert-template"/".codebuddy-plugin"/"plugin.json"),
+        expert,
+        "expert-template/plugin.json"
+    )
+    ok &= validate(
+        md_frontmatter(T/"expert-template"/"agents"/"your-expert.md"),
+        agent,
+        "expert-template agent frontmatter"
+    )
+
+    # Expert Team.
+    ok &= validate(
+        load_json(T/"expert-team-template"/".codebuddy-plugin"/"plugin.json"),
+        team,
+        "expert-team-template/plugin.json"
+    )
+    for p in sorted((T/"expert-team-template"/"agents").glob("*.md")):
+        ok &= validate(md_frontmatter(p),agent,f"expert-team agent frontmatter: {p.name}")
+
+    # Connector metadata.
+    connector_names=[
+        "connector-mcp-token-template",
+        "connector-mcp-oauth-template",
+        "connector-cli-template",
+    ]
+    for name in connector_names:
+        ok &= validate(
+            load_json(T/name/"connector-meta.json"),
+            connector,
+            name+"/connector-meta.json"
+        )
+
+    # MCP configs.
+    for name in ["connector-mcp-token-template","connector-mcp-oauth-template"]:
+        ok &= validate(load_json(T/name/"mcp.json"),mcp,name+"/mcp.json")
+
+    # CLI config.
+    ok &= validate(
+        load_json(T/"connector-cli-template"/"cli.json"),
+        cli,
+        "connector-cli-template/cli.json"
+    )
+
+    # Token form.
+    ok &= validate(
+        load_json(T/"connector-mcp-token-template"/"token-schema.json"),
+        token,
+        "connector token-schema"
+    )
 
     return 0 if ok else 1
 
