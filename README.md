@@ -69,7 +69,8 @@ Skill / Expert / Expert Team / Connector / Buddy App / Open API
 | Release Engineering | 需求、包校验、提交资料、审核/版本 |
 | Recipes | Skill / Expert / Team / MCP→Connector / Buddy App |
 | Templates | Brief、Source Metadata、Release Handoff、Submission QA |
-| Maintenance | 官方来源检查脚本、KB metadata validator |
+| Schemas | Skill / Expert / Team / Connector / Token / Release Manifest machine-readable schema |
+| Maintenance | Source Watch、Snapshot、KB/Schema Validator、Starter Smoke Test、HTML Build |
 
 ## Quick Start — 开发者
 
@@ -80,6 +81,8 @@ python3 scripts/validate_skill.py path/to/skill
 python3 scripts/validate_expert.py path/to/expert
 python3 scripts/validate_expert_team.py path/to/team
 python3 scripts/validate_connector.py path/to/connector
+python3 scripts/validate_schemas.py
+python3 scripts/generate_release_manifest.py path/to/package
 python3 scripts/pack_release.py path/to/package --out dist/release.zip
 ```
 
@@ -93,7 +96,11 @@ python3 scripts/pack_release.py path/to/package --out dist/release.zip
 - `90-templates/connector-cli-template/`
 - `90-templates/buddy-app-template/`
 
-CI 会自动执行 KB metadata 校验、Starter smoke test 与 HTML 文档构建。
+CI 会自动执行 KB metadata 校验、JSON Schema 校验、Starter smoke test、Release Manifest 校验与 HTML 文档构建。
+
+完整“需求 → 发布包”流程见：
+
+[`80-recipes/end-to-end-release.md`](80-recipes/end-to-end-release.md)
 
 ## 给 AI Agent：从这里开始
 
@@ -187,6 +194,7 @@ Requirement Intake
 ├── 70-release-engineering/
 ├── 80-recipes/
 ├── 90-templates/
+├── schemas/
 ├── scripts/
 └── sources/
 ```
