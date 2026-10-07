@@ -127,6 +127,17 @@ nav:
       - Freshness Dashboard: _generated/freshness.md
       - Tools & Starters: _generated/devkit-tools.md
 
+  - Real-world Validation:
+      - Methodology: 95-validation/methodology.md
+      - Ledger: 95-validation/ledger.md
+      - WeChat Article Skill Case: 95-validation/wechat-article-publishing-skill.md
+      - Record Template: 95-validation/record-template.yaml
+
+  - Schemas:
+      - Overview: schemas/README.md
+      - Release Manifest: schemas/release-manifest.schema.json
+      - Validation Record: schemas/validation-record.schema.json
+
   - Maintenance:
       - HTML Knowledge Base: docs-site.md
       - Scripts: scripts/README.md
