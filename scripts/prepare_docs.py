@@ -31,6 +31,7 @@ SOURCE_DIRS=[
     "schemas",
     "sources",
     "scripts",
+    "examples",
 ]
 
 def main():
@@ -49,7 +50,7 @@ def main():
             shutil.copytree(
                 src,
                 OUT/name,
-                ignore=shutil.ignore_patterns("__pycache__","*.pyc",".DS_Store"),
+                ignore=shutil.ignore_patterns("__pycache__","*.pyc",".DS_Store",".venv"),
             )
 
     print(f"prepared MkDocs source: {OUT}")
