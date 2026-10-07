@@ -37,6 +37,7 @@ SOURCE_DIRS=[
     "75-operations",
     "80-recipes",
     "90-templates",
+    "95-validation",
     "schemas",
     "sources",
     "scripts",
