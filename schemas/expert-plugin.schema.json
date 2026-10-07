@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/shynloc/workbuddy-open-platform-devkit/schemas/expert-plugin.schema.json",
+  "title": "WB-OPDK Expert plugin.json",
+  "description": "Derived operational schema for WorkBuddy Expert packages.",
+  "type": "object",
+  "required": [
+    "name","expertType","version","description","author","agents","agentName",
+    "displayName","profession","displayDescription","avatar","categoryId",
+    "defaultInitPrompt","plugin","tags","quickPrompts"
+  ],
+  "properties": {
+    "name": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "expertType": {"const":"agent"},
+    "version": {"type":"string","pattern":"^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$"},
+    "description": {"type":"string","minLength":1},
+    "author": {
+      "type":"object",
+      "required":["name"],
+      "properties":{
+        "name":{"type":"string","minLength":1},
+        "email":{"type":"string"}
+      },
+      "additionalProperties":true
+    },
+    "agents": {"type":"array","minItems":1,"items":{"type":"string"}},
+    "agentName": {"type":"string","minLength":1},
+    "skills": {"type":"array","items":{"type":"string"}},
+    "homepage": {"type":"string"},
+    "license": {"type":"string"},
+    "keywords": {"type":"array","items":{"type":"string"}},
+    "displayName": {"$ref":"#/$defs/i18n"},
+    "profession": {"$ref":"#/$defs/i18n"},
+    "displayDescription": {"$ref":"#/$defs/i18n"},
+    "avatar": {"type":"string","minLength":1},
+    "categoryId": {"type":"string","pattern":"^(0[1-9]|1[0-5])-.+$"},
+    "defaultInitPrompt": {"$ref":"#/$defs/i18n"},
+    "plugin": {"type":"string","minLength":1},
+    "tags": {
+      "type":"array",
+      "minItems":3,
+      "maxItems":3,
+      "items":{"oneOf":[{"type":"string"},{"$ref":"#/$defs/i18n"}]}
+    },
+    "quickPrompts": {
+      "type":"array",
+      "minItems":3,
+      "maxItems":3,
+      "items":{"oneOf":[{"type":"string"},{"$ref":"#/$defs/i18n"}]}
+    },
+    "dependencies": {"type":"object"}
+  },
+  "$defs":{
+    "i18n":{
+      "type":"object",
+      "required":["en","zh"],
+      "properties":{
+        "en":{"type":"string"},
+        "zh":{"type":"string"}
+      },
+      "additionalProperties":false
+    }
+  },
+  "additionalProperties":true
+}
