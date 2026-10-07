@@ -35,6 +35,26 @@ WB-OPDK 的目标不是复制官方文档，而是把 WorkBuddy 开放平台整�
 
 > HTML 知识库当前已经由 CI 构建并作为 artifact 输出。GitHub Pages 是额外公开部署入口，暂不自动开启。
 
+## Working-grade Baseline ✅
+
+内容与工程层已经达到可用于真实开发工作的基线：
+
+- [x] 主体/服务类目/资质 Gate
+- [x] Hardware 一等接入路径
+- [x] Security & Governance
+- [x] Post-release Operations
+- [x] NOTICE / Compatibility / Security Policy
+- [x] Source Registry + Impact Map Validator
+- [x] Repository Doctor
+- [x] Skill / Expert / Expert Team 已取得真实 Platform Parse 证据
+- [x] Expert / Expert Team 当前均已进入平台审核
+
+质量定义见：
+
+`QUALITY_GATES.md`
+
+这不等于 v1.0 Runtime-complete；Connector、Buddy App、Open API 等真实验证仍按下述 Gate 继续推进。
+
 ## v1.0 — Production-ready DevKit
 
 真实平台验证 Gate 见：
