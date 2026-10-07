@@ -4,7 +4,7 @@ asset:
   type: expert-team
   name: ai-editorial-team
   version: 1.0.0
-  commit: "101ae547fd861dee7f20b364de36498f94541969"
+  commit: "8d3c6207537505767ce96c733866007b3731d3de"
 
 environment:
   observed_at: "2026-10-08"
@@ -29,7 +29,7 @@ stages:
     notes:
       - "First upload failed before expert ID generation."
       - "Parser error: settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下提供 settings.json）"
-      - "Candidate corrected to settings.json and awaits re-upload."
+      - "Candidate corrected to settings.json, rebuilt successfully, and awaits re-upload."
   runtime_test:
     status: not-run
     at: null
@@ -53,9 +53,17 @@ evidence:
     ref: "https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/37669725863"
     sha256: null
   - type: artifact
-    description: "Candidate build artifact: workbuddy-v1-candidates, artifact id 11504640834, digest sha256:98b7c2cf2417a0eb7a5f93c7f5f7edf67b79e2255d36060c2f4726d3c1f36cd3."
+    description: "Original candidate build artifact before platform parse feedback: artifact id 11504640834."
     ref: "https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/37669725863"
     sha256: "98b7c2cf2417a0eb7a5f93c7f5f7edf67b79e2255d36060c2f4726d3c1f36cd3"
+  - type: url
+    description: "Corrected Candidate Builds run passed after replacing setting.json with settings.json."
+    ref: "https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/37673991463"
+    sha256: null
+  - type: artifact
+    description: "Corrected candidate artifact: workbuddy-v1-candidates, artifact id 11506240942."
+    ref: "https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/37673991463"
+    sha256: "6d0eb4dadf43d7e99fd610a6a000df6b877a718139252129587ec7e0cc1dade1"
 
 observations:
   - knowledge_type: OBSERVED
