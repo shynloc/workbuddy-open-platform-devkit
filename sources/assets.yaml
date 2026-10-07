@@ -1,0 +1,27 @@
+schema_version: 1
+project: WB-OPDK
+policy: reference-and-fingerprint
+
+assets:
+  expert-team-official-template:
+    title: WorkBuddy Expert Team official trading-team template
+    source_page: https://open.workbuddy.cn/docs/expert-team
+    direct_url: null
+    authority: official
+    asset_type: zip-template
+    last_verified: 2026-10-08
+    sha256: 4935e7b86b7d32c47d03bb7c70c24adc29a41dc7d74fb9a97596e6d5a3e04345
+    notes:
+      - "Historical/current downloaded template observed with setting.json (singular)."
+      - "2026-10-08 real parser requires settings.json (plural), so this asset is not blindly treated as runtime-compatible."
+
+  buddy-app-design-assets:
+    title: Buddy App design assets / guidance
+    source_page: https://open.workbuddy.cn/docs/buddy-app
+    direct_url: null
+    authority: official
+    asset_type: design-guidance
+    last_verified: 2026-10-08
+    sha256: null
+    notes:
+      - "Track page/asset changes before hard-coding visual dimensions or downloadable resource assumptions."
