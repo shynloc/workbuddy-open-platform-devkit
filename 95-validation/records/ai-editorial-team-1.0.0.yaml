@@ -1,0 +1,51 @@
+schema_version: 1
+
+asset:
+  type: expert-team
+  name: ai-editorial-team
+  version: 1.0.0
+  commit: null
+
+environment:
+  observed_at: "2026-10-08"
+  workbuddy_version: null
+  platform: "WorkBuddy Open Platform"
+  publisher_type: personal
+  notes:
+    - "Prepared as a real Expert Team validation candidate."
+    - "The package intentionally uses setting.json, following the current official downloadable team template; see known-inconsistencies.md."
+
+stages:
+  local_validation:
+    status: pending
+    at: null
+    notes:
+      - "Candidate Build CI must pass before this stage is changed to pass."
+  platform_parse:
+    status: not-run
+    at: null
+    notes: []
+  runtime_test:
+    status: not-run
+    at: null
+    notes: []
+  platform_review:
+    status: not-run
+    at: null
+    notes: []
+  published:
+    status: not-run
+    at: null
+    notes: []
+
+evidence: []
+
+observations:
+  - knowledge_type: EXPERIMENTAL
+    summary: "This candidate follows the official downloadable Expert Team template and uses setting.json instead of the page-structure spelling settings.json."
+    affects:
+      - "30-expert-team/"
+      - "90-templates/expert-team-template/"
+    action: "Record the actual WorkBuddy parser result without silently changing the OFFICIAL documentation note."
+
+status: candidate
