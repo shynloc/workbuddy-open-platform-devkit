@@ -24,26 +24,32 @@ stages:
       - "Passed validate_asset_schemas.py, validate_expert_team.py, and release_check.py."
       - "Release candidate ZIP, release manifest, and submission notes were generated."
   platform_parse:
-    status: fail
+    status: pass
     at: "2026-10-08"
     notes:
-      - "First upload failed before expert ID generation."
-      - "Parser error: settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下提供 settings.json）"
-      - "Candidate corrected to settings.json, rebuilt successfully, and awaits re-upload."
+      - "First upload failed before expert ID generation because the package only contained setting.json."
+      - "Parser error from first attempt: settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下提供 settings.json）"
+      - "The package was corrected to settings.json and rebuilt."
+      - "Corrected package was accepted by WorkBuddy Open Platform and successfully submitted for review."
   runtime_test:
     status: not-run
     at: null
     notes: []
   platform_review:
-    status: not-run
-    at: null
-    notes: []
+    status: pending
+    at: "2026-10-08"
+    notes:
+      - "Current platform status after corrected upload: 审核中 (under review)."
   published:
     status: not-run
     at: null
     notes: []
 
 evidence:
+  - type: manual-note
+    description: "User confirmed that the corrected AI Editorial Team package with settings.json uploaded successfully and is currently under review."
+    ref: null
+    sha256: null
   - type: manual-note
     description: "WorkBuddy Open Platform parser returned: settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下提供 settings.json）"
     ref: null
@@ -73,12 +79,12 @@ observations:
       - "90-templates/expert-team-template/"
       - "scripts/validate_expert_team.py"
       - "sources/known-inconsistencies.md"
-    action: "Use settings.json only, keep the agent field aligned with plugin.json.agentName/teamInfo.leadAgent, and re-upload."
+    action: "Use settings.json only. This requirement is now confirmed by both failure of the singular filename and successful parse of the corrected package."
   - knowledge_type: OBSERVED
     summary: "The AI Editorial Team candidate passes the WB-OPDK local schema, Expert Team validator, release manifest validation, and packaging pipeline."
     affects:
       - "30-expert-team/"
       - "scripts/validate_expert_team.py"
-    action: "Rebuild the corrected candidate, then repeat Platform Parse."
+    action: "Platform Parse now passes; wait for review result and then run Team runtime/orchestration tests."
 
-status: candidate
+status: reviewing
