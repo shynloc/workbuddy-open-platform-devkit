@@ -1,9 +1,10 @@
-.PHONY: help setup validate schemas records smoke docs source-check source-review
+.PHONY: help setup doctor validate schemas records smoke docs source-check source-review
 
 help:
 	@echo "WB-OPDK developer commands:"
 	@echo "  make setup         Install dev + docs dependencies"
-	@echo "  make validate      Run KB/schema/record validation"
+	@echo "  make doctor        Run working-grade local health checks"
+	@echo "  make validate      Run KB/source/schema/record validation"
 	@echo "  make smoke         Smoke-test starter templates/scaffolds"
 	@echo "  make docs          Build HTML knowledge base"
 	@echo "  make source-check  Check current official sources"
@@ -12,6 +13,9 @@ help:
 setup:
 	python3 -m pip install -r requirements-dev.txt
 	python3 -m pip install -r requirements-docs.txt
+
+doctor:
+	python3 scripts/doctor.py
 
 schemas:
 	python3 scripts/validate_schemas.py
