@@ -2,7 +2,7 @@
 
 本文件记录 WorkBuddy 官方文档内部、官方文档与官方模板、或官方文档与当前平台行为之间的已知差异。目的不是替官方选择答案，而是防止 Agent 静默把冲突内容“合理化”。
 
-## 2026-10-07
+## 2026-10-08
 
 ### Expert Team：Lead 设置文件名
 
@@ -39,6 +39,20 @@
 2. 提交当天重新检查开放平台解析/字段校验；
 3. 若运行时与字段表冲突，记录为 `OBSERVED`，不要静默改知识库中的 `OFFICIAL` 结论。
 
+### Buddy App：工作模式推荐数量
+
+当前同一官方 Buddy App 页面存在两处不同建议：
+
+- “首页配置 → 工作模式”：写“建议配置 3–5 个”；
+- “最佳实践 → 精简工作模式”：写“建议 2–4 个”。
+
+处理原则：
+
+1. 不把任何一处改写成唯一官方结论；
+2. 产品设计层优先减少职责重叠、控制用户选择成本；
+3. MVP 可从 2–3 个差异明显的模式开始；
+4. 实际提交时以开放平台当前 UI、校验和审核要求为准。
+
 ### Open API：Token 有效期
 
 第三方应用页当前明确写：
@@ -46,7 +60,7 @@
 - access_token：24 小时
 - refresh_token：60 天
 
-但 Open API token 接口示例中的 `expires_in` 当前出现过不同数值（例如授权码交换与刷新示例并不一致）。
+但 Open API token 接口响应使用 `expires_in`，实际示例与页面概述可能存在差异。
 
 处理原则：
 
@@ -57,7 +71,7 @@
 
 ### Open API：user.credit.readable
 
-当前英文 Open API Reference 的个人额度读取接口 `GET /openapi/v2/credit` 标注 Scope 为 `user.credit.readable`。
+当前英文 Open API Reference 的个人额度读取接口曾标注 Scope 为 `user.credit.readable`。
 
 但第三方应用页面当前公开的 Scope 列表未列出该 Scope，只列出 `user.credit.exchange` 等。
 
@@ -66,7 +80,3 @@
 - 不默认认为所有第三方应用都可申请 `user.credit.readable`；
 - 以当前开放平台应用权限管理页面实际可选 Scope 为准；
 - 若目标产品需要读取额度，提交前确认应用类型是否开放该权限。
-
-### Buddy App：工作模式推荐数量
-
-当前 Buddy App 文档首页配置处写明工作模式“建议配置 3–5 个”。如果本地旧文档写成 2–4，应标记为过期并更新。
