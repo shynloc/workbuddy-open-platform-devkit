@@ -326,6 +326,66 @@
       ],
       "last_modified": null,
       "etag": "\"osk1qha5ab2cw1\""
+    },
+    {
+      "id": "workbuddy-service-categories-individual",
+      "url": "https://open.workbuddy.cn/docs/service-categories-individual",
+      "status": 200,
+      "html_sha256": "98e0a21f48e17d1214eba03f10bc5cde57e73961a26b5d91d8528e3ee4dc7432",
+      "text_sha256": "bd032c3bc3288517e924d457ad0b4208c01190bbedcbe25b01448ed91f1ff83c",
+      "visible_text_bytes": 6733,
+      "heading_sha256": "bbfbb806c89ee00dd8d256c27098b3de3d9735e8c02c136ee2ff1ba009089e6c",
+      "headings": [
+        "服务类目（个人主体）",
+        "物流服务",
+        "教育服务",
+        "交通服务",
+        "生活服务",
+        "餐饮服务",
+        "旅游服务",
+        "工具",
+        "商业服务",
+        "体育"
+      ],
+      "last_modified": null,
+      "etag": "\"qlj1flpgap2wrs\""
+    },
+    {
+      "id": "workbuddy-service-categories-enterprise",
+      "url": "https://open.workbuddy.cn/docs/service-categories-enterprise",
+      "status": 200,
+      "html_sha256": "71d5094593e6bd9799b203cbcd82c443ef3ec7aa2c2a45cc6003a3f9d6c51c1d",
+      "text_sha256": "d669ed1f901372396bfdfbfc957c24b614972bd7f02ab87403dbf427c0c2d514",
+      "visible_text_bytes": 147708,
+      "heading_sha256": "e7995d92eda0e0ef6ceef9eb0108953d331b9db33bc7526744b7e6d540db8b23",
+      "headings": [
+        "服务类目（非个人主体）",
+        "物流服务",
+        "教育服务",
+        "医疗服务",
+        "政务民生",
+        "金融业",
+        "交通服务",
+        "房地产服务",
+        "生活服务",
+        "IT科技",
+        "餐饮服务",
+        "旅游服务",
+        "时政信息",
+        "文娱",
+        "工具",
+        "电商平台",
+        "商家自营",
+        "商业服务",
+        "公益",
+        "社交",
+        "体育",
+        "汽车服务",
+        "资讯",
+        "深度合成"
+      ],
+      "last_modified": null,
+      "etag": "\"ns6g1vgx3a7mz8\""
     }
   ]
 }
