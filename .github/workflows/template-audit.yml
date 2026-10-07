@@ -1,0 +1,32 @@
+name: Official Template Audit
+
+on:
+  schedule:
+    - cron: "41 4 1 * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "sources/official-templates.json"
+      - "scripts/audit_official_templates.py"
+      - ".github/workflows/template-audit.yml"
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Audit official template ZIPs
+        run: python3 scripts/audit_official_templates.py
+
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: workbuddy-official-template-audit
+          path: build/official-template-audit
