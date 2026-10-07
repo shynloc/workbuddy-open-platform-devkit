@@ -45,6 +45,7 @@ jobs:
           python3 scripts/release_check.py             90-templates/skill-template             --dist /tmp/wb-opdk-release             --side-effect-review not-applicable
           test -s /tmp/wb-opdk-release/your-skill-name-v1.0.0.zip
           test -s /tmp/wb-opdk-release/your-skill-name-v1.0.0.manifest.json
+          test -s /tmp/wb-opdk-release/your-skill-name-v1.0.0.submission-notes.md
 
       - name: Prepare HTML knowledge base
         run: python3 scripts/prepare_docs.py
