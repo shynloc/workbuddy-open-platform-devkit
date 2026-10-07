@@ -12,7 +12,7 @@
 
 WB-OPDK（WorkBuddy Open Platform Development Kit）不是 WorkBuddy 官方文档的镜像，也不是官方项目。
 
-它把开放平台规范整理为 **Agent 可快速读取、开发者可直接执行、可以持续追溯和更新** 的工程知识库，覆盖需求判断、架构、开发、测试、打包、审核、发布与版本维护。
+它把开放平台规范整理为 **Agent 可快速读取、开发者可直接执行、可以持续追溯和更新** 的工程知识库，覆盖主体/资质判断、需求、架构、开发、测试、安全、打包、审核、发布与上线后运营。
 
 ```text
 WorkBuddy 官方文档
@@ -60,16 +60,21 @@ Skill / Expert / Expert Team / Connector / Buddy App / Open API
 | 模块 | 当前内容 |
 |---|---|
 | Platform | 产品地图、术语、能力决策树、入驻 |
+| Qualification | 个人/非个人主体、服务类目、资质 Gate |
 | Skill | 官方结构、frontmatter、开发 SOP、QA |
 | Expert | plugin.json / Agent 规范、设计指南、QA |
 | Expert Team | 团队结构、编排、依赖 |
 | Connector | MCP / CLI / Auth / 版本兼容 / QA |
 | Buddy App | Harness 设计、配置发布、视觉资产、企业分发 |
+| Hardware | 硬件接入架构、OAuth/Scope、Local Assistant / Cloud Task / ACP |
 | Third-party App / Open API | OAuth 2.1、Scope、能力地图 |
+| Security Governance | Trust Boundary、凭据、日志、Side-effect Policy、Security Gate |
 | Release Engineering | 需求、包校验、提交资料、审核/版本 |
 | Recipes | Skill / Expert / Team / MCP→Connector / Buddy App |
 | Templates | Brief、Source Metadata、Release Handoff、Submission QA |
 | Schemas | Skill / Expert / Team / Connector / Token / Release Manifest machine-readable schema |
+| Operations | 上线监控、版本兼容、回滚、事故响应、弃用与支持交接 |
+| Validation | 真实 Platform Parse / Runtime / Review 证据链 |
 | Maintenance | Source Watch、Snapshot、KB/Schema Validator、Starter Smoke Test、HTML Build |
 
 ## Quick Start — 开发者
@@ -167,7 +172,8 @@ Agent：
 ## 从需求到发布
 
 ```text
-Requirement Intake
+Publisher / Qualification Gate
+→ Requirement Intake
 → Product Type Decision
 → Product Brief / PRD
 → Architecture
@@ -180,7 +186,9 @@ Requirement Intake
 → Platform Review
 → Review Fix
 → Publish
-→ Version & Operations
+→ Observe / Support
+→ Version / Compatibility
+→ Operations / Deprecation
 ```
 
 ## 目录
@@ -188,15 +196,20 @@ Requirement Intake
 ```text
 ├── START_HERE.md
 ├── 00-platform/
+├── 05-qualification-compliance/
 ├── 10-skill/
 ├── 20-expert/
 ├── 30-expert-team/
 ├── 40-connector/
 ├── 50-buddy-app/
+├── 55-hardware/
 ├── 60-open-api/
+├── 65-security-governance/
 ├── 70-release-engineering/
+├── 75-operations/
 ├── 80-recipes/
 ├── 90-templates/
+├── 95-validation/
 ├── schemas/
 ├── scripts/
 └── sources/
@@ -223,6 +236,11 @@ python3 scripts/validate_kb.py
 → 改回 VERIFIED
 → CHANGELOG
 ```
+
+## Compatibility & Attribution
+
+- 全局兼容策略：[`COMPATIBILITY.md`](COMPATIBILITY.md)
+- 上游归属与 MIT 边界：[`NOTICE.md`](NOTICE.md)
 
 ## 项目边界与声明
 
