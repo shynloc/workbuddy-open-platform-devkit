@@ -1,0 +1,18 @@
+{
+  "title": "服务对接配置",
+  "title_en": "Service Configuration",
+  "description": "连接您的账号。敏感凭据仅用于本地连接配置。",
+  "description_en": "Connect your account. Sensitive credentials are used only for local connector configuration.",
+  "docUrl": "https://example.com/docs/api-token",
+  "docLabel": "如何获取 Access Token？",
+  "fields": [
+    {
+      "key": "API_KEY",
+      "label": "Access Token",
+      "type": "password",
+      "required": true,
+      "placeholder": "粘贴您的 Access Token",
+      "description": "用于访问服务 API 的个人凭据。"
+    }
+  ]
+}
