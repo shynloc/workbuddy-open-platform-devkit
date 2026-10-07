@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "example-service": {
+      "type": "streamableHttp",
+      "url": "https://example.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${SERVICE_TOKEN}"
+      },
+      "timeout": 30000
+    }
+  }
+}
