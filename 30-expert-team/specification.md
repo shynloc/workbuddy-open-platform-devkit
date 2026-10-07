@@ -15,7 +15,8 @@ status: VERIFIED
 
 ```text
 my-team/
-├── .codebuddy-plugin/plugin.json
+├── .codebuddy-plugin/
+│   └── plugin.json
 ├── avatars/
 │   ├── team.png
 │   ├── team-lead.png
@@ -35,29 +36,77 @@ my-team/
 
 ## 2. plugin.json
 
-核心字段与 Expert 类似，但：
+必须包含：
 
+- `name`
 - `expertType = "team"`
-- `teamInfo` 必填
-- `teamInfo.leadAgent` 指定主理人
-- `teamInfo.memberAgents` 列出成员
-- `members` 包含全部团队成员（含主理人），每项提供 id/name/profession/avatar/role。
+- `version`
+- `description`
+- `author`
+- `agents`
+- `agentName`
+- `teamInfo`
+- 市场展示字段
+- `members`
 
-市场字段同样要求 displayName、profession、displayDescription、avatar、categoryId、defaultInitPrompt、plugin、tags、quickPrompts。
+`teamInfo`：
 
-官方当前写明 tags 固定 3 个、quickPrompts 固定 3 个；defaultInitPrompt 必须与第一条 quickPrompt 一致。
+```json
+{
+  "leadAgent": "my-team-team-lead",
+  "memberAgents": ["member-a", "member-b"]
+}
+```
 
-## 3. settings.json
+`members` 必须包含主理人和所有成员，每项：
 
-专家团必须提供 settings.json 设置主理人。具体字段应以官方模板/当前开放平台解析结果为准，生成包时不要凭历史记忆猜字段。
+- id
+- name {en,zh}
+- profession {en,zh}
+- avatar
+- role = lead | member
 
-## 4. MCP / Connector dependencies
+官方字段表当前要求：
+
+- tags：固定 3 个
+- quickPrompts：固定 3 个
+- defaultInitPrompt 与第一条 quickPrompt 一致
+- displayDescription 中文 40–50 字
+
+> 官方 trading-team 示例当前展示了 4 个 tags，但同页字段表写“固定 3 个”。本仓库把该差异记录在 `sources/known-inconsistencies.md`，发布前应再次看当前平台解析规则。
+
+## 3. Agent MD
+
+主理人和成员都使用 YAML frontmatter + Markdown。
+
+至少包含：
+
+- name
+- description
+- displayName {en,zh}
+- profession {en,zh}
+
+## 4. settings.json
+
+官方目录规范明确要求 `settings.json`，用于设置主理人。
+
+但当前公开页面正文没有给出该文件的完整字段 schema；官方同时提供 `trading-team.zip` 模板作为下载样例。
+
+因此：
+
+- 不凭经验伪造 settings.json 字段；
+- 开发时以当前官方模板 ZIP / 平台解析行为为准；
+- 字段被官方页面明确公开或官方模板内容被验证后，再固化 schema。
+
+详见：`30-expert-team/settings-json.md`。
+
+## 5. MCP / Connector dependencies
 
 专家/专家团可声明：
 
 - 自带 MCP：`dependencies.mcpServers`
 - 已上架连接器：`dependencies.connectors`
 
-如果 plugin.json 未声明 mcpServers，根目录 `.mcp.json` 可作为兜底。
+如果 plugin.json 未声明 mcpServers，根目录 `.mcp.json` 可作为 fallback。
 
 自带 MCP 可通过 `x-workbuddy` 提供展示名、描述、icon 与 auth（oauth/token/none）元信息。真实 Token/密钥严禁硬编码。
