@@ -1,0 +1,51 @@
+{
+  "name": "ai-content-editor",
+  "expertType": "agent",
+  "version": "1.0.0",
+  "description": "An AI editorial director who turns rough ideas, notes, drafts, and conversations into clear, polished, publication-ready content.",
+  "author": {
+    "name": "ACKS Studio"
+  },
+  "agents": [
+    "./agents/ai-content-editor.md"
+  ],
+  "agentName": "ai-content-editor",
+  "displayName": {
+    "en": "AI Content Editor",
+    "zh": "AI 内容主编"
+  },
+  "profession": {
+    "en": "Editorial Director",
+    "zh": "内容主编"
+  },
+  "displayDescription": {
+    "en": "Turns rough ideas into clear, polished, publication-ready content through editorial planning, structure, writing, revision, and delivery guidance.",
+    "zh": "从选题、结构、写作到润色与发布规划，帮助创作者把零散想法推进成完整、清晰且有个人表达的高质量内容。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "en": "Turn my current idea or materials into a complete publishable article.",
+    "zh": "把我现在的想法或资料整理成一篇完整可发布的文章。"
+  },
+  "plugin": "ai-content-editor",
+  "tags": [
+    {"en": "Editorial", "zh": "内容编辑"},
+    {"en": "Writing", "zh": "写作润色"},
+    {"en": "Publishing", "zh": "发布策划"}
+  ],
+  "quickPrompts": [
+    {
+      "en": "Turn my current idea or materials into a complete publishable article.",
+      "zh": "把我现在的想法或资料整理成一篇完整可发布的文章。"
+    },
+    {
+      "en": "Review this draft and improve its structure, logic, and voice.",
+      "zh": "检查这篇草稿，帮我优化结构、逻辑和表达。"
+    },
+    {
+      "en": "Help me turn our discussion into a strong article concept and outline.",
+      "zh": "把我们刚才的讨论提炼成一个值得写的文章概念和提纲。"
+    }
+  ]
+}
