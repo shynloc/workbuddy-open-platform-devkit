@@ -6,6 +6,13 @@ from _image_utils import validate_avatar
 
 CATEGORY_PREFIXES={f"{i:02d}-" for i in range(1,16)}
 
+def load_json(path: Path, errs: list[str], label: str):
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception as e:
+        errs.append(f"invalid {label}: {e}")
+        return {}
+
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("path")
@@ -18,11 +25,7 @@ def main():
         errs.append("missing .codebuddy-plugin/plugin.json")
         data={}
     else:
-        try:
-            data=json.loads(cfg.read_text(encoding="utf-8"))
-        except Exception as e:
-            data={}
-            errs.append(f"invalid plugin.json: {e}")
+        data=load_json(cfg,errs,"plugin.json")
 
     required=["name","version","description","author","agents","expertType","agentName","teamInfo","members","displayName","profession","displayDescription","avatar","categoryId","defaultInitPrompt","plugin","tags","quickPrompts"]
     for k in required:
@@ -87,8 +90,25 @@ def main():
     if cat and not any(cat.startswith(x) for x in CATEGORY_PREFIXES):
         errs.append(f"unknown categoryId: {cat}")
 
-    if not (root/"settings.json").is_file():
-        errs.append("missing required settings.json; do not invent schema—use current official template")
+    # Official docs currently say settings.json, while the official trading-team.zip
+    # currently contains setting.json with {"agent": "<lead>"}. Accept either one
+    # but never both; see sources/known-inconsistencies.md.
+    singular=root/"setting.json"
+    plural=root/"settings.json"
+    if singular.is_file() and plural.is_file():
+        errs.append("both setting.json and settings.json exist; upstream naming is inconsistent, package must choose one")
+    elif singular.is_file():
+        setting=load_json(singular,errs,"setting.json")
+        if setting.get("agent")!=lead:
+            errs.append(f"setting.json agent must equal lead agent: expected {lead!r}, got {setting.get('agent')!r}")
+    elif plural.is_file():
+        settings=load_json(plural,errs,"settings.json")
+        # Public docs do not currently expose a schema. If an agent field is
+        # present, at least enforce consistency with the lead.
+        if "agent" in settings and settings.get("agent")!=lead:
+            errs.append(f"settings.json agent must equal lead agent: expected {lead!r}, got {settings.get('agent')!r}")
+    else:
+        errs.append("missing lead settings file: official docs say settings.json; official trading-team.zip uses setting.json")
 
     # Team-level market avatar.
     if data.get("avatar"):
