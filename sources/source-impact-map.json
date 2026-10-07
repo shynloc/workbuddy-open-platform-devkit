@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "workbuddy-open-platform-overview": {
+      "affected": [
+        "00-platform/overview.md",
+        "00-platform/product-map.md",
+        "00-platform/capability-decision-tree.md",
+        "README.md",
+        "START_HERE.md"
+      ]
+    },
+    "workbuddy-onboarding": {
+      "affected": [
+        "00-platform/onboarding.md",
+        "70-release-engineering/requirement-intake.md"
+      ]
+    },
+    "workbuddy-skill": {
+      "affected": [
+        "10-skill/",
+        "schemas/skill-frontmatter.schema.json",
+        "90-templates/skill-template/",
+        "scripts/validate_skill.py",
+        "scripts/scaffold.py",
+        "scripts/smoke_test_templates.py"
+      ]
+    },
+    "workbuddy-expert": {
+      "affected": [
+        "20-expert/",
+        "schemas/expert-plugin.schema.json",
+        "90-templates/expert-template/",
+        "scripts/validate_expert.py",
+        "scripts/audit_official_templates.py",
+        "sources/official-template-audit-baseline.json"
+      ]
+    },
+    "workbuddy-expert-team": {
+      "affected": [
+        "30-expert-team/",
+        "schemas/expert-team-plugin.schema.json",
+        "90-templates/expert-team-template/",
+        "scripts/validate_expert_team.py",
+        "scripts/audit_official_templates.py",
+        "sources/known-inconsistencies.md",
+        "sources/official-template-audit-baseline.json"
+      ]
+    },
+    "workbuddy-connector": {
+      "affected": [
+        "40-connector/",
+        "schemas/connector-meta.schema.json",
+        "schemas/token-schema.schema.json",
+        "90-templates/connector-mcp-token-template/",
+        "90-templates/connector-mcp-oauth-template/",
+        "90-templates/connector-cli-template/",
+        "scripts/validate_connector.py"
+      ]
+    },
+    "workbuddy-buddy-app": {
+      "affected": [
+        "50-buddy-app/",
+        "90-templates/buddy-app-template/",
+        "sources/known-inconsistencies.md"
+      ]
+    },
+    "workbuddy-third-party-app": {
+      "affected": [
+        "60-open-api/third-party-app.md",
+        "60-open-api/oauth-2.1.md",
+        "60-open-api/integration-checklist.md",
+        "80-recipes/build-third-party-app.md",
+        "examples/third-party-oauth-minimal/"
+      ]
+    },
+    "workbuddy-openapi": {
+      "affected": [
+        "60-open-api/",
+        "examples/third-party-oauth-minimal/",
+        "70-release-engineering/security-checklist.md",
+        "sources/known-inconsistencies.md"
+      ]
+    },
+    "workbuddy-contact": {
+      "affected": [
+        "README.md"
+      ]
+    }
+  }
+}
