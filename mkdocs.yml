@@ -96,6 +96,8 @@ nav:
       - Security Checklist: 70-release-engineering/security-checklist.md
       - Package Validation: 70-release-engineering/package-validation.md
       - Submission Materials: 70-release-engineering/submission-materials.md
+      - Release Manifest: 70-release-engineering/release-manifest.md
+      - Release Pipeline: 70-release-engineering/release-pipeline.md
       - Review & Versioning: 70-release-engineering/review-and-versioning.md
 
   - Recipes:
@@ -105,6 +107,16 @@ nav:
       - MCP to Connector: 80-recipes/convert-mcp-to-connector.md
       - Design a Buddy App: 80-recipes/design-a-buddy-app.md
       - Build a Third-party App: 80-recipes/build-third-party-app.md
+      - End-to-end Release: 80-recipes/end-to-end-release.md
+
+  - Schemas:
+      - Overview: schemas/README.md
+      - Skill Frontmatter: schemas/skill-frontmatter.schema.json
+      - Expert plugin.json: schemas/expert-plugin.schema.json
+      - Expert Team plugin.json: schemas/expert-team-plugin.schema.json
+      - Connector Meta: schemas/connector-meta.schema.json
+      - Token Schema: schemas/token-schema.schema.json
+      - Release Manifest: schemas/release-manifest.schema.json
 
   - Maintenance:
       - HTML Knowledge Base: docs-site.md
