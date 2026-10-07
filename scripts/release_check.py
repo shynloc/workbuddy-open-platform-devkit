@@ -66,6 +66,7 @@ def main():
     manifest=dist/f"{base}.manifest.json"
     archive=dist/f"{base}.zip"
 
+    run([sys.executable,SCRIPTS/"validate_asset_schemas.py",asset])
     run([sys.executable,validator,asset])
 
     run([
