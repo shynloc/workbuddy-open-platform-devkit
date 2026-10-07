@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WB-OPDK Official Source Snapshot Manifest",
+  "type": "object",
+  "required": ["generated_at", "sources"],
+  "properties": {
+    "generated_at": {"type": "string"},
+    "sources": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["url", "checked_at"],
+        "properties": {
+          "url": {"type": "string"},
+          "checked_at": {"type": "string"},
+          "status": {"type": "integer"},
+          "sha256": {"type": "string"},
+          "etag": {"type": ["string", "null"]},
+          "last_modified": {"type": ["string", "null"]},
+          "error": {"type": "string"}
+        }
+      }
+    }
+  }
+}
