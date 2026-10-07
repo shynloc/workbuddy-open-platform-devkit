@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased — Working-grade Baseline
+
+- 补齐主体认证、个人/非个人服务类目与资质 Gate
+- 增加 Hardware 接入架构、OAuth/Scope、Runtime 和设备安全
+- 增加 Security & Governance：Trust Boundary、凭据、数据日志、Side-effect Policy、Release Gate
+- 增加 Post-release Operations：监控、版本兼容、回滚、事故响应、弃用和支持交接
+- 增加 NOTICE、Compatibility Policy、Security Policy、Quality Gates
+- 增加 Source Registry / Impact Map Validator 和 Repository Doctor
+- 将 Qualification 官方页面纳入 Source Watch baseline
+- Expert 与 Expert Team 真实包均通过 WorkBuddy Platform Parse 并进入审核
+- 真实 Team Parser 明确要求 plugin root 使用 settings.json；Starter / Validator 已修正
+
+
 ## 2026-10-08 — Tooling / v0.2
 
 - 增加 Skill / Expert / Expert Team / Connector package validators
