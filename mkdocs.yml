@@ -3,6 +3,8 @@ site_description: WorkBuddy Open Platform Development Kit
 site_url: https://shynloc.github.io/workbuddy-open-platform-devkit/
 repo_url: https://github.com/shynloc/workbuddy-open-platform-devkit
 repo_name: shynloc/workbuddy-open-platform-devkit
+hooks:
+  - scripts/mkdocs_hooks.py
 docs_dir: build/docs
 site_dir: build/site
 
@@ -20,6 +22,7 @@ plugins:
   - search
 
 markdown_extensions:
+  - meta
   - admonition
   - tables
   - fenced_code
@@ -118,6 +121,10 @@ nav:
       - Connector Meta: schemas/connector-meta.schema.json
       - Token Schema: schemas/token-schema.schema.json
       - Release Manifest: schemas/release-manifest.schema.json
+
+  - DevKit:
+      - Freshness Dashboard: _generated/freshness.md
+      - Tools & Starters: _generated/devkit-tools.md
 
   - Maintenance:
       - HTML Knowledge Base: docs-site.md
