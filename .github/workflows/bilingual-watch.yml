@@ -1,0 +1,35 @@
+name: Official Docs zh-en Watch
+
+on:
+  schedule:
+    - cron: "29 4 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "sources/bilingual-docs.json"
+      - "scripts/check_bilingual_docs.py"
+      - ".github/workflows/bilingual-watch.yml"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check zh/en technical consistency
+        run: |
+          python3 scripts/check_bilingual_docs.py             --json-out bilingual-report.json             --markdown-out bilingual-report.md             --fail-on-mismatch
+
+      - name: Upload review artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: workbuddy-bilingual-docs-review
+          path: |
+            bilingual-report.json
+            bilingual-report.md
