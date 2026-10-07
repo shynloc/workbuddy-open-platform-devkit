@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "pairs": [
+    {
+      "id": "skill",
+      "zh": "https://open.workbuddy.cn/docs/skill",
+      "en": "https://open.workbuddy.cn/en/docs/skill",
+      "required_literals": ["SKILL.md", "description_zh", "description_en", "allowed-tools", "user-invocable"]
+    },
+    {
+      "id": "expert",
+      "zh": "https://open.workbuddy.cn/docs/expert",
+      "en": "https://open.workbuddy.cn/en/docs/expert",
+      "required_literals": ["plugin.json", "expertType", "agentName", "quickPrompts", "categoryId"]
+    },
+    {
+      "id": "expert-team",
+      "zh": "https://open.workbuddy.cn/docs/expert-team",
+      "en": "https://open.workbuddy.cn/en/docs/expert-team",
+      "required_literals": ["plugin.json", "teamInfo", "leadAgent", "memberAgents", "quickPrompts"]
+    },
+    {
+      "id": "connector",
+      "zh": "https://open.workbuddy.cn/docs/connector",
+      "en": "https://open.workbuddy.cn/en/docs/connector",
+      "required_literals": ["connector-meta.json", "mcp.json", "cli.json", "token-schema.json", "minWorkbuddyVersion"]
+    },
+    {
+      "id": "buddy-app",
+      "zh": "https://open.workbuddy.cn/docs/buddy-app",
+      "en": "https://open.workbuddy.cn/en/docs/buddy-app",
+      "required_literals": ["Client ID", "Client Secret"]
+    },
+    {
+      "id": "third-party-app",
+      "zh": "https://open.workbuddy.cn/docs/third-party-app",
+      "en": "https://open.workbuddy.cn/en/docs/third-party-app",
+      "required_literals": ["OAuth 2.1", "client_id", "client_secret", "access_token", "refresh_token"]
+    },
+    {
+      "id": "openapi",
+      "zh": "https://open.workbuddy.cn/docs/openapi",
+      "en": "https://open.workbuddy.cn/en/docs/openapi",
+      "required_literals": ["/openapi/v2/authorize", "/openapi/v2/token", "grant_type", "client_id", "client_secret", "expires_in"]
+    }
+  ]
+}
