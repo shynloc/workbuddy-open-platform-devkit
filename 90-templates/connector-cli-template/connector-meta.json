@@ -1,0 +1,20 @@
+{
+  "name": "命令行服务",
+  "name_zh": "命令行服务",
+  "name_en": "CLI Service",
+  "description": "Use the service through its CLI.",
+  "description_zh": "通过自然语言调用该服务的命令行能力。",
+  "description_en": "Use the service through its CLI with natural language.",
+  "source": "your-cli-service",
+  "type": "cli",
+  "version": "1.0.0",
+  "examples_zh": [
+    "帮我查询当前登录状态",
+    "帮我执行一个常用任务"
+  ],
+  "examples_en": [
+    "Check my login status",
+    "Run a common task for me"
+  ],
+  "minWorkbuddyVersion": "4.24.0"
+}
