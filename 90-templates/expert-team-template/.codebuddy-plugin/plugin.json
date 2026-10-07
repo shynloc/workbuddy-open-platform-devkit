@@ -1,0 +1,84 @@
+{
+  "name": "your-expert-team",
+  "version": "1.0.0",
+  "description": "A three-role expert team that decomposes work, performs specialist analysis, and synthesizes the final deliverable.",
+  "author": {
+    "name": "Your Name",
+    "email": "you@example.com"
+  },
+  "agents": [
+    "./agents/your-expert-team-team-lead.md",
+    "./agents/research-specialist.md",
+    "./agents/delivery-specialist.md"
+  ],
+  "expertType": "team",
+  "agentName": "your-expert-team-team-lead",
+  "teamInfo": {
+    "leadAgent": "your-expert-team-team-lead",
+    "memberAgents": [
+      "research-specialist",
+      "delivery-specialist"
+    ]
+  },
+  "displayName": {
+    "en": "Collaboration Expert Team",
+    "zh": "协作专家团"
+  },
+  "profession": {
+    "en": "Collaboration Expert Team",
+    "zh": "协作专家团"
+  },
+  "displayDescription": {
+    "en": "A lead orchestrates research and delivery specialists from task decomposition through expert analysis, review, synthesis, and final delivery.",
+    "zh": "由主理人协调研究员与执行专家分工协作，完成从问题拆解、专业分析到最终汇总交付的完整任务流程。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "12-IndustryConsultant",
+  "defaultInitPrompt": {
+    "en": "Organize the team and complete this task",
+    "zh": "请组织团队完成这个任务"
+  },
+  "plugin": "your-expert-team",
+  "tags": [
+    {"en": "Collaboration", "zh": "团队协作"},
+    {"en": "Research", "zh": "专业研究"},
+    {"en": "Delivery", "zh": "成果交付"}
+  ],
+  "quickPrompts": [
+    {
+      "en": "Organize the team and complete this task",
+      "zh": "请组织团队完成这个任务"
+    },
+    {
+      "en": "Research this problem and deliver a complete recommendation",
+      "zh": "研究这个问题并给我一份完整建议"
+    },
+    {
+      "en": "Review my current plan with the full team",
+      "zh": "让整个团队评审我现在的方案"
+    }
+  ],
+  "members": [
+    {
+      "id": "your-expert-team-team-lead",
+      "name": {"en": "Lead", "zh": "主理人"},
+      "profession": {"en": "Team Lead & Orchestrator", "zh": "团队主理人"},
+      "avatar": "avatars/team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "research-specialist",
+      "name": {"en": "Researcher", "zh": "研究员"},
+      "profession": {"en": "Research Specialist", "zh": "研究专家"},
+      "avatar": "avatars/research-specialist.png",
+      "role": "member"
+    },
+    {
+      "id": "delivery-specialist",
+      "name": {"en": "Builder", "zh": "执行专家"},
+      "profession": {"en": "Delivery Specialist", "zh": "执行交付专家"},
+      "avatar": "avatars/delivery-specialist.png",
+      "role": "member"
+    }
+  ]
+}
