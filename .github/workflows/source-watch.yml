@@ -1,0 +1,26 @@
+name: Official Source Watch
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch official source status
+        run: python3 scripts/check_official_sources.py --json > source-status.json
+
+      - name: Upload source status
+        uses: actions/upload-artifact@v4
+        with:
+          name: workbuddy-official-source-status
+          path: source-status.json
