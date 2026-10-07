@@ -7,8 +7,8 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 | Asset type | Local schema/validator | Starter smoke test | Platform parse | Runtime test | Review | Published |
 |---|---:|---:|---:|---:|---:|---:|
 | Skill | ✅ | ✅ | ✅ 1 case | — | ⏳ 1 case | — |
-| Expert | ✅ | ✅ | — | — | — | — |
-| Expert Team | ✅ | ✅ | ❌ first attempt; corrected retry ready | — | — | — |
+| Expert | ✅ | ✅ | ✅ 1 case | — | ⏳ 1 case | — |
+| Expert Team | ✅ | ✅ | ✅ 1 corrected case | — | ⏳ 1 case | — |
 | Connector | ✅ | ✅ MCP/CLI | — | — | — | — |
 | Buddy App | N/A platform-configured | Product canvas/QA ready | — | — | — | — |
 | Third-party App / Open API | OAuth sample syntax ✅ | Integration checklist ✅ | App config not tested | — | — | — |
@@ -39,7 +39,8 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 - Expert Validator: Pass
 - Release Check: Pass
 - Candidate ZIP/manifest/submission-notes: Generated
-- Platform Parse: Not run
+- Platform Parse: Pass
+- Review: Pending
 
 ### Expert Team Candidate — AI Editorial Team
 
@@ -49,7 +50,8 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 - Team Validator: Pass
 - Release Check: Pass
 - Candidate ZIP/manifest/submission-notes: Generated
-- Platform Parse: First attempt failed because `settings.json` was missing; corrected package is ready for retry
+- Platform Parse: Pass after correcting `setting.json` → `settings.json`
+- Review: Pending
 - Confirmed rule: plugin root must contain `settings.json`
 
 Candidate Build:
@@ -75,7 +77,7 @@ https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/376697258
 
 目标：
 
-- 重新上传修正版 `settings.json` 包，确认下一阶段 JSON 内容与其余字段是否被接受；
+- 等待审核结果，审核通过后执行 Team Runtime / Orchestration 测试；
 - 验证 Lead 是否能真实调度至少 2 个 Member；
 - 验证 Team Skill / Connector dependency 引导。
 
