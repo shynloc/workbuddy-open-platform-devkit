@@ -8,7 +8,7 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 |---|---:|---:|---:|---:|---:|---:|
 | Skill | ✅ | ✅ | ✅ 1 case | — | ⏳ 1 case | — |
 | Expert | ✅ | ✅ | — | — | — | — |
-| Expert Team | ✅ | ✅ | — | — | — | — |
+| Expert Team | ✅ | ✅ | ❌ first attempt; corrected retry ready | — | — | — |
 | Connector | ✅ | ✅ MCP/CLI | — | — | — | — |
 | Buddy App | N/A platform-configured | Product canvas/QA ready | — | — | — | — |
 | Third-party App / Open API | OAuth sample syntax ✅ | Integration checklist ✅ | App config not tested | — | — | — |
@@ -49,8 +49,8 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 - Team Validator: Pass
 - Release Check: Pass
 - Candidate ZIP/manifest/submission-notes: Generated
-- Platform Parse: Not run
-- Special observation target: `setting.json` acceptance
+- Platform Parse: First attempt failed because `settings.json` was missing; corrected package is ready for retry
+- Confirmed rule: plugin root must contain `settings.json`
 
 Candidate Build:
 
@@ -75,7 +75,7 @@ https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/376697258
 
 目标：
 
-- 验证当前 `setting.json` / `settings.json` 上游冲突的真实解析行为；
+- 重新上传修正版 `settings.json` 包，确认下一阶段 JSON 内容与其余字段是否被接受；
 - 验证 Lead 是否能真实调度至少 2 个 Member；
 - 验证 Team Skill / Connector dependency 引导。
 
