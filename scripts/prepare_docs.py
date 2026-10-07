@@ -20,10 +20,6 @@ ROOT_FILES=[
     "LICENSE",
     "docs-site.md",
 ]
-SPECIAL_FILES=[
-    "scripts/README.md",
-]
-
 SOURCE_DIRS=[
     "00-platform",
     "10-skill",
@@ -50,13 +46,6 @@ def main():
         src=ROOT/name
         if src.exists():
             shutil.copy2(src,OUT/name)
-
-    for name in SPECIAL_FILES:
-        src=ROOT/name
-        if src.exists():
-            dst=OUT/name
-            dst.parent.mkdir(parents=True,exist_ok=True)
-            shutil.copy2(src,dst)
 
     for name in SOURCE_DIRS:
         src=ROOT/name
