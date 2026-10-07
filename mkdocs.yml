@@ -32,6 +32,7 @@ markdown_extensions:
 nav:
   - 首页: README.md
   - Agent 入口: START_HERE.md
+  - 开发者入口: DEVELOPER_START.md
 
   - 平台:
       - Overview: 00-platform/overview.md
