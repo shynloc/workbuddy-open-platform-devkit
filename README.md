@@ -44,6 +44,8 @@ Skill / Expert / Expert Team / Connector / Buddy App / Open API
 
 - 开放平台概述：https://open.workbuddy.cn/docs/what-is-open-platform
 - 入驻：https://open.workbuddy.cn/docs/onboarding
+- 服务类目（个人主体）：https://open.workbuddy.cn/docs/service-categories-individual
+- 服务类目（非个人主体）：https://open.workbuddy.cn/docs/service-categories-enterprise
 - Skill：https://open.workbuddy.cn/docs/skill
 - 专家：https://open.workbuddy.cn/docs/expert
 - 专家团：https://open.workbuddy.cn/docs/expert-team
