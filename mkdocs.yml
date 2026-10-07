@@ -176,6 +176,8 @@ nav:
       - Source Snapshot Schema: sources/source-snapshots.schema.json
       - Update Log: sources/update-log.md
 
+  - Quality Gates: QUALITY_GATES.md
+  - Security Policy: SECURITY.md
   - Compatibility Policy: COMPATIBILITY.md
   - Notice / Attribution: NOTICE.md
   - Roadmap: ROADMAP.md
