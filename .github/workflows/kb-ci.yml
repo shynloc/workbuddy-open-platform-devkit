@@ -26,6 +26,9 @@ jobs:
       - name: Validate JSON Schemas and representative starters
         run: python3 scripts/validate_schemas.py
 
+      - name: Validate real-world validation records
+        run: python3 scripts/validate_validation_records.py
+
       - name: Smoke-test starter templates and scaffolds
         run: python3 scripts/smoke_test_templates.py
 
