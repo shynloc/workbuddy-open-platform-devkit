@@ -29,40 +29,55 @@ markdown_extensions:
 nav:
   - 首页: README.md
   - Agent 入口: START_HERE.md
+
   - 平台:
       - Overview: 00-platform/overview.md
       - 入驻: 00-platform/onboarding.md
       - 产品地图: 00-platform/product-map.md
       - 能力决策树: 00-platform/capability-decision-tree.md
       - 术语: 00-platform/terminology.md
+
   - Skill:
       - Specification: 10-skill/specification.md
       - Frontmatter: 10-skill/frontmatter-reference.md
       - Development Workflow: 10-skill/development-workflow.md
       - QA: 10-skill/qa-checklist.md
+      - Publishing Checklist: 10-skill/publishing-checklist.md
+
   - Expert:
       - Specification: 20-expert/specification.md
+      - plugin.json Reference: 20-expert/plugin-json-reference.md
       - Category Reference: 20-expert/category-reference.md
       - Design Guide: 20-expert/design-guide.md
       - QA: 20-expert/qa-checklist.md
+
   - Expert Team:
       - Specification: 30-expert-team/specification.md
       - Orchestration: 30-expert-team/orchestration.md
       - Dependencies: 30-expert-team/dependencies.md
-      - settings.json 状态: 30-expert-team/settings-json.md
+      - Lead Settings Upstream Status: 30-expert-team/settings-json.md
+      - QA: 30-expert-team/qa-checklist.md
+
   - Connector:
       - Specification: 40-connector/specification.md
+      - connector-meta.json: 40-connector/connector-meta-reference.md
       - MCP: 40-connector/mcp-guide.md
       - CLI: 40-connector/cli-guide.md
       - Auth: 40-connector/auth-and-credentials.md
+      - token-schema.json: 40-connector/token-schema-reference.md
       - Version Compatibility: 40-connector/version-compatibility.md
+      - High-risk Tools: 40-connector/high-risk-tools.md
       - QA: 40-connector/qa-checklist.md
+
   - Buddy App:
       - Specification: 50-buddy-app/specification.md
       - Product Design: 50-buddy-app/product-design.md
+      - Scenario Design: 50-buddy-app/scenario-design.md
+      - Model Strategy: 50-buddy-app/model-strategy.md
       - Configuration & Release: 50-buddy-app/configuration-and-release.md
       - Design Assets: 50-buddy-app/design-assets.md
       - Enterprise Distribution: 50-buddy-app/enterprise-distribution.md
+
   - Open API:
       - Third-party App: 60-open-api/third-party-app.md
       - OAuth 2.1: 60-open-api/oauth-2.1.md
@@ -72,22 +87,31 @@ nav:
       - Local Assistant: 60-open-api/local-assistant.md
       - Cloud Tasks: 60-open-api/cloud-tasks.md
       - ACP & Artifacts: 60-open-api/acp-and-artifacts.md
+      - Integration Checklist: 60-open-api/integration-checklist.md
+
   - Release Engineering:
       - Requirement Intake: 70-release-engineering/requirement-intake.md
+      - Test Plan: 70-release-engineering/test-plan.md
       - Runtime Test Matrix: 70-release-engineering/runtime-test-matrix.md
       - Security Checklist: 70-release-engineering/security-checklist.md
       - Package Validation: 70-release-engineering/package-validation.md
       - Submission Materials: 70-release-engineering/submission-materials.md
       - Review & Versioning: 70-release-engineering/review-and-versioning.md
+
   - Recipes:
       - Build a Skill: 80-recipes/build-a-skill.md
       - Build an Expert: 80-recipes/build-an-expert.md
       - Build an Expert Team: 80-recipes/build-an-expert-team.md
       - MCP to Connector: 80-recipes/convert-mcp-to-connector.md
       - Design a Buddy App: 80-recipes/design-a-buddy-app.md
+      - Build a Third-party App: 80-recipes/build-third-party-app.md
+
   - Maintenance:
       - HTML Knowledge Base: docs-site.md
+      - Scripts: scripts/README.md
       - Source Policy: sources/source-policy.md
       - Known Inconsistencies: sources/known-inconsistencies.md
+      - Source Snapshot Schema: sources/source-snapshots.schema.json
       - Update Log: sources/update-log.md
+
   - Changelog: CHANGELOG.md
