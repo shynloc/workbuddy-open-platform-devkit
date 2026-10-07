@@ -20,6 +20,8 @@ ROOT_FILES=[
     "LICENSE",
     "NOTICE.md",
     "COMPATIBILITY.md",
+    "QUALITY_GATES.md",
+    "SECURITY.md",
     "docs-site.md",
 ]
 SOURCE_DIRS=[
