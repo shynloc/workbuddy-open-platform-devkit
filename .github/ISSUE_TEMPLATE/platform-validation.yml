@@ -1,0 +1,65 @@
+name: Platform validation / review evidence
+description: Record WorkBuddy parser, runtime, review, or publishing evidence.
+title: "[Validation] "
+labels: ["validation"]
+body:
+  - type: dropdown
+    id: asset_type
+    attributes:
+      label: Asset type
+      options:
+        - Skill
+        - Expert
+        - Expert Team
+        - Connector
+        - Buddy App
+        - Third-party App
+    validations:
+      required: true
+  - type: input
+    id: asset
+    attributes:
+      label: Asset name and version
+      placeholder: example-skill v1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Validation stage
+      options:
+        - Platform Parse
+        - Runtime Test
+        - Platform Review
+        - Published
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Pass
+        - Fail
+        - Pending
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: WorkBuddy version, OS/platform, publisher type. Do not include secrets.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Sanitized screenshots, logs, review message, commit or artifact references.
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Observation and KB impact
+      description: What did we learn, and which docs/templates/validators may be affected?
