@@ -1,0 +1,59 @@
+schema_version: 1
+
+asset:
+  type: skill
+  name: wechat-article-publishing
+  version: 1.0.0
+  commit: null
+
+environment:
+  observed_at: "2026-10-07"
+  workbuddy_version: null
+  platform: "WorkBuddy Open Platform"
+  publisher_type: personal
+  notes:
+    - "WorkBuddy-specific distribution package was prepared from the generic Skill source."
+    - "This record intentionally distinguishes platform parse from review approval."
+
+stages:
+  local_validation:
+    status: pass
+    at: "2026-10-07"
+    notes:
+      - "Frontmatter, @references paths, Python scripts, manual-delivery smoke test and ZIP structure were checked before submission."
+  platform_parse:
+    status: pass
+    at: "2026-10-07"
+    notes:
+      - "Open Platform accepted the uploaded Skill package and displayed v1.0.0 in the Skill management UI."
+  runtime_test:
+    status: not-run
+    at: null
+    notes:
+      - "No marketplace installation/runtime result is claimed yet."
+  platform_review:
+    status: pending
+    at: "2026-10-07"
+    notes:
+      - "Platform UI showed the Skill status as 审核中 (under review)."
+  published:
+    status: not-run
+    at: null
+    notes: []
+
+evidence:
+  - type: manual-note
+    description: "User-provided WorkBuddy Open Platform UI observation: 微信公众号文章全流程发布, v1.0.0, status 审核中."
+    ref: null
+    sha256: null
+
+observations:
+  - knowledge_type: OBSERVED
+    summary: "The WorkBuddy-specific Skill ZIP structure was accepted by the Open Platform parser and entered the review workflow."
+    affects:
+      - "10-skill/"
+      - "90-templates/skill-template/"
+      - "scripts/validate_skill.py"
+    action: "Keep current Skill package structure as a validated candidate; update this record when the review result arrives."
+
+status: reviewing
