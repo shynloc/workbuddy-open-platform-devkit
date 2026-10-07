@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "17 3 * * 1"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "sources/official-sources.yaml"
+      - "scripts/check_official_sources.py"
+      - ".github/workflows/source-watch.yml"
 
 jobs:
   check:
@@ -19,8 +25,21 @@ jobs:
       - name: Fetch official source status
         run: python3 scripts/check_official_sources.py --json > source-status.json
 
-      - name: Upload source status
+      - name: Compare with committed baseline
+        if: ${{ hashFiles('sources/source-baseline.json') != '' }}
+        run: |
+          python3 scripts/check_official_sources.py             --baseline sources/source-baseline.json             --fail-on-change
+
+      - name: Generate proposed baseline snapshot
+        if: always()
+        run: |
+          python3 scripts/check_official_sources.py             --write-baseline proposed-source-baseline.json
+
+      - name: Upload source-watch artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: workbuddy-official-source-status
-          path: source-status.json
+          path: |
+            source-status.json
+            proposed-source-baseline.json
