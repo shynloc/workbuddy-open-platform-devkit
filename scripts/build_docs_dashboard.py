@@ -13,7 +13,7 @@ import re
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
-DOC_GLOBS=["00-platform","10-skill","20-expert","30-expert-team","40-connector","50-buddy-app","60-open-api","70-release-engineering","80-recipes"]
+DOC_GLOBS=["00-platform","05-qualification-compliance","10-skill","20-expert","30-expert-team","40-connector","50-buddy-app","55-hardware","60-open-api","65-security-governance","70-release-engineering","75-operations","80-recipes","95-validation"]
 
 def parse_registry(path: Path):
     rows=[]
