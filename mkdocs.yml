@@ -130,6 +130,7 @@ nav:
   - Real-world Validation:
       - Methodology: 95-validation/methodology.md
       - Ledger: 95-validation/ledger.md
+      - V1 Readiness: 95-validation/v1-readiness.md
       - WeChat Article Skill Case: 95-validation/wechat-article-publishing-skill.md
       - Record Template: 95-validation/record-template.yaml
 
