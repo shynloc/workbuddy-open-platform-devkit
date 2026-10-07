@@ -9,7 +9,9 @@ on:
     paths:
       - "sources/official-sources.yaml"
       - "sources/source-baseline.json"
+      - "sources/source-impact-map.json"
       - "scripts/check_official_sources.py"
+      - "scripts/build_source_change_report.py"
       - ".github/workflows/source-watch.yml"
 
 jobs:
@@ -23,11 +25,15 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Fetch official source status
-        run: python3 scripts/check_official_sources.py --json > source-status.json
+      - name: Fetch official source status with baseline comparison
+        run: |
+          python3 scripts/check_official_sources.py             --baseline sources/source-baseline.json             --json > source-status.json
 
-      - name: Compare with committed baseline
-        if: ${{ hashFiles('sources/source-baseline.json') != '' }}
+      - name: Build impact-aware change review
+        run: |
+          python3 scripts/build_source_change_report.py             source-status.json             --impact-map sources/source-impact-map.json             --json-out source-change-report.json             --markdown-out source-change-report.md
+
+      - name: Fail when registered official content changed
         run: |
           python3 scripts/check_official_sources.py             --baseline sources/source-baseline.json             --fail-on-change
 
@@ -36,11 +42,13 @@ jobs:
         run: |
           python3 scripts/check_official_sources.py             --write-baseline proposed-source-baseline.json
 
-      - name: Upload source-watch artifacts
+      - name: Upload source-watch review artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: workbuddy-official-source-status
           path: |
             source-status.json
+            source-change-report.json
+            source-change-report.md
             proposed-source-baseline.json
