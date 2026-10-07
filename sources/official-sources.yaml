@@ -73,3 +73,17 @@ sources:
     authority: official
     category: support
     last_verified: 2026-10-07
+
+  workbuddy-service-categories-individual:
+    title: 服务类目（个人主体）
+    url: https://open.workbuddy.cn/docs/service-categories-individual
+    authority: official
+    category: qualification
+    last_verified: 2026-10-08
+
+  workbuddy-service-categories-enterprise:
+    title: 服务类目（非个人主体）
+    url: https://open.workbuddy.cn/docs/service-categories-enterprise
+    authority: official
+    category: qualification
+    last_verified: 2026-10-08
