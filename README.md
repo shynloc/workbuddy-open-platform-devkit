@@ -74,6 +74,9 @@ Skill / Expert / Expert Team / Connector / Buddy App / Open API
 
 ## Quick Start — 开发者
 
+如果你想按产品类型一步步走，直接看 **[`DEVELOPER_START.md`](DEVELOPER_START.md)**。
+
+
 复制对应 Starter，再运行 Validator：
 
 ```bash
