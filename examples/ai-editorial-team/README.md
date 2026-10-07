@@ -13,7 +13,7 @@
 ## 本次验证重点
 
 1. Expert Team package 是否被 WorkBuddy 当前解析器接受；
-2. 官方文档 `settings.json` 与官方下载模板 `setting.json` 的冲突，当前平台实际如何解析；
+2. 当前平台是否接受修正后的 `settings.json`；首次上传使用 `setting.json` 已被明确拒绝；
 3. Lead 是否真正调度 Member；
 4. Member 是否按角色边界工作；
 5. quickPrompts 是否能触发不同团队协作路径；
@@ -60,3 +60,29 @@ python3 scripts/new_validation_record.py \
 ```
 
 只记录真实发生的状态。
+
+## 首次 Platform Parse 结果 — 2026-10-08
+
+第一版候选包沿用了官方下载模板中的 `setting.json`（单数）。
+
+WorkBuddy 开放平台解析失败：
+
+```text
+settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下提供 settings.json）
+```
+
+已修正为：
+
+```text
+settings.json
+```
+
+内容：
+
+```json
+{
+  "agent": "ai-editorial-team-team-lead"
+}
+```
+
+下一次上传应使用修正版候选包；平台是否继续接受其 JSON 内容，以实际解析结果为准。
