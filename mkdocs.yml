@@ -1,0 +1,81 @@
+site_name: WB-OPDK
+site_description: WorkBuddy Open Platform Development Kit
+site_url: https://shynloc.github.io/workbuddy-open-platform-devkit/
+repo_url: https://github.com/shynloc/workbuddy-open-platform-devkit
+repo_name: shynloc/workbuddy-open-platform-devkit
+docs_dir: .
+site_dir: ../wb-opdk-site
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - tables
+  - fenced_code
+  - toc:
+      permalink: true
+
+nav:
+  - 首页: README.md
+  - Agent 入口: START_HERE.md
+  - 平台:
+      - Overview: 00-platform/overview.md
+      - 入驻: 00-platform/onboarding.md
+      - 产品地图: 00-platform/product-map.md
+      - 能力决策树: 00-platform/capability-decision-tree.md
+      - 术语: 00-platform/terminology.md
+  - Skill:
+      - Specification: 10-skill/specification.md
+      - Development Workflow: 10-skill/development-workflow.md
+      - QA: 10-skill/qa-checklist.md
+  - Expert:
+      - Specification: 20-expert/specification.md
+      - Design Guide: 20-expert/design-guide.md
+      - QA: 20-expert/qa-checklist.md
+  - Expert Team:
+      - Specification: 30-expert-team/specification.md
+      - Orchestration: 30-expert-team/orchestration.md
+      - Dependencies: 30-expert-team/dependencies.md
+  - Connector:
+      - Specification: 40-connector/specification.md
+      - MCP: 40-connector/mcp-guide.md
+      - CLI: 40-connector/cli-guide.md
+      - Auth: 40-connector/auth-and-credentials.md
+      - Version Compatibility: 40-connector/version-compatibility.md
+      - QA: 40-connector/qa-checklist.md
+  - Buddy App:
+      - Specification: 50-buddy-app/specification.md
+      - Product Design: 50-buddy-app/product-design.md
+      - Configuration & Release: 50-buddy-app/configuration-and-release.md
+      - Design Assets: 50-buddy-app/design-assets.md
+      - Enterprise Distribution: 50-buddy-app/enterprise-distribution.md
+  - Open API:
+      - Third-party App: 60-open-api/third-party-app.md
+      - OAuth 2.1: 60-open-api/oauth-2.1.md
+      - Capability Map: 60-open-api/capability-map.md
+  - Release Engineering:
+      - Requirement Intake: 70-release-engineering/requirement-intake.md
+      - Package Validation: 70-release-engineering/package-validation.md
+      - Submission Materials: 70-release-engineering/submission-materials.md
+      - Review & Versioning: 70-release-engineering/review-and-versioning.md
+  - Recipes:
+      - Build a Skill: 80-recipes/build-a-skill.md
+      - Build an Expert: 80-recipes/build-an-expert.md
+      - Build an Expert Team: 80-recipes/build-an-expert-team.md
+      - MCP to Connector: 80-recipes/convert-mcp-to-connector.md
+      - Design a Buddy App: 80-recipes/design-a-buddy-app.md
+  - Sources:
+      - Source Policy: sources/source-policy.md
+      - Update Log: sources/update-log.md
+  - Changelog: CHANGELOG.md
