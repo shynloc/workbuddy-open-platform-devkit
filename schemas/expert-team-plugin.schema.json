@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/shynloc/workbuddy-open-platform-devkit/schemas/expert-team-plugin.schema.json",
+  "title": "WB-OPDK Expert Team plugin.json",
+  "description": "Derived operational schema. See sources/known-inconsistencies.md for current upstream conflicts.",
+  "type": "object",
+  "required": [
+    "name","expertType","version","description","author","agents","agentName",
+    "teamInfo","members","displayName","profession","displayDescription","avatar",
+    "categoryId","defaultInitPrompt","plugin","tags","quickPrompts"
+  ],
+  "properties": {
+    "name":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "expertType":{"const":"team"},
+    "version":{"type":"string","pattern":"^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$"},
+    "description":{"type":"string","minLength":1},
+    "author":{"type":"object","required":["name"],"properties":{"name":{"type":"string"},"email":{"type":"string"}},"additionalProperties":true},
+    "agents":{"type":"array","minItems":2,"items":{"type":"string"}},
+    "agentName":{"type":"string","minLength":1},
+    "teamInfo":{
+      "type":"object",
+      "required":["leadAgent","memberAgents"],
+      "properties":{
+        "leadAgent":{"type":"string","minLength":1},
+        "memberAgents":{"type":"array","minItems":1,"items":{"type":"string"}}
+      },
+      "additionalProperties":true
+    },
+    "members":{
+      "type":"array",
+      "minItems":2,
+      "items":{
+        "type":"object",
+        "required":["id","name","profession","avatar","role"],
+        "properties":{
+          "id":{"type":"string"},
+          "name":{"$ref":"#/$defs/i18n"},
+          "profession":{"$ref":"#/$defs/i18n"},
+          "avatar":{"type":"string"},
+          "role":{"enum":["lead","member"]}
+        },
+        "additionalProperties":true
+      }
+    },
+    "displayName":{"$ref":"#/$defs/i18n"},
+    "profession":{"$ref":"#/$defs/i18n"},
+    "displayDescription":{"$ref":"#/$defs/i18n"},
+    "avatar":{"type":"string"},
+    "categoryId":{"type":"string","pattern":"^(0[1-9]|1[0-5])-.+$"},
+    "defaultInitPrompt":{"$ref":"#/$defs/i18n"},
+    "plugin":{"type":"string"},
+    "tags":{"type":"array","minItems":3,"maxItems":3,"items":{"oneOf":[{"type":"string"},{"$ref":"#/$defs/i18n"}]}},
+    "quickPrompts":{"type":"array","minItems":3,"maxItems":3,"items":{"oneOf":[{"type":"string"},{"$ref":"#/$defs/i18n"}]}},
+    "skills":{"type":"array","items":{"type":"string"}},
+    "dependencies":{"type":"object"}
+  },
+  "$defs":{
+    "i18n":{
+      "type":"object",
+      "required":["en","zh"],
+      "properties":{"en":{"type":"string"},"zh":{"type":"string"}},
+      "additionalProperties":false
+    }
+  },
+  "additionalProperties":true
+}
