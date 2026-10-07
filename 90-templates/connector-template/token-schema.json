@@ -1,0 +1,14 @@
+{
+  "title": "连接服务",
+  "description": "填写服务访问令牌。",
+  "fields": [
+    {
+      "key": "SERVICE_TOKEN",
+      "label": "Access Token",
+      "type": "password",
+      "required": true,
+      "placeholder": "token_...",
+      "description": "请从服务提供方的开发者设置中获取。"
+    }
+  ]
+}
