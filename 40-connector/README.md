@@ -2,6 +2,26 @@
 
 官方来源：https://open.workbuddy.cn/docs/connector
 
-本目录用于整理 Connector 的：MCP/CLI 选型、认证模式、token schema、工具设计、风险控制、配套 Skill、运行时测试与市场发布。
+## 已覆盖
 
-> 状态：骨架已建立，待按官方文档逐项工程化。
+- `specification.md` — MCP / CLI 总规范
+- `connector-meta-reference.md` — connector-meta.json 字段
+- `mcp-guide.md` — MCP 接入
+- `cli-guide.md` — CLI 接入
+- `auth-and-credentials.md` — OAuth / Token / CLI Auth
+- `token-schema-reference.md` — 用户自填 Token 表单
+- `version-compatibility.md` — WorkBuddy 最低版本映射
+- `high-risk-tools.md` — 高风险 Tool 设计
+- `qa-checklist.md` — 提交前 QA
+
+## 推荐阅读顺序
+
+```text
+specification
+→ 选择 mcp-guide 或 cli-guide
+→ auth-and-credentials
+→ version-compatibility
+→ qa-checklist
+```
+
+模板见：`90-templates/connector-template/`
