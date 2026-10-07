@@ -26,3 +26,24 @@ official_sources:
 ```
 
 如果发现“官方文档”和“平台实际行为”不一致，请同时记录二者，不要静默选择一个结论。
+
+## Source IDs and impact mapping
+
+新增 OFFICIAL / DERIVED 知识页时：
+
+1. 优先引用 `sources/official-sources.yaml` 中已有 source id；
+2. 如果新增官方来源，必须同时更新：
+   - `sources/official-sources.yaml`
+   - `sources/source-impact-map.json`
+   - 人工核验后的 `sources/source-baseline.json`
+3. 运行：
+
+```bash
+python3 scripts/validate_source_registry.py
+```
+
+## License / upstream boundary
+
+MIT 只覆盖本项目自身原创代码、模板与工程化文档。官方 WorkBuddy 文档、商标、图片、ZIP 模板等上游材料不因被引用而转为 MIT。
+
+见：`NOTICE.md`
