@@ -2,6 +2,16 @@
 
 开始做 WorkBuddy 资产前回答：
 
+## Publisher / Qualification
+
+- 发布主体是个人还是非个人？
+- 当前主体认证是否完成？
+- 实际服务对应哪个官方服务类目？
+- 是否要求许可证/执业证/备案/合作协议？
+- 如果资质不满足，产品范围应如何调整？
+
+详见：`05-qualification-compliance/`
+
 ## Product
 
 - 用户是谁？
@@ -35,7 +45,11 @@ Target User
 Core JTBD
 Inputs
 Outputs
+Publisher Entity
+Service Category
+Qualification Status
 Dependencies
+Security / Side Effects
 Risks
 Release Target
 Definition of Done
