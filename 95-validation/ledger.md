@@ -4,7 +4,7 @@
 |---|---|---:|---|---|---|---|---|---|
 | 微信公众号文章全流程发布 | Skill | 1.0.0 | ✅ Pass | ✅ Pass | — Not run | ⏳ Pending | — | [record](records/wechat-article-publishing-1.0.0.yaml) |
 | AI 内容主编 | Expert | 1.0.0 | ✅ Pass | — Not run | — Not run | — | — | [record](records/ai-content-editor-1.0.0.yaml) |
-| AI 编辑部 | Expert Team | 1.0.0 | ✅ Pass | — Not run | — Not run | — | — | [record](records/ai-editorial-team-1.0.0.yaml) |
+| AI 编辑部 | Expert Team | 1.0.0 | ✅ Pass | ❌ First parse failed; corrected retry ready | — Not run | — | — | [record](records/ai-editorial-team-1.0.0.yaml) |
 
 ## Candidate Build Evidence
 
