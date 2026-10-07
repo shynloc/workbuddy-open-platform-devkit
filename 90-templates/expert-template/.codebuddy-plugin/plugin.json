@@ -1,0 +1,41 @@
+{
+  "name": "your-expert",
+  "version": "1.0.0",
+  "description": "One-sentence English description of the expert.",
+  "author": {
+    "name": "Your Name",
+    "email": "you@example.com"
+  },
+  "agents": ["./agents/your-expert.md"],
+  "expertType": "agent",
+  "agentName": "your-expert",
+  "displayName": {
+    "en": "Expert Name",
+    "zh": "专家名称"
+  },
+  "profession": {
+    "en": "Professional Title",
+    "zh": "专业职业头衔"
+  },
+  "displayDescription": {
+    "en": "Describe the expert's core capability and outcome in a concise marketplace-friendly paragraph.",
+    "zh": "请填写四十至五十个中文字，突出这个专家最核心的能力、专业方法和最终能交付给用户的结果。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "en": "Help me with my task",
+    "zh": "帮我完成这个任务"
+  },
+  "plugin": "your-expert",
+  "tags": [
+    {"en": "Tag One", "zh": "标签一"},
+    {"en": "Tag Two", "zh": "标签二"},
+    {"en": "Tag Three", "zh": "标签三"}
+  ],
+  "quickPrompts": [
+    {"en": "Help me with my task", "zh": "帮我完成这个任务"},
+    {"en": "Review my current work", "zh": "检查我现在的成果"},
+    {"en": "Create a complete plan", "zh": "给我做一套完整方案"}
+  ]
+}
