@@ -13,7 +13,7 @@ environment:
   publisher_type: personal
   notes:
     - "Prepared as a real Expert Team validation candidate."
-    - "The package intentionally uses setting.json, following the current official downloadable team template; see known-inconsistencies.md."
+    - "First platform upload used setting.json following the official downloadable template and failed parser validation; the candidate has now been corrected to settings.json."
 
 stages:
   local_validation:
@@ -24,9 +24,12 @@ stages:
       - "Passed validate_asset_schemas.py, validate_expert_team.py, and release_check.py."
       - "Release candidate ZIP, release manifest, and submission notes were generated."
   platform_parse:
-    status: not-run
-    at: null
-    notes: []
+    status: fail
+    at: "2026-10-08"
+    notes:
+      - "First upload failed before expert ID generation."
+      - "Parser error: settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下提供 settings.json）"
+      - "Candidate corrected to settings.json and awaits re-upload."
   runtime_test:
     status: not-run
     at: null
@@ -41,6 +44,10 @@ stages:
     notes: []
 
 evidence:
+  - type: manual-note
+    description: "WorkBuddy Open Platform parser returned: settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下提供 settings.json）"
+    ref: null
+    sha256: null
   - type: url
     description: "GitHub Actions Candidate Builds run completed successfully."
     ref: "https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/37669725863"
@@ -52,17 +59,18 @@ evidence:
 
 observations:
   - knowledge_type: OBSERVED
-    summary: "The AI Editorial Team candidate passes the current WB-OPDK schema, Expert Team validator, release manifest validation, and packaging pipeline."
+    summary: "The first AI Editorial Team upload proved that the current WorkBuddy Team parser requires settings.json at plugin root and rejects a package that only provides setting.json."
     affects:
       - "30-expert-team/"
       - "90-templates/expert-team-template/"
       - "scripts/validate_expert_team.py"
-    action: "Proceed to WorkBuddy Platform Parse and specifically observe whether setting.json is accepted."
-  - knowledge_type: EXPERIMENTAL
-    summary: "This candidate follows the official downloadable Expert Team template and uses setting.json instead of the page-structure spelling settings.json."
+      - "sources/known-inconsistencies.md"
+    action: "Use settings.json only, keep the agent field aligned with plugin.json.agentName/teamInfo.leadAgent, and re-upload."
+  - knowledge_type: OBSERVED
+    summary: "The AI Editorial Team candidate passes the WB-OPDK local schema, Expert Team validator, release manifest validation, and packaging pipeline."
     affects:
       - "30-expert-team/"
-      - "90-templates/expert-team-template/"
-    action: "Record the actual WorkBuddy parser result without silently changing the OFFICIAL documentation note."
+      - "scripts/validate_expert_team.py"
+    action: "Rebuild the corrected candidate, then repeat Platform Parse."
 
 status: candidate
