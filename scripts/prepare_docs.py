@@ -13,6 +13,7 @@ OUT=ROOT/"build"/"docs"
 ROOT_FILES=[
     "README.md",
     "START_HERE.md",
+    "DEVELOPER_START.md",
     "ROADMAP.md",
     "CHANGELOG.md",
     "CONTRIBUTING.md",
