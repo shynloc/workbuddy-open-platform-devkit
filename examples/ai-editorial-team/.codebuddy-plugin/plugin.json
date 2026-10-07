@@ -1,0 +1,101 @@
+{
+  "name": "ai-editorial-team",
+  "expertType": "team",
+  "version": "1.0.0",
+  "description": "A coordinated editorial team for research, writing, art direction, publishing preparation, and final editorial quality control.",
+  "author": {
+    "name": "ACKS Studio"
+  },
+  "agents": [
+    "./agents/ai-editorial-team-team-lead.md",
+    "./agents/research-editor.md",
+    "./agents/writer-editor.md",
+    "./agents/art-director.md",
+    "./agents/publishing-editor.md"
+  ],
+  "agentName": "ai-editorial-team-team-lead",
+  "teamInfo": {
+    "leadAgent": "ai-editorial-team-team-lead",
+    "memberAgents": [
+      "research-editor",
+      "writer-editor",
+      "art-director",
+      "publishing-editor"
+    ]
+  },
+  "displayName": {
+    "en": "AI Editorial Team",
+    "zh": "AI 编辑部"
+  },
+  "profession": {
+    "en": "Editorial Production Team",
+    "zh": "内容编辑制作团队"
+  },
+  "displayDescription": {
+    "en": "An editor-in-chief coordinates research, writing, art direction, and publishing specialists to turn ideas and materials into complete editorial deliverables.",
+    "zh": "由主编统筹研究、写作与设计三个角色协作，从事实核查、结构表达、视觉方案到最终交付形成完整编辑工作流。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "en": "Organize the editorial team and turn my materials into a complete publishable article.",
+    "zh": "组织编辑部，把我的想法或资料做成一篇完整可发布的文章。"
+  },
+  "plugin": "ai-editorial-team",
+  "tags": [
+    {"en": "Editorial Team", "zh": "编辑协作"},
+    {"en": "Research & Writing", "zh": "研究写作"},
+    {"en": "Design & Publishing", "zh": "设计发布"}
+  ],
+  "quickPrompts": [
+    {
+      "en": "Organize the editorial team and turn my materials into a complete publishable article.",
+      "zh": "组织编辑部，把我的想法或资料做成一篇完整可发布的文章。"
+    },
+    {
+      "en": "Research this topic, write the article, and propose a visual direction.",
+      "zh": "研究这个选题，完成文章，并给出完整的视觉设计方向。"
+    },
+    {
+      "en": "Have the full editorial team review and improve my current draft.",
+      "zh": "让整个编辑部评审并完善我现在这篇草稿。"
+    }
+  ],
+  "members": [
+    {
+      "id": "ai-editorial-team-team-lead",
+      "name": {"en": "Editor-in-Chief", "zh": "总编辑"},
+      "profession": {"en": "Editor-in-Chief & Orchestrator", "zh": "总编辑与团队主理人"},
+      "avatar": "avatars/editor-in-chief.png",
+      "role": "lead"
+    },
+    {
+      "id": "research-editor",
+      "name": {"en": "Research Editor", "zh": "研究编辑"},
+      "profession": {"en": "Research & Fact-check Editor", "zh": "资料研究与事实核查编辑"},
+      "avatar": "avatars/research-editor.png",
+      "role": "member"
+    },
+    {
+      "id": "writer-editor",
+      "name": {"en": "Writer", "zh": "写作编辑"},
+      "profession": {"en": "Writer & Copy Editor", "zh": "写作与文字编辑"},
+      "avatar": "avatars/writer-editor.png",
+      "role": "member"
+    },
+    {
+      "id": "art-director",
+      "name": {"en": "Art Director", "zh": "视觉总监"},
+      "profession": {"en": "Editorial Art Director", "zh": "编辑视觉设计总监"},
+      "avatar": "avatars/art-director.png",
+      "role": "member"
+    },
+    {
+      "id": "publishing-editor",
+      "name": {"en": "Publishing Editor", "zh": "发布编辑"},
+      "profession": {"en": "Publishing & Delivery Editor", "zh": "发布与交付编辑"},
+      "avatar": "avatars/publishing-editor.png",
+      "role": "member"
+    }
+  ]
+}
