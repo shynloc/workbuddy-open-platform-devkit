@@ -3,6 +3,8 @@
 
 from __future__ import annotations
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -52,6 +54,13 @@ def main():
                 OUT/name,
                 ignore=shutil.ignore_patterns("__pycache__","*.pyc",".DS_Store",".venv"),
             )
+
+    subprocess.run([
+        sys.executable,
+        str(ROOT/"scripts"/"build_docs_dashboard.py"),
+        "--output-dir",
+        str(OUT/"_generated"),
+    ],check=True,cwd=ROOT)
 
     print(f"prepared MkDocs source: {OUT}")
     return 0
