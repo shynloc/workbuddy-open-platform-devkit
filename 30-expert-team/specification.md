@@ -3,7 +3,7 @@ title: WorkBuddy Expert Team Specification
 knowledge_type: OFFICIAL
 official_sources:
   - workbuddy-expert-team
-last_verified: 2026-10-07
+last_verified: 2026-10-08
 status: VERIFIED
 ---
 
@@ -12,6 +12,8 @@ status: VERIFIED
 官方来源：https://open.workbuddy.cn/docs/expert-team
 
 ## 1. 基础结构
+
+官方页面当前展示：
 
 ```text
 my-team/
@@ -28,15 +30,19 @@ my-team/
 ├── skills/            # 可选
 ├── .mcp.json          # 可选
 ├── bin/               # 可选
-├── settings.json      # 必须
+├── settings.json      # 页面结构写法
 └── README.md
 ```
 
-主理人 Agent 文件名应带专家团前缀，不应使用通用 `team-lead.md`。
+但同页官方可下载 `trading-team.zip` 当前实际使用 `setting.json`（单数）。这是官方文档内部差异，不应静默消解。详见：
+
+`sources/known-inconsistencies.md`
+
+WB-OPDK starter template 当前跟随官方可下载模板使用 `setting.json`。
 
 ## 2. plugin.json
 
-必须包含：
+必填基础字段：
 
 - `name`
 - `expertType = "team"`
@@ -46,8 +52,20 @@ my-team/
 - `agents`
 - `agentName`
 - `teamInfo`
-- 市场展示字段
-- `members`
+
+市场字段：
+
+- displayName
+- profession
+- displayDescription
+- avatar
+- categoryId
+- defaultInitPrompt
+- plugin
+- tags
+- quickPrompts
+
+WB-OPDK Validator 还要求 `members` 与团队成员定义保持一致，因为当前官方示例/团队结构使用该字段承载成员市场信息。
 
 `teamInfo`：
 
@@ -58,22 +76,14 @@ my-team/
 }
 ```
 
-`members` 必须包含主理人和所有成员，每项：
-
-- id
-- name {en,zh}
-- profession {en,zh}
-- avatar
-- role = lead | member
-
-官方字段表当前要求：
+当前官方字段表要求：
 
 - tags：固定 3 个
 - quickPrompts：固定 3 个
 - defaultInitPrompt 与第一条 quickPrompt 一致
 - displayDescription 中文 40–50 字
 
-> 官方 trading-team 示例当前展示了 4 个 tags，但同页字段表写“固定 3 个”。本仓库把该差异记录在 `sources/known-inconsistencies.md`，发布前应再次看当前平台解析规则。
+> 官方 trading-team 示例当前 tags 数量与字段表存在差异，见 `sources/known-inconsistencies.md`。
 
 ## 3. Agent MD
 
@@ -86,23 +96,25 @@ my-team/
 - displayName {en,zh}
 - profession {en,zh}
 
-## 4. settings.json
+主理人文件名建议带团队前缀，避免多个 Team 安装后出现通用名称冲突。
 
-官方目录规范明确要求 `settings.json`，用于设置主理人。
+## 4. Lead 设置文件
 
-但当前公开页面正文没有给出该文件的完整字段 schema；官方同时提供 `trading-team.zip` 模板作为下载样例。
+当前上游存在：
+
+- 页面结构：`settings.json`
+- 官方下载模板：`setting.json`，内容使用 `{"agent":"<lead>"}`
 
 因此：
 
-- 不凭经验伪造 settings.json 字段；
-- 开发时以当前官方模板 ZIP / 平台解析行为为准；
-- 字段被官方页面明确公开或官方模板内容被验证后，再固化 schema。
-
-详见：`30-expert-team/settings-json.md`。
+1. 不同时打包两份；
+2. WB-OPDK starter 当前选择 `setting.json`；
+3. `agent` 必须与 `agentName/teamInfo.leadAgent` 一致；
+4. 提交当天以开放平台实际解析结果为准。
 
 ## 5. MCP / Connector dependencies
 
-专家/专家团可声明：
+专家团可声明：
 
 - 自带 MCP：`dependencies.mcpServers`
 - 已上架连接器：`dependencies.connectors`
