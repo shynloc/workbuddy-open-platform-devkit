@@ -65,6 +65,7 @@ def main():
     base=f"{safe_name(name)}-v{safe_name(version)}"
     manifest=dist/f"{base}.manifest.json"
     archive=dist/f"{base}.zip"
+    submission=dist/f"{base}.submission-notes.md"
 
     run([sys.executable,SCRIPTS/"validate_asset_schemas.py",asset])
     run([sys.executable,validator,asset])
@@ -87,12 +88,18 @@ def main():
 
     run([sys.executable,SCRIPTS/"pack_release.py",asset,"--out",archive])
 
+    run([
+        sys.executable,SCRIPTS/"generate_submission_notes.py",asset,
+        "--output",submission
+    ])
+
     summary={
         "type":typ,
         "name":name,
         "version":version,
         "manifest":str(manifest),
         "archive":str(archive),
+        "submission_notes":str(submission),
         "status":"ready-for-platform-parse-and-runtime-test"
     }
     print(json.dumps(summary,ensure_ascii=False,indent=2))
