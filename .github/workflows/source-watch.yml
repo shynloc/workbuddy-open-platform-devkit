@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "sources/official-sources.yaml"
+      - "sources/source-baseline.json"
       - "scripts/check_official_sources.py"
       - ".github/workflows/source-watch.yml"
 
