@@ -96,7 +96,21 @@ python3 scripts/pack_release.py path/to/package --out dist/release.zip
 
 ## 8. Submission Materials
 
-读取：
+一键 Release Check 现在会额外生成：
+
+```text
+<name>-v<version>.submission-notes.md
+```
+
+也可以单独运行：
+
+```bash
+python3 scripts/generate_submission_notes.py path/to/asset --output submission-notes.md
+```
+
+脚本只预填包内能确认的事实；权限、隐私、外部副作用和审核说明保持 TODO，禁止自动编造。
+
+然后读取：
 
 `70-release-engineering/submission-materials.md`
 
