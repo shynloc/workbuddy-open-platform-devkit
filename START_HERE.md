@@ -15,7 +15,8 @@
 如果本地文档标记为 `STALE`、平台报未知字段/解析错误、或用户反馈与 KB 不一致：**先回查官方来源，不要猜。**
 
 来源注册表：`sources/official-sources.yaml`  
-治理规则：`sources/source-policy.md`
+治理规则：`sources/source-policy.md`  
+已知官方冲突：`sources/known-inconsistencies.md`
 
 ## 1. 判断产品类型
 
@@ -33,20 +34,23 @@
 ### Skill
 
 1. `10-skill/specification.md`
-2. `10-skill/development-workflow.md`
-3. `10-skill/qa-checklist.md`
+2. 字段 → `10-skill/frontmatter-reference.md`
+3. `10-skill/development-workflow.md`
+4. `10-skill/qa-checklist.md`
 
 ### Expert
 
 1. `20-expert/specification.md`
-2. `20-expert/design-guide.md`
-3. `20-expert/qa-checklist.md`
+2. 分类 → `20-expert/category-reference.md`
+3. `20-expert/design-guide.md`
+4. `20-expert/qa-checklist.md`
 
 ### Expert Team
 
 1. `30-expert-team/specification.md`
 2. `30-expert-team/orchestration.md`
-3. 如需外部能力：`30-expert-team/dependencies.md`
+3. settings → `30-expert-team/settings-json.md`
+4. 如需外部能力：`30-expert-team/dependencies.md`
 
 ### Connector
 
@@ -69,20 +73,54 @@
 
 1. `60-open-api/third-party-app.md`
 2. `60-open-api/oauth-2.1.md`
-3. `60-open-api/capability-map.md`
+3. 快速索引 → `60-open-api/endpoints-quick-reference.md`
+4. Local Assistant → `60-open-api/local-assistant.md`
+5. Cloud Task → `60-open-api/cloud-tasks.md`
+6. ACP / Artifacts → `60-open-api/acp-and-artifacts.md`
 
 ## 3. 所有类型共用 Release Engineering
 
 开发中后期读取 `70-release-engineering/`：
 
-需求 → 开发 → QA → Runtime Test → 发布资料 → 审核 → 版本维护
+需求 → 开发 → QA → Runtime Test → Security Review → 发布资料 → 审核 → 版本维护
 
-## 4. Agent 工作纪律
+重点：
+
+- `runtime-test-matrix.md`
+- `security-checklist.md`
+- `package-validation.md`
+- `submission-materials.md`
+
+## 4. 可直接使用的模板
+
+`90-templates/` 当前包含：
+
+- Skill starter
+- Expert starter
+- MCP + Token Connector starter
+- Product Brief
+- Release Handoff
+- Submission Checklist
+
+## 5. Validator / Packaging
+
+```bash
+python3 scripts/validate_skill.py <skill-root>
+python3 scripts/validate_expert.py <expert-root>
+python3 scripts/validate_expert_team.py <team-root>
+python3 scripts/validate_connector.py <connector-root>
+python3 scripts/pack_release.py <asset-root>
+```
+
+这些脚本是辅助校验，不替代 WorkBuddy 开放平台最终解析结果。
+
+## 6. Agent 工作纪律
 
 - 不一次性加载整个仓库；
 - 字段不得凭记忆杜撰；
 - OFFICIAL 与 DERIVED/OBSERVED 必须区分；
 - 当前官方来源不支持的点要明确说“未确认”；
+- 官方内部存在冲突时不要静默选边；
 - 不把 Secret/Token/AppSecret 写进公开仓库；
 - 有外部副作用的动作设计明确确认门槛；
 - 发布前重新核验官方文档与当前开放平台界面。
