@@ -34,3 +34,14 @@
 - [ ] 示例使用 placeholder
 - [ ] 截图/日志已脱敏
 - [ ] 不上传真实生产配置备份
+
+## Working-grade Security Gate
+
+涉及外部账号、用户数据、Open API、Connector 或 Hardware 时，进一步执行：
+
+- `65-security-governance/credential-handling.md`
+- `65-security-governance/data-and-logging.md`
+- `65-security-governance/side-effect-policy.md`
+- `65-security-governance/release-security-gate.md`
+
+本页是快速检查；`65-security-governance/` 是完整治理层。
