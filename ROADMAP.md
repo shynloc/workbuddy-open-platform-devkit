@@ -28,10 +28,12 @@ WB-OPDK 的目标不是复制官方文档，而是把 WorkBuddy 开放平台整�
 
 - [x] 稳定 MkDocs 构建链路
 - [ ] 决定是否启用 GitHub Pages
-- [ ] 加入来源 / knowledge_type / last_verified 可视化 Badge
-- [ ] 优化搜索与“Agent / Developer Quick Start”导航
-- [ ] 为 Templates / Schemas / Validators 生成可视化工具入口
-- [ ] 加入当前官方来源 freshness dashboard
+- [x] 加入来源 / knowledge_type / last_verified 可视化 Badge
+- [x] 优化搜索与 Agent / Developer Quick Start 导航
+- [x] 为 Templates / Schemas / Validators 生成 DevKit Tools 可视化入口
+- [x] 加入官方来源 Freshness Dashboard
+
+> HTML 知识库当前已经由 CI 构建并作为 artifact 输出。GitHub Pages 是额外公开部署入口，暂不自动开启。
 
 ## v1.0 — Production-ready DevKit
 
