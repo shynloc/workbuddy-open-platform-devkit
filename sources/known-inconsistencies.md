@@ -15,15 +15,33 @@
 2. 提交当天重新检查开放平台解析/字段校验；
 3. 若运行时与字段表冲突，记录为 `OBSERVED`，不要静默改知识库中的 `OFFICIAL` 结论。
 
-### Open API：access_token expires_in
+### Open API：Token 有效期
 
-Open API 当前不同 token 示例中的 `expires_in` 数值并不完全一致。
+第三方应用页当前明确写：
+
+- access_token：24 小时
+- refresh_token：60 天
+
+但 Open API token 接口示例中的 `expires_in` 当前出现过不同数值（例如授权码交换与刷新示例并不一致）。
 
 处理原则：
 
-- 客户端不得把固定 access_token 时长写死；
-- 以 `/openapi/v2/token` 实际响应中的 `expires_in` 为准；
-- refresh_token 也应按接口实际行为和官方当前文档处理。
+- 客户端不得把 access_token 时长写死；
+- 以 `/openapi/v2/token` 实际响应中的 `expires_in` 驱动缓存与刷新；
+- refresh_token 的持久化/失效策略应重新核对当前官方页面与实际响应；
+- 如果业务依赖精确 TTL，提交前应向官方确认。
+
+### Open API：user.credit.readable
+
+当前英文 Open API Reference 的个人额度读取接口 `GET /openapi/v2/credit` 标注 Scope 为 `user.credit.readable`。
+
+但第三方应用页面当前公开的 Scope 列表未列出该 Scope，只列出 `user.credit.exchange` 等。
+
+处理原则：
+
+- 不默认认为所有第三方应用都可申请 `user.credit.readable`；
+- 以当前开放平台应用权限管理页面实际可选 Scope 为准；
+- 若目标产品需要读取额度，提交前确认应用类型是否开放该权限。
 
 ### Buddy App：工作模式推荐数量
 
