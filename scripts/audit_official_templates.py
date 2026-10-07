@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """Download and audit official WorkBuddy template ZIPs.
 
-This script never overwrites local starter templates. It creates an audit
-artifact containing:
-- archive SHA256 / size;
-- member paths, sizes and hashes;
-- safe copies of text configuration files for review.
+This script never overwrites local starter templates. It produces:
+- a full machine-readable audit manifest;
+- safe copies of text configuration files for human/agent review;
+- optional compact baseline output;
+- optional change detection against a committed baseline.
 
-The output is evidence for maintaining WB-OPDK, not an automatic sync.
+A detected upstream change is a review signal, not an automatic sync.
 """
 
 from __future__ import annotations
+import argparse
+import datetime
 import hashlib
 import io
 import json
@@ -22,6 +24,7 @@ from pathlib import Path, PurePosixPath
 ROOT=Path(__file__).resolve().parents[1]
 REGISTRY=ROOT/"sources"/"official-templates.json"
 OUT=ROOT/"build"/"official-template-audit"
+DEFAULT_BASELINE=ROOT/"sources"/"official-template-audit-baseline.json"
 TEXT_SUFFIXES={".json",".md",".yaml",".yml",".txt"}
 MAX_TEXT_BYTES=512*1024
 
@@ -33,16 +36,13 @@ def safe_member(name: str) -> bool:
     return not p.is_absolute() and ".." not in p.parts
 
 def fetch(url: str) -> bytes:
-    req=urllib.request.Request(
-        url,
-        headers={"User-Agent":"WB-OPDK-template-audit/1.0"}
-    )
+    req=urllib.request.Request(url,headers={"User-Agent":"WB-OPDK-template-audit/1.1"})
     with urllib.request.urlopen(req,timeout=60) as resp:
         if not (200 <= resp.status < 400):
             raise RuntimeError(f"HTTP {resp.status}: {url}")
         return resp.read()
 
-def main():
+def build_report():
     data=json.loads(REGISTRY.read_text(encoding="utf-8"))
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -50,6 +50,7 @@ def main():
 
     report={
         "schema_version":1,
+        "audited_at":datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "registry":str(REGISTRY.relative_to(ROOT)),
         "templates":[]
     }
@@ -75,12 +76,11 @@ def main():
                 if not safe_member(info.filename):
                     raise RuntimeError(f"unsafe ZIP member: {info.filename}")
                 content=z.read(info)
-                frow={
+                row["files"].append({
                     "path":info.filename,
                     "bytes":len(content),
                     "sha256":sha256(content)
-                }
-                row["files"].append(frow)
+                })
 
                 suffix=PurePosixPath(info.filename).suffix.lower()
                 if suffix in TEXT_SUFFIXES and len(content)<=MAX_TEXT_BYTES:
@@ -94,19 +94,82 @@ def main():
         json.dumps(report,ensure_ascii=False,indent=2)+"\n",
         encoding="utf-8"
     )
-    print(json.dumps(
-        [
+    return report
+
+def compact_baseline(report):
+    return {
+        "schema_version":1,
+        "audited_at":report["audited_at"],
+        "templates":[
             {
                 "id":x["id"],
-                "archive_sha256":x["archive_sha256"],
+                "page_url":x["page_url"],
+                "download_url":x["download_url"],
+                "filename":x["filename"],
                 "archive_bytes":x["archive_bytes"],
-                "files":len(x["files"])
+                "archive_sha256":x["archive_sha256"]
             }
             for x in report["templates"]
-        ],
-        ensure_ascii=False,
-        indent=2
-    ))
+        ]
+    }
+
+def compare(report, baseline):
+    current={x["id"]:x for x in report["templates"]}
+    old={x["id"]:x for x in baseline.get("templates",[])}
+    changed=[]
+    for tid in sorted(set(current)|set(old)):
+        if tid not in old:
+            changed.append({"id":tid,"change":"added"})
+        elif tid not in current:
+            changed.append({"id":tid,"change":"removed"})
+        elif current[tid]["archive_sha256"]!=old[tid].get("archive_sha256"):
+            changed.append({
+                "id":tid,
+                "change":"archive_changed",
+                "old_sha256":old[tid].get("archive_sha256"),
+                "new_sha256":current[tid]["archive_sha256"]
+            })
+    return changed
+
+def main():
+    ap=argparse.ArgumentParser()
+    ap.add_argument("--baseline",default=str(DEFAULT_BASELINE))
+    ap.add_argument("--fail-on-change",action="store_true")
+    ap.add_argument("--write-baseline")
+    args=ap.parse_args()
+
+    report=build_report()
+
+    summary=[
+        {
+            "id":x["id"],
+            "archive_sha256":x["archive_sha256"],
+            "archive_bytes":x["archive_bytes"],
+            "files":len(x["files"])
+        }
+        for x in report["templates"]
+    ]
+    print(json.dumps(summary,ensure_ascii=False,indent=2))
+
+    if args.write_baseline:
+        Path(args.write_baseline).write_text(
+            json.dumps(compact_baseline(report),ensure_ascii=False,indent=2)+"\n",
+            encoding="utf-8"
+        )
+
+    baseline_path=Path(args.baseline)
+    changes=[]
+    if baseline_path.is_file():
+        baseline=json.loads(baseline_path.read_text(encoding="utf-8"))
+        changes=compare(report,baseline)
+        if changes:
+            print("UPSTREAM TEMPLATE CHANGES DETECTED")
+            print(json.dumps(changes,ensure_ascii=False,indent=2))
+        else:
+            print("Official template archives match committed baseline.")
+
+    if changes and args.fail_on_change:
+        return 2
     return 0
 
 if __name__=="__main__":
