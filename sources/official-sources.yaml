@@ -11,6 +11,13 @@ sources:
     category: platform
     last_verified: 2026-10-07
 
+  workbuddy-onboarding:
+    title: 入驻开放平台
+    url: https://open.workbuddy.cn/docs/onboarding
+    authority: official
+    category: onboarding
+    last_verified: 2026-10-07
+
   workbuddy-skill:
     title: 技能
     url: https://open.workbuddy.cn/docs/skill
@@ -58,4 +65,11 @@ sources:
     url: https://open.workbuddy.cn/docs/openapi
     authority: official
     category: open-api
+    last_verified: 2026-10-07
+
+  workbuddy-contact:
+    title: 联系渠道
+    url: https://open.workbuddy.cn/docs/contact
+    authority: official
+    category: support
     last_verified: 2026-10-07
