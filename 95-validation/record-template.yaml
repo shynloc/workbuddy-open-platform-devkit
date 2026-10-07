@@ -1,0 +1,42 @@
+schema_version: 1
+
+asset:
+  type: skill
+  name: your-asset
+  version: 1.0.0
+  commit: null
+
+environment:
+  observed_at: "YYYY-MM-DD"
+  workbuddy_version: null
+  platform: null
+  publisher_type: unknown
+  notes: []
+
+stages:
+  local_validation:
+    status: not-run
+    at: null
+    notes: []
+  platform_parse:
+    status: not-run
+    at: null
+    notes: []
+  runtime_test:
+    status: not-run
+    at: null
+    notes: []
+  platform_review:
+    status: not-run
+    at: null
+    notes: []
+  published:
+    status: not-run
+    at: null
+    notes: []
+
+evidence: []
+
+observations: []
+
+status: candidate
