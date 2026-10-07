@@ -35,6 +35,9 @@ jobs:
       - name: Smoke-test starter templates and scaffolds
         run: python3 scripts/smoke_test_templates.py
 
+      - name: Run repository doctor
+        run: python3 scripts/doctor.py --json
+
       - name: Syntax-check OAuth reference
         run: python3 -m py_compile examples/third-party-oauth-minimal/app.py
 
