@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/shynloc/workbuddy-open-platform-devkit/schemas/skill-frontmatter.schema.json",
+  "title": "WB-OPDK Skill Frontmatter",
+  "description": "Derived schema for parsed WorkBuddy SKILL.md YAML frontmatter.",
+  "type": "object",
+  "required": ["description", "description_zh", "description_en", "version", "author"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "display_name": {"type": "string", "minLength": 1},
+    "display_name_en": {"type": "string"},
+    "description": {"type": "string", "minLength": 1},
+    "description_zh": {"type": "string", "minLength": 1},
+    "description_en": {"type": "string", "minLength": 1},
+    "category": {"type": "string"},
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:[-+][0-9A-Za-z.-]+)?$"
+    },
+    "author": {"type": "string", "minLength": 1},
+    "allowed-tools": {"type": "string"},
+    "disable-model-invocation": {"type": "boolean"},
+    "user-invocable": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}
