@@ -2,36 +2,52 @@
 
 WB-OPDK 使用 Markdown 作为唯一知识源，通过 MkDocs 构建静态 HTML。
 
-## 本地构建
+为了保持根目录对 AI Agent 友好，知识源不迁移到传统 `docs/`。构建前由 `scripts/prepare_docs.py` 把需要的内容复制到 `build/docs/`，MkDocs 再输出到 `build/site/`。
+
+## 本地预览
 
 ```bash
+python3 scripts/prepare_docs.py
 python3 -m pip install -r requirements-docs.txt
 mkdocs serve
 ```
 
-构建静态站：
+## 构建静态站
 
 ```bash
+python3 scripts/prepare_docs.py
 mkdocs build
 ```
 
-默认输出到仓库上级目录的 `wb-opdk-site/`。
+输出：
+
+```text
+build/site/
+```
+
+整个 `build/` 已被 gitignore，不会污染知识源。
 
 ## CI
 
 `.github/workflows/kb-ci.yml` 会：
 
 1. 验证 KB metadata；
-2. 构建 HTML；
-3. 将构建站点作为 GitHub Actions artifact 上传。
+2. smoke-test starter templates；
+3. 生成 `build/docs/`；
+4. 构建 HTML；
+5. 把 `build/site/` 作为 GitHub Actions artifact 上传。
 
-当前不自动部署 GitHub Pages。需要公开文档站时再启用 Pages，避免在内容仍快速迭代时产生第二个“看起来像官方”的公开入口。
+当前不自动部署 GitHub Pages。等内容和导航稳定后，再决定是否启用公开文档站。
 
 ## Official Source Watch
 
-`.github/workflows/source-watch.yml` 每周抓取 `sources/official-sources.yaml` 中的官方 URL 并生成状态/hash artifact。
+`.github/workflows/source-watch.yml` 会定期检查 `sources/official-sources.yaml`：
 
-它只检测，不自动改写本地知识库。
+- 获取官方页面；
+- 计算 visible-text / HTML hash；
+- 有 baseline 时比较变化；
+- 生成 proposed baseline artifact；
+- **不会自动修改任何 KB 文档**。
 
 正确流程：
 
