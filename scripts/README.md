@@ -1,5 +1,24 @@
 # Maintenance & Validation Scripts
 
+## Repository Doctor
+
+本地工作级健康检查：
+
+```bash
+python3 scripts/doctor.py
+python3 scripts/doctor.py --online
+python3 scripts/doctor.py --docs
+python3 scripts/doctor.py --online --docs
+```
+
+或：
+
+```bash
+make doctor
+```
+
+`--online` 会把当前官方页面与 committed baseline 比较；`--docs` 会额外构建 MkDocs。
+
 ## Knowledge base
 
 ```bash
