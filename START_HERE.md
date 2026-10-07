@@ -18,7 +18,18 @@
 治理规则：`sources/source-policy.md`  
 已知官方冲突：`sources/known-inconsistencies.md`
 
-## 1. 判断产品类型
+## 1. 先做发布主体 / 资质 Gate
+
+如果任务目标包含“上架、发布、审核”：
+
+1. 读取 `05-qualification-compliance/subject-and-category-decision.md`
+2. 确认个人 / 非个人主体
+3. 按真实服务核对官方服务类目
+4. 如果需要额外资质，先确认资质再开发
+
+然后再判断产品类型。
+
+## 2. 判断产品类型
 
 读取：`00-platform/capability-decision-tree.md`
 
@@ -29,7 +40,7 @@
 - 垂直行业工作台 → Buddy App
 - 外部 App / 网站 / 硬件调用 WorkBuddy → Third-party App / Open API
 
-## 2. 按类型最小加载
+## 3. 按类型最小加载
 
 ### Skill
 
@@ -69,6 +80,14 @@
 4. 视觉 → `50-buddy-app/design-assets.md`
 5. B2B → `50-buddy-app/enterprise-distribution.md`
 
+### Hardware
+
+1. `55-hardware/README.md`
+2. `55-hardware/architecture.md`
+3. `55-hardware/oauth-and-scopes.md`
+4. `55-hardware/runtime.md`
+5. `55-hardware/device-security.md`
+
 ### Third-party App / Open API
 
 1. `60-open-api/third-party-app.md`
@@ -78,7 +97,9 @@
 5. Cloud Task → `60-open-api/cloud-tasks.md`
 6. ACP / Artifacts → `60-open-api/acp-and-artifacts.md`
 
-## 3. 所有类型共用 Release Engineering
+## 4. 共用 Security & Release Engineering
+
+涉及用户数据、外部账户、写操作或 Open API 时先读取 `65-security-governance/`。
 
 开发中后期读取 `70-release-engineering/`：
 
@@ -91,7 +112,7 @@
 - `package-validation.md`
 - `submission-materials.md`
 
-## 4. 可直接使用的模板
+## 5. 可直接使用的模板
 
 `90-templates/` 当前包含：
 
@@ -102,7 +123,7 @@
 - Release Handoff
 - Submission Checklist
 
-## 5. Validator / Packaging
+## 6. Validator / Packaging
 
 ```bash
 python3 scripts/validate_skill.py <skill-root>
@@ -114,7 +135,17 @@ python3 scripts/pack_release.py <asset-root>
 
 这些脚本是辅助校验，不替代 WorkBuddy 开放平台最终解析结果。
 
-## 6. Agent 工作纪律
+## 7. 上线后运营
+
+正式发布后读取 `75-operations/`：
+
+- post-release
+- versioning & compatibility
+- rollback & incident
+- deprecation
+- support handoff
+
+## 8. Agent 工作纪律
 
 - 不一次性加载整个仓库；
 - 字段不得凭记忆杜撰；
