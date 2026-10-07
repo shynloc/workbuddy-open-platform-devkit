@@ -38,7 +38,15 @@ python3 scripts/validate_json_schema.py \
 
 ## 注意
 
-默认 `pack_release.py` 会把目录中现有 manifest 一并打包。如果目标平台不需要该文件，可在发布流程中生成外部 manifest 或在最终包校验时明确排除。
+WB-OPDK 的 `pack_release.py` 默认**排除**资产目录中的 `release-manifest.json`。推荐把 Manifest 输出到 `dist/`，与 ZIP 并列保存：
+
+```text
+dist/
+├── your-asset-v1.0.0.zip
+└── your-asset-v1.0.0.manifest.json
+```
+
+这样官方发布包保持纯净，同时内部仍保留可追溯审计记录。
 
 Release Manifest **不能**替代：
 
