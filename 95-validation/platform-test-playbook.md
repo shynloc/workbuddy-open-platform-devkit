@@ -97,22 +97,33 @@ stages:
 
 `ai-editorial-team-v1.0.0.zip`
 
-## 1. 重点观察
+## 1. settings.json 已确认
 
-除了常规解析，特别记录：
-
-### setting.json
-
-当前官方页面和官方下载模板存在 `settings.json` / `setting.json` 差异。
-
-本候选使用：
+第一次上传使用 `setting.json`（单数）时，WorkBuddy 当前解析器明确失败：
 
 ```text
-setting.json
-{"agent":"ai-editorial-team-team-lead"}
+settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下提供 settings.json）
 ```
 
-必须记录当前 WorkBuddy 实际解析结果。
+修正版候选必须包含：
+
+```text
+settings.json
+```
+
+内容：
+
+```json
+{
+  "agent": "ai-editorial-team-team-lead"
+}
+```
+
+重新上传时重点记录：
+
+- `settings.json` 是否通过文件级解析；
+- 如果继续报错，原样记录 JSON 字段/schema 错误；
+- 不再测试 `setting.json` 作为有效 fallback。
 
 ## 2. Runtime Prompts
 
