@@ -11,6 +11,7 @@ OUT=ROOT/"build"/"docs"
 ROOT_FILES=[
     "README.md",
     "START_HERE.md",
+    "ROADMAP.md",
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "LICENSE",
@@ -27,7 +28,9 @@ SOURCE_DIRS=[
     "70-release-engineering",
     "80-recipes",
     "90-templates",
+    "schemas",
     "sources",
+    "scripts",
 ]
 
 def main():
