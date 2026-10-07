@@ -1,20 +1,31 @@
 {
   "schema_version": 1,
-  "last_verified": "2026-10-07",
+  "last_verified": "2026-10-08",
   "templates": [
     {
       "id": "workbuddy-expert-design-experts",
       "page_url": "https://open.workbuddy.cn/docs/expert",
       "download_url": "https://codebuddy-platform-1258344699.cos.ap-beijing.myqcloud.com/open/static/files/design-experts.zip",
       "filename": "design-experts.zip",
-      "authority": "official"
+      "authority": "official",
+      "key_files": [
+        "design-experts/.codebuddy-plugin/plugin.json",
+        "design-experts/agents/design-md-architect.md",
+        "design-experts/skills/design-reference/SKILL.md"
+      ]
     },
     {
       "id": "workbuddy-expert-team-trading-team",
       "page_url": "https://open.workbuddy.cn/docs/expert-team",
       "download_url": "https://codebuddy-platform-1258344699.cos.ap-beijing.myqcloud.com/open/static/files/trading-team.zip",
       "filename": "trading-team.zip",
-      "authority": "official"
+      "authority": "official",
+      "key_files": [
+        "trading-team/setting.json",
+        "trading-team/.codebuddy-plugin/plugin.json",
+        "trading-team/agents/trading-team-lead.md",
+        "trading-team/skills/trading-analysis/SKILL.md"
+      ]
     }
   ]
 }
