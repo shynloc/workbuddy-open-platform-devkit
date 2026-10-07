@@ -77,3 +77,14 @@ python3 scripts/validate_validation_records.py
 ```
 
 验证记录用于保存 WorkBuddy 实际 Platform Parse / Runtime / Review / Published 证据，不替代官方规范。
+
+## Submission Notes
+
+```bash
+python3 scripts/generate_submission_notes.py path/to/asset \
+  --output submission-notes.md
+```
+
+只从包内元数据预填确定事实。权限、隐私、外部副作用、审核复现步骤等仍需发布者填写。
+
+`release_check.py` 会自动在 dist/ 中生成同名 `.submission-notes.md`。
