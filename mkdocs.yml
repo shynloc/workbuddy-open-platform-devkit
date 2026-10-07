@@ -37,10 +37,12 @@ nav:
       - 术语: 00-platform/terminology.md
   - Skill:
       - Specification: 10-skill/specification.md
+      - Frontmatter: 10-skill/frontmatter-reference.md
       - Development Workflow: 10-skill/development-workflow.md
       - QA: 10-skill/qa-checklist.md
   - Expert:
       - Specification: 20-expert/specification.md
+      - Category Reference: 20-expert/category-reference.md
       - Design Guide: 20-expert/design-guide.md
       - QA: 20-expert/qa-checklist.md
   - Expert Team:
@@ -66,8 +68,13 @@ nav:
       - OAuth 2.1: 60-open-api/oauth-2.1.md
       - Capability Map: 60-open-api/capability-map.md
       - Endpoint Quick Reference: 60-open-api/endpoints-quick-reference.md
+      - Local Assistant: 60-open-api/local-assistant.md
+      - Cloud Tasks: 60-open-api/cloud-tasks.md
+      - ACP & Artifacts: 60-open-api/acp-and-artifacts.md
   - Release Engineering:
       - Requirement Intake: 70-release-engineering/requirement-intake.md
+      - Runtime Test Matrix: 70-release-engineering/runtime-test-matrix.md
+      - Security Checklist: 70-release-engineering/security-checklist.md
       - Package Validation: 70-release-engineering/package-validation.md
       - Submission Materials: 70-release-engineering/submission-materials.md
       - Review & Versioning: 70-release-engineering/review-and-versioning.md
