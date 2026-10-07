@@ -7,9 +7,11 @@
 
 先读：
 
-1. [产品类型决策树](00-platform/capability-decision-tree.md)
-2. [Requirement Intake](70-release-engineering/requirement-intake.md)
-3. 复制 [Product Brief](90-templates/product-brief.md)
+1. [主体与服务类目决策](05-qualification-compliance/subject-and-category-decision.md)
+2. [Qualification Gate](05-qualification-compliance/qualification-gate.md)
+3. [产品类型决策树](00-platform/capability-decision-tree.md)
+4. [Requirement Intake](70-release-engineering/requirement-intake.md)
+5. 复制 [Product Brief](90-templates/product-brief.md)
 
 判断：
 
@@ -146,6 +148,20 @@ python3 scripts/validate_connector.py ./work/my-service
 
 ---
 
+## 我要做硬件接入
+
+硬件接入属于 Third-party App / Open API 路径，但有独立设备生命周期与安全边界。
+
+先读：
+
+- [Hardware Overview](55-hardware/README.md)
+- [Architecture](55-hardware/architecture.md)
+- [OAuth & Scopes](55-hardware/oauth-and-scopes.md)
+- [Device Security](55-hardware/device-security.md)
+- [Integration Checklist](55-hardware/integration-checklist.md)
+
+---
+
 ## 我要让自己的产品调用 WorkBuddy
 
 读：
@@ -158,6 +174,17 @@ python3 scripts/validate_connector.py ./work/my-service
 有一个最小 OAuth 示例：
 
 [`examples/third-party-oauth-minimal/`](examples/third-party-oauth-minimal/README.md)
+
+---
+
+## 安全与权限统一检查
+
+如果涉及 Connector / Open API / Hardware / 外部写操作：
+
+- [Security Governance](65-security-governance/README.md)
+- [Credential Handling](65-security-governance/credential-handling.md)
+- [Side-effect Policy](65-security-governance/side-effect-policy.md)
+- [Security Release Gate](65-security-governance/release-security-gate.md)
 
 ---
 
@@ -186,3 +213,18 @@ WB-OPDK static checks
 ```
 
 本 DevKit 不声称替代 WorkBuddy 官方解析器或审核。
+
+---
+
+## 上线后
+
+正式发布不代表任务结束。
+
+继续读取：
+
+- [Post-release Operations](75-operations/post-release.md)
+- [Versioning & Compatibility](75-operations/versioning-and-compatibility.md)
+- [Rollback & Incident](75-operations/rollback-and-incident.md)
+- [Deprecation](75-operations/deprecation.md)
+
+全局兼容策略：[`COMPATIBILITY.md`](COMPATIBILITY.md)
