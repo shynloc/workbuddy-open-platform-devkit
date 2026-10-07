@@ -88,6 +88,7 @@ nav:
       - Cloud Tasks: 60-open-api/cloud-tasks.md
       - ACP & Artifacts: 60-open-api/acp-and-artifacts.md
       - Integration Checklist: 60-open-api/integration-checklist.md
+      - Minimal OAuth Example: examples/third-party-oauth-minimal/README.md
 
   - Release Engineering:
       - Requirement Intake: 70-release-engineering/requirement-intake.md
@@ -122,8 +123,11 @@ nav:
       - HTML Knowledge Base: docs-site.md
       - Scripts: scripts/README.md
       - Source Policy: sources/source-policy.md
+      - Source Intelligence: sources/source-intelligence.md
       - Known Inconsistencies: sources/known-inconsistencies.md
+      - Official Template Audit: sources/official-template-audit.md
       - Source Snapshot Schema: sources/source-snapshots.schema.json
       - Update Log: sources/update-log.md
 
+  - Roadmap: ROADMAP.md
   - Changelog: CHANGELOG.md
