@@ -21,3 +21,17 @@ python3 scripts/pack_release.py path/to/package dist/package.zip
 ```
 
 这些 Validator 是 WB-OPDK 的工程辅助检查，不替代 WorkBuddy 官方解析器和审核。
+
+## Scaffold
+
+```bash
+python3 scripts/scaffold.py skill my-skill ./tmp/my-skill
+python3 scripts/scaffold.py expert my-expert ./tmp/my-expert
+python3 scripts/scaffold.py expert-team my-team ./tmp/my-team
+python3 scripts/scaffold.py connector-token my-service ./tmp/my-service
+python3 scripts/scaffold.py connector-oauth my-service ./tmp/my-service
+python3 scripts/scaffold.py connector-cli my-cli ./tmp/my-cli
+python3 scripts/scaffold.py buddy-app my-buddy ./tmp/my-buddy
+```
+
+脚手架只负责复制官方适配 starter 与替换基础标识；不会替你生成业务内容，也不会绕过对应 Validator。
