@@ -3,8 +3,8 @@ site_description: WorkBuddy Open Platform Development Kit
 site_url: https://shynloc.github.io/workbuddy-open-platform-devkit/
 repo_url: https://github.com/shynloc/workbuddy-open-platform-devkit
 repo_name: shynloc/workbuddy-open-platform-devkit
-docs_dir: .
-site_dir: ../wb-opdk-site
+docs_dir: build/docs
+site_dir: build/site
 
 theme:
   name: material
@@ -68,6 +68,7 @@ nav:
       - OAuth 2.1: 60-open-api/oauth-2.1.md
       - Capability Map: 60-open-api/capability-map.md
       - Endpoint Quick Reference: 60-open-api/endpoints-quick-reference.md
+      - User & Credits: 60-open-api/user-and-credits.md
       - Local Assistant: 60-open-api/local-assistant.md
       - Cloud Tasks: 60-open-api/cloud-tasks.md
       - ACP & Artifacts: 60-open-api/acp-and-artifacts.md
@@ -84,7 +85,8 @@ nav:
       - Build an Expert Team: 80-recipes/build-an-expert-team.md
       - MCP to Connector: 80-recipes/convert-mcp-to-connector.md
       - Design a Buddy App: 80-recipes/design-a-buddy-app.md
-  - Sources:
+  - Maintenance:
+      - HTML Knowledge Base: docs-site.md
       - Source Policy: sources/source-policy.md
       - Known Inconsistencies: sources/known-inconsistencies.md
       - Update Log: sources/update-log.md
