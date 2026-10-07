@@ -29,6 +29,33 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 - `95-validation/records/wechat-article-publishing-1.0.0.yaml`
 - `95-validation/wechat-article-publishing-skill.md`
 
+## 本地候选已就绪
+
+### Expert Candidate — AI Content Editor
+
+`examples/ai-content-editor/`
+
+- Schema: Pass
+- Expert Validator: Pass
+- Release Check: Pass
+- Candidate ZIP/manifest/submission-notes: Generated
+- Platform Parse: Not run
+
+### Expert Team Candidate — AI Editorial Team
+
+`examples/ai-editorial-team/`
+
+- Schema: Pass
+- Team Validator: Pass
+- Release Check: Pass
+- Candidate ZIP/manifest/submission-notes: Generated
+- Platform Parse: Not run
+- Special observation target: `setting.json` acceptance
+
+Candidate Build:
+
+https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/37669725863
+
 ## v1.0 下一批验证顺序
 
 ### 1. Expert
