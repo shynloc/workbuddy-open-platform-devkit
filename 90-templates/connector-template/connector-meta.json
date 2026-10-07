@@ -1,0 +1,20 @@
+{
+  "name": "Example Connector",
+  "name_zh": "示例连接器",
+  "name_en": "Example Connector",
+  "description": "Connect WorkBuddy to an external service.",
+  "description_zh": "将 WorkBuddy 连接到外部服务。",
+  "description_en": "Connect WorkBuddy to an external service.",
+  "source": "example-connector",
+  "type": "mcp",
+  "version": "1.0.0",
+  "examples_zh": [
+    "查询我的数据",
+    "创建一个新项目"
+  ],
+  "examples_en": [
+    "Show my data",
+    "Create a new project"
+  ],
+  "minWorkbuddyVersion": "4.24.0"
+}
