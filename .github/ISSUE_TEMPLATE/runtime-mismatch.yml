@@ -1,0 +1,49 @@
+name: Official docs / runtime mismatch
+description: Report a mismatch between current official WorkBuddy docs and observed platform/runtime behavior.
+title: "[Runtime mismatch] "
+labels: ["runtime-mismatch"]
+body:
+  - type: input
+    id: product
+    attributes:
+      label: Product type
+      placeholder: Skill / Expert / Expert Team / Connector / Buddy App / Open API
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: WorkBuddy version / platform context
+      placeholder: e.g. 5.x / Open Platform web
+  - type: input
+    id: source
+    attributes:
+      label: Official source URL
+      placeholder: https://open.workbuddy.cn/docs/...
+    validations:
+      required: true
+  - type: textarea
+    id: official
+    attributes:
+      label: What the official docs currently say
+      description: Summarize; do not paste long passages.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: What was observed
+      description: Include exact error/status where possible, but remove tokens and private data.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Minimal reproduction
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety
+      options:
+        - label: Logs/screenshots have been redacted.
+          required: true
