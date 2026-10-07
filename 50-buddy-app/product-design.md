@@ -9,7 +9,7 @@ status: VERIFIED
 
 # Buddy App 产品设计
 
-官方最佳实践要求从高频场景出发，并建议先梳理至少 5 个高频场景、工作模式控制在 2–4 个。
+官方当前文档强调“场景优先”：建议先梳理至少 5 个高频场景；首页工作模式建议配置 **3–5 个**。如果产品仍在 MVP 阶段，可以先从 3 个差异明显的模式起步，避免模式之间职责重叠。
 
 ## 1. Requirement Canvas
 
@@ -17,18 +17,20 @@ status: VERIFIED
 Target User:
 Industry:
 Core Job-to-be-Done:
-Top 5 High-frequency Scenarios:
+
+Top 5+ High-frequency Scenarios:
 1.
 2.
 3.
 4.
 5.
 
-Work Modes (2-4):
+Work Modes (3-5 recommended):
 1.
 2.
 3.
 4.
+5.
 
 Assets:
 - Skills
@@ -64,4 +66,4 @@ Assets:
 
 ## 5. MVP
 
-先做最小可用版本，验证 5 个高频场景，再扩展模式与市场。
+先做最小可用版本，验证至少 5 个高频场景与 3 个明显不同的工作模式，再扩展市场、连接器与模型组合。
