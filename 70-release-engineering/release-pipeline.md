@@ -25,7 +25,16 @@ status: VERIFIED
 - `sources/known-inconsistencies.md`；
 - Source Watch 是否提示 upstream changed。
 
-## 1. Requirement
+## 1. Qualification Gate
+
+先执行：
+
+- `05-qualification-compliance/subject-and-category-decision.md`
+- `05-qualification-compliance/qualification-gate.md`
+
+如果主体/类目/资质不满足，停止发布流程或调整产品范围。
+
+## 2. Requirement
 
 输出：
 
@@ -35,13 +44,13 @@ status: VERIFIED
 - Security / Side-effect gates
 - Definition of Done
 
-## 2. Scaffold
+## 3. Scaffold
 
 ```bash
 python3 scripts/scaffold.py <type> <name> <output>
 ```
 
-## 3. Build
+## 4. Build
 
 按对应目录规范完成：
 
@@ -50,9 +59,10 @@ python3 scripts/scaffold.py <type> <name> <output>
 - Expert Team → `30-expert-team/`
 - Connector → `40-connector/`
 - Buddy App → `50-buddy-app/`
+- Hardware → `55-hardware/`
 - Third-party App → `60-open-api/`
 
-## 4. Static Validation
+## 5. Static Validation
 
 ```bash
 python3 scripts/validate_skill.py ...
@@ -67,9 +77,13 @@ python3 scripts/validate_connector.py ...
 python3 scripts/validate_schemas.py
 ```
 
-## 5. Runtime Test
+## 6. Security & Runtime Test
 
-读取：
+先读取：
+
+- `65-security-governance/release-security-gate.md`
+
+再读取：
 
 - `70-release-engineering/test-plan.md`
 - `70-release-engineering/runtime-test-matrix.md`
@@ -77,7 +91,7 @@ python3 scripts/validate_schemas.py
 
 至少覆盖 Happy Path / Error Path / Auth Expiry / Side Effect / Version Compatibility。
 
-## 6. Release Manifest
+## 7. Release Manifest
 
 ```bash
 python3 scripts/generate_release_manifest.py path/to/asset \
@@ -88,13 +102,13 @@ python3 scripts/generate_release_manifest.py path/to/asset \
 
 Manifest 用于内部版本审计，不是官方强制上传文件。
 
-## 7. Package
+## 8. Package
 
 ```bash
 python3 scripts/pack_release.py path/to/package --out dist/release.zip
 ```
 
-## 8. Submission Materials
+## 9. Submission Materials
 
 一键 Release Check 现在会额外生成：
 
@@ -123,7 +137,7 @@ python3 scripts/generate_submission_notes.py path/to/asset --output submission-n
 - 高风险操作说明
 - 测试方式
 
-## 9. Platform Review
+## 10. Platform Review
 
 提交后记录：
 
@@ -135,9 +149,10 @@ python3 scripts/generate_submission_notes.py path/to/asset --output submission-n
 
 具有普遍价值的审核反馈写入 OBSERVED，而不是伪装为官方规则。
 
-## 10. Post-release
+## 11. Post-release
 
 - 监控版本兼容
 - 记录用户反馈
 - Source Watch 发现官方变化后重新核验
 - SemVer 更新
+- `75-operations/` 中的监控、回滚、兼容、弃用和支持交接
