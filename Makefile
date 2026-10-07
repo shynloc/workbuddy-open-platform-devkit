@@ -21,6 +21,7 @@ records:
 
 validate:
 	python3 scripts/validate_kb.py
+	python3 scripts/validate_source_registry.py
 	python3 scripts/validate_schemas.py
 	python3 scripts/validate_validation_records.py
 
