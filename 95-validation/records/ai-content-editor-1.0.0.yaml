@@ -23,23 +23,30 @@ stages:
       - "Passed validate_asset_schemas.py, validate_expert.py, and release_check.py."
       - "Release candidate ZIP, release manifest, and submission notes were generated."
   platform_parse:
-    status: not-run
-    at: null
-    notes: []
+    status: pass
+    at: "2026-10-08"
+    notes:
+      - "WorkBuddy Open Platform accepted the Expert package and generated the Expert entry."
+      - "The asset was successfully submitted into the platform review workflow."
   runtime_test:
     status: not-run
     at: null
     notes: []
   platform_review:
-    status: not-run
-    at: null
-    notes: []
+    status: pending
+    at: "2026-10-08"
+    notes:
+      - "Current platform status: 审核中 (under review)."
   published:
     status: not-run
     at: null
     notes: []
 
 evidence:
+  - type: manual-note
+    description: "User confirmed that AI Content Editor uploaded successfully and is currently under WorkBuddy platform review."
+    ref: null
+    sha256: null
   - type: url
     description: "GitHub Actions Candidate Builds run completed successfully."
     ref: "https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/37669725863"
@@ -56,6 +63,6 @@ observations:
       - "20-expert/"
       - "90-templates/expert-template/"
       - "scripts/validate_expert.py"
-    action: "Proceed to WorkBuddy Platform Parse; do not claim platform compatibility before upload."
+    action: "Platform Parse is now confirmed; wait for review result, then perform real WorkBuddy runtime tests."
 
-status: candidate
+status: reviewing
