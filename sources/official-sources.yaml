@@ -1,0 +1,61 @@
+schema_version: 1
+project: WB-OPDK
+policy: official-first
+last_registry_review: 2026-10-07
+
+sources:
+  workbuddy-open-platform-overview:
+    title: 开放平台概述
+    url: https://open.workbuddy.cn/docs/what-is-open-platform
+    authority: official
+    category: platform
+    last_verified: 2026-10-07
+
+  workbuddy-skill:
+    title: 技能
+    url: https://open.workbuddy.cn/docs/skill
+    authority: official
+    category: skill
+    last_verified: 2026-10-07
+
+  workbuddy-expert:
+    title: 专家
+    url: https://open.workbuddy.cn/docs/expert
+    authority: official
+    category: expert
+    last_verified: 2026-10-07
+
+  workbuddy-expert-team:
+    title: 专家团
+    url: https://open.workbuddy.cn/docs/expert-team
+    authority: official
+    category: expert-team
+    last_verified: 2026-10-07
+
+  workbuddy-connector:
+    title: 连接器
+    url: https://open.workbuddy.cn/docs/connector
+    authority: official
+    category: connector
+    last_verified: 2026-10-07
+
+  workbuddy-buddy-app:
+    title: Buddy应用
+    url: https://open.workbuddy.cn/docs/buddy-app
+    authority: official
+    category: buddy-app
+    last_verified: 2026-10-07
+
+  workbuddy-third-party-app:
+    title: 第三方应用
+    url: https://open.workbuddy.cn/docs/third-party-app
+    authority: official
+    category: third-party-app
+    last_verified: 2026-10-07
+
+  workbuddy-openapi:
+    title: Open API 接口
+    url: https://open.workbuddy.cn/docs/openapi
+    authority: official
+    category: open-api
+    last_verified: 2026-10-07
