@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-10-08",
+  "templates": [
+    {
+      "id": "workbuddy-expert-design-experts",
+      "page_url": "https://open.workbuddy.cn/docs/expert",
+      "download_url": "https://codebuddy-platform-1258344699.cos.ap-beijing.myqcloud.com/open/static/files/design-experts.zip",
+      "filename": "design-experts.zip",
+      "archive_bytes": 15909,
+      "archive_sha256": "99e14f7096f56c814af2b3369ca2f5184491477721223cc1d60ee2f2f2fc02c3",
+      "key_files": {
+        "design-experts/.codebuddy-plugin/plugin.json": {
+          "bytes": 2029,
+          "sha256": "afb4ea43b79708b4cc0db38b2577ba6f9b631e9982c17341cb20ed96ff043e7c"
+        },
+        "design-experts/agents/design-md-architect.md": {
+          "bytes": 8510,
+          "sha256": "d1d404825f3faa1ffffc3ec80ce0c91500399b330daefa774104a1144dbcc445"
+        },
+        "design-experts/skills/design-reference/SKILL.md": {
+          "bytes": 5929,
+          "sha256": "12000913034f4e0bf58705ee506db2a81db5070252eb1679f64c460325e1e3ea"
+        }
+      }
+    },
+    {
+      "id": "workbuddy-expert-team-trading-team",
+      "page_url": "https://open.workbuddy.cn/docs/expert-team",
+      "download_url": "https://codebuddy-platform-1258344699.cos.ap-beijing.myqcloud.com/open/static/files/trading-team.zip",
+      "filename": "trading-team.zip",
+      "archive_bytes": 33126,
+      "archive_sha256": "4935e7b86b7d32c47d03bb7c70c24adc29a41dc7d74fb9a97596e6d5a3e04345",
+      "key_files": {
+        "trading-team/setting.json": {
+          "bytes": 35,
+          "sha256": "168767b04cffdc12b5c9f6b61d6a110208d58c3e0a1699dffa6e61a8091ca23b"
+        },
+        "trading-team/.codebuddy-plugin/plugin.json": {
+          "bytes": 5223,
+          "sha256": "3861add2d351155c7183d8d99e592a6a5cbbea5a1b7e72a02418fb2e8d233deb"
+        },
+        "trading-team/agents/trading-team-lead.md": {
+          "bytes": 5812,
+          "sha256": "842e15a5deb943ee1dbee04aa1015c299b7468e25a762833d0b8bb9a0dafef34"
+        },
+        "trading-team/skills/trading-analysis/SKILL.md": {
+          "bytes": 9468,
+          "sha256": "5d592cd5ea72ff092af311ddd7e141cf9dc22a5d200496acb6bec26ffcbb5210"
+        }
+      }
+    }
+  ]
+}
