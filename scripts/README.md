@@ -64,3 +64,16 @@ python3 scripts/scaffold.py buddy-app my-buddy ./tmp/my-buddy
 ```
 
 脚手架只负责复制官方适配 starter 与替换基础标识；不会替你生成业务内容，也不会绕过对应 Validator。
+
+## Real-world Validation Records
+
+```bash
+python3 scripts/new_validation_record.py \
+  --type expert \
+  --name my-expert \
+  --version 1.0.0
+
+python3 scripts/validate_validation_records.py
+```
+
+验证记录用于保存 WorkBuddy 实际 Platform Parse / Runtime / Review / Published 证据，不替代官方规范。
