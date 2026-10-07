@@ -23,6 +23,9 @@ jobs:
       - name: Smoke-test starter templates
         run: python3 scripts/smoke_test_templates.py
 
+      - name: Prepare HTML knowledge base
+        run: python3 scripts/prepare_docs.py
+
       - name: Install docs dependencies
         run: python3 -m pip install -r requirements-docs.txt
 
@@ -33,4 +36,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: wb-opdk-html
-          path: ../wb-opdk-site
+          path: build/site
