@@ -25,6 +25,7 @@ def main():
             "url":row.get("url"),
             "change":row.get("change") or ("fetch-failed" if not row.get("ok") else None),
             "error":row.get("error"),
+            "heading_changes":row.get("heading_changes") or {"added":[],"removed":[]},
             "affected":impact.get(row.get("id"),{}).get("affected",[])
         }
         item["recommended_actions"]=[
@@ -62,6 +63,15 @@ def main():
             ]
             if item.get("error"):
                 lines.append(f"- Error: `{item['error']}`")
+
+            hc=item.get("heading_changes") or {}
+            if hc.get("added") or hc.get("removed"):
+                lines += ["","### Section-level signal",""]
+                for h in hc.get("added",[]):
+                    lines.append(f"- Added heading: **{h}**")
+                for h in hc.get("removed",[]):
+                    lines.append(f"- Removed heading: **{h}**")
+
             lines += ["","### STALE candidates",""]
             if item["affected"]:
                 lines += [f"- `{p}`" for p in item["affected"]]
