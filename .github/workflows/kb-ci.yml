@@ -17,11 +17,22 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install validation dependencies
+        run: python3 -m pip install -r requirements-dev.txt
+
       - name: Validate KB metadata
         run: python3 scripts/validate_kb.py
 
+      - name: Validate JSON Schemas and representative starters
+        run: python3 scripts/validate_schemas.py
+
       - name: Smoke-test starter templates
         run: python3 scripts/smoke_test_templates.py
+
+      - name: Generate and validate a sample release manifest
+        run: |
+          python3 scripts/generate_release_manifest.py 90-templates/skill-template             --validation-status pass             --validator scripts/validate_skill.py             --side-effect-review not-applicable             --output /tmp/release-manifest.json
+          python3 scripts/validate_json_schema.py             /tmp/release-manifest.json             schemas/release-manifest.schema.json
 
       - name: Prepare HTML knowledge base
         run: python3 scripts/prepare_docs.py
