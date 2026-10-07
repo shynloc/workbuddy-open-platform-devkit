@@ -37,6 +37,10 @@ WB-OPDK 的目标不是复制官方文档，而是把 WorkBuddy 开放平台整�
 
 ## v1.0 — Production-ready DevKit
 
+真实平台验证 Gate 见：
+
+`95-validation/v1-readiness.md`
+
 目标：
 
 - 主要开放平台能力均有 OFFICIAL 规范页
