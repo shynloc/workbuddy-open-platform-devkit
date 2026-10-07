@@ -1,0 +1,21 @@
+{
+  "name": "服务名称",
+  "name_zh": "服务名称",
+  "name_en": "Service Name",
+  "description": "Connect and use the service with natural language.",
+  "description_zh": "通过自然语言连接并使用该服务的核心能力。",
+  "description_en": "Connect and use the service with natural language.",
+  "source": "your-service-token",
+  "type": "mcp",
+  "version": "1.0.0",
+  "examples_zh": [
+    "帮我查询最近的数据",
+    "帮我创建一个新的项目"
+  ],
+  "examples_en": [
+    "Show me the latest data",
+    "Create a new project"
+  ],
+  "auth_mode": "token",
+  "minWorkbuddyVersion": "4.24.0"
+}
