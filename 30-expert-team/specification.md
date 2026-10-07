@@ -100,17 +100,30 @@ WB-OPDK Validator 还要求 `members` 与团队成员定义保持一致，因为
 
 ## 4. Lead 设置文件
 
-当前上游存在：
+当前有效规则：
 
-- 页面结构：`settings.json`
-- 官方下载模板：`setting.json`，内容使用 `{"agent":"<lead>"}`
+```text
+plugin root/
+└── settings.json    # 必须
+```
 
-因此：
+当前采用的内容结构来自官方 Team 模板中的已知字段：
 
-1. 不同时打包两份；
-2. WB-OPDK starter 当前选择 `setting.json`；
-3. `agent` 必须与 `agentName/teamInfo.leadAgent` 一致；
-4. 提交当天以开放平台实际解析结果为准。
+```json
+{
+  "agent": "my-team-team-lead"
+}
+```
+
+要求：
+
+1. 文件名必须是 `settings.json`（复数）；
+2. 必须位于 Team 插件根目录；
+3. JSON 必须可读取；
+4. `agent` 必须与 `plugin.json.agentName`、`teamInfo.leadAgent` 一致；
+5. 不再打包 `setting.json`。
+
+证据来源同时包括官方页面与 2026-10-08 的真实平台解析结果。
 
 ## 5. MCP / Connector dependencies
 
