@@ -1,0 +1,53 @@
+name: WorkBuddy official docs changed
+description: Report an upstream WorkBuddy official documentation change that may affect WB-OPDK.
+title: "[Upstream] "
+labels: ["upstream-change"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Official source URL
+      placeholder: https://open.workbuddy.cn/docs/...
+    validations:
+      required: true
+  - type: input
+    id: detected
+    attributes:
+      label: Detected at
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What changed?
+      description: Summarize the official upstream change. Do not paste long copyrighted passages.
+    validations:
+      required: true
+  - type: textarea
+    id: affected
+    attributes:
+      label: Affected WB-OPDK files
+      placeholder: |
+        - 40-connector/specification.md
+        - schemas/connector-meta.schema.json
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impact
+      options:
+        - Documentation only
+        - Template / schema update needed
+        - Validator update needed
+        - Breaking / publishing risk
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Verification
+      options:
+        - label: I verified this against the current official WorkBuddy source.
+          required: true
+        - label: I did not include credentials, private user data, or secrets.
+          required: true
