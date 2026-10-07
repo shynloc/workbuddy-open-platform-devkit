@@ -14,11 +14,11 @@ WB-OPDK 的目标不是复制官方文档，而是把 WorkBuddy 开放平台整�
 
 ## v0.4 — Source Intelligence
 
-- [ ] 将 Source Watch 输出升级为结构化字段级/章节级 diff
-- [ ] 自动映射 upstream source → 受影响 KB / Schema / Template / Validator
-- [ ] Source change 时生成待处理 Issue 草稿或 Review Artifact
-- [ ] 页面 hash 变化后辅助生成 STALE 候选清单
-- [ ] 增加官方文档中文/英文版本一致性检查
+- [ ] 将 Source Watch 输出升级为章节级 / 语义级 diff
+- [x] 自动映射 upstream source → 受影响 KB / Schema / Template / Validator
+- [x] Source change 时生成 Review Artifact（JSON + Markdown）
+- [x] 页面 hash 变化后自动生成 STALE 候选清单
+- [ ] 增加官方文档中文 / 英文版本一致性检查
 - [ ] 官方模板 ZIP 变化时生成关键配置文件 diff
 
 ## v0.5 — HTML Knowledge Base
