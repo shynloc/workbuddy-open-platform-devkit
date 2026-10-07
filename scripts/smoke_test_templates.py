@@ -66,6 +66,17 @@ def main():
         write_png(expert/"avatars"/"expert.png")
         run(SCRIPTS/"validate_expert.py",expert)
 
+        team=base/"expert-team"
+        copy_template("expert-team-template",team)
+        for name in [
+            "team.png",
+            "team-lead.png",
+            "research-specialist.png",
+            "delivery-specialist.png",
+        ]:
+            write_png(team/"avatars"/name)
+        run(SCRIPTS/"validate_expert_team.py",team)
+
         for template in [
             "connector-mcp-token-template",
             "connector-mcp-oauth-template",
@@ -76,11 +87,15 @@ def main():
             write_svg(dst/"icon.svg")
             run(SCRIPTS/"validate_connector.py",dst)
 
-        out=base/"skill-release.zip"
-        run(SCRIPTS/"pack_release.py",skill,"--out",out)
-        if not out.is_file() or out.stat().st_size==0:
-            raise SystemExit("release packer did not produce a zip")
-        print(f"release zip OK: {out.name} ({out.stat().st_size} bytes)")
+        for name,root in [
+            ("skill-release.zip",skill),
+            ("expert-team-release.zip",team),
+        ]:
+            out=base/name
+            run(SCRIPTS/"pack_release.py",root,"--out",out)
+            if not out.is_file() or out.stat().st_size==0:
+                raise SystemExit(f"release packer did not produce {name}")
+            print(f"release zip OK: {out.name} ({out.stat().st_size} bytes)")
 
     print("All template smoke tests passed")
     return 0
