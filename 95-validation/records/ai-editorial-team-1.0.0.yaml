@@ -36,18 +36,21 @@ stages:
     at: null
     notes: []
   platform_review:
-    status: pending
+    status: pass
     at: "2026-10-08"
     notes:
-      - "Current platform status after corrected upload: 审核中 (under review)."
+      - "Corrected Expert Team package passed WorkBuddy platform review."
+      - "This confirms that the settings.json correction is compatible with the reviewed/published Team package."
   published:
-    status: not-run
-    at: null
-    notes: []
+    status: pass
+    at: "2026-10-08"
+    notes:
+      - "AI Editorial Team / 内容编辑制作团队 is published and summonable in the WorkBuddy market."
+      - "Marketplace page currently shows 暂无数据 for usage, so runtime orchestration is not inferred from publication."
 
 evidence:
   - type: manual-note
-    description: "User confirmed that the corrected AI Editorial Team package with settings.json uploaded successfully and is currently under review."
+    description: "User-provided WorkBuddy market screenshot confirmed 内容编辑制作团队 | AI 编辑部 v1.0.0 is published and summonable."
     ref: null
     sha256: null
   - type: manual-note
@@ -85,6 +88,6 @@ observations:
     affects:
       - "30-expert-team/"
       - "scripts/validate_expert_team.py"
-    action: "Platform Parse now passes; wait for review result and then run Team runtime/orchestration tests."
+    action: "Platform Parse, review, and publication now pass; next step is Team runtime/orchestration testing in the real marketplace version."
 
-status: reviewing
+status: published
