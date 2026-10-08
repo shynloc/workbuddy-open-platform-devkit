@@ -59,7 +59,7 @@ WB-OPDK 区分两个目标：
 
 Current:
 
-- Skill: Platform Parse ✅ / Review pending
+- Skill: Platform Parse ✅ / Review Approved ✅ / Published ✅
 - Expert: Platform Parse ✅ / Review pending
 - Expert Team: Platform Parse ✅ after `settings.json` correction / Review pending
 - Connector: pending real platform/runtime validation
