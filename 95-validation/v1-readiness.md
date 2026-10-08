@@ -6,7 +6,7 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 
 | Asset type | Local schema/validator | Starter smoke test | Platform parse | Runtime test | Review | Published |
 |---|---:|---:|---:|---:|---:|---:|
-| Skill | ✅ | ✅ | ✅ 1 case | — | ⏳ 1 case | — |
+| Skill | ✅ | ✅ | ✅ 1 case | — | ✅ 1 approved case | ✅ 1 published case |
 | Expert | ✅ | ✅ | ✅ 1 case | — | ⏳ 1 case | — |
 | Expert Team | ✅ | ✅ | ✅ 1 corrected case | — | ⏳ 1 case | — |
 | Connector | ✅ | ✅ MCP/CLI | — | — | — | — |
@@ -21,7 +21,8 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 
 - Local validation: Pass
 - Platform parse: Pass
-- Review: Pending
+- Review: Approved
+- Published: Yes
 - Runtime: Not claimed yet
 
 见：
@@ -126,7 +127,7 @@ https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/376697258
 
 只有满足以下条件才把 WB-OPDK 标为 1.0：
 
-- [ ] Skill 至少 1 个 Published/Approved 真实案例
+- [x] Skill 至少 1 个 Published/Approved 真实案例
 - [ ] Expert 至少 1 个 Platform Parse + Runtime 案例
 - [ ] Expert Team 至少 1 个 Platform Parse + Runtime 案例
 - [ ] Connector 至少 1 个真实连接/Runtime 案例
