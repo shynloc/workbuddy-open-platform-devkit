@@ -2,7 +2,7 @@
 
 | Asset | Type | Version | Local validation | Platform parse | Runtime | Review | Published | Record |
 |---|---|---:|---|---|---|---|---|---|
-| 微信公众号文章全流程发布 | Skill | 1.0.0 | ✅ Pass | ✅ Pass | — Not run | ⏳ Pending | — | [record](records/wechat-article-publishing-1.0.0.yaml) |
+| 微信公众号文章全流程发布 | Skill | 1.0.0 | ✅ Pass | ✅ Pass | — Not run | ✅ Approved | ✅ Published | [record](records/wechat-article-publishing-1.0.0.yaml) |
 | AI 内容主编 | Expert | 1.0.0 | ✅ Pass | ✅ Pass | — Not run | ⏳ Pending | — | [record](records/ai-content-editor-1.0.0.yaml) |
 | AI 编辑部 | Expert Team | 1.0.0 | ✅ Pass | ✅ Pass after settings.json fix | — Not run | ⏳ Pending | — | [record](records/ai-editorial-team-1.0.0.yaml) |
 
