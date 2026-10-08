@@ -7,8 +7,8 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 | Asset type | Local schema/validator | Starter smoke test | Platform parse | Runtime test | Review | Published |
 |---|---:|---:|---:|---:|---:|---:|
 | Skill | ✅ | ✅ | ✅ 1 case | — | ✅ 1 approved case | ✅ 1 published case |
-| Expert | ✅ | ✅ | ✅ 1 case | — | ⏳ 1 case | — |
-| Expert Team | ✅ | ✅ | ✅ 1 corrected case | — | ⏳ 1 case | — |
+| Expert | ✅ | ✅ | ✅ 1 case | — | ✅ 1 approved case | ✅ 1 published case |
+| Expert Team | ✅ | ✅ | ✅ 1 corrected case | — | ✅ 1 approved case | ✅ 1 published case |
 | Connector | ✅ | ✅ MCP/CLI | — | — | — | — |
 | Buddy App | N/A platform-configured | Product canvas/QA ready | — | — | — | — |
 | Third-party App / Open API | OAuth sample syntax ✅ | Integration checklist ✅ | App config not tested | — | — | — |
@@ -41,7 +41,8 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 - Release Check: Pass
 - Candidate ZIP/manifest/submission-notes: Generated
 - Platform Parse: Pass
-- Review: Pending
+- Review: Approved
+- Published: Yes
 
 ### Expert Team Candidate — AI Editorial Team
 
@@ -52,7 +53,8 @@ WB-OPDK v1.0 的最后门槛不是再增加文档数量，而是用真实 WorkBu
 - Release Check: Pass
 - Candidate ZIP/manifest/submission-notes: Generated
 - Platform Parse: Pass after correcting `setting.json` → `settings.json`
-- Review: Pending
+- Review: Approved
+- Published: Yes
 - Confirmed rule: plugin root must contain `settings.json`
 
 Candidate Build:
@@ -61,28 +63,36 @@ https://github.com/shynloc/workbuddy-open-platform-devkit/actions/runs/376697258
 
 ## v1.0 下一批验证顺序
 
-### 1. Expert
+### 1. Expert Runtime
 
-目标：
+AI 内容主编已经完成：
 
-- 使用 WB-OPDK Expert starter 创建一个真实 Expert；
-- 通过本地 schema + validator；
-- 上传 WorkBuddy；
-- 记录 parser 结果；
-- 召唤后运行 3 个 quick prompts；
-- 记录审核反馈。
+- Local Validation ✅
+- Platform Parse ✅
+- Review ✅
+- Published ✅
 
-建议候选：内容主编 / Editorial Director。
+下一步只剩真实市场版本 Runtime：
 
-### 2. Expert Team
+- 运行 3 个 quick prompts；
+- 检查角色稳定性；
+- 记录用户侧表现与异常。
 
-目标：
+### 2. Expert Team Runtime
 
-- 等待审核结果，审核通过后执行 Team Runtime / Orchestration 测试；
-- 验证 Lead 是否能真实调度至少 2 个 Member；
+AI 编辑部已经完成：
+
+- Local Validation ✅
+- Platform Parse ✅
+- Review ✅
+- Published ✅
+
+下一步：
+
+- 验证 Lead 是否真正调度 Member；
+- 验证轻任务不会无意义召集全员；
+- 验证角色冲突/中途改题时的恢复；
 - 验证 Team Skill / Connector dependency 引导。
-
-建议候选：AI 编辑部。
 
 ### 3. Connector
 
