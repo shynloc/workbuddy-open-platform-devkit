@@ -1,8 +1,16 @@
 # AI Content Editor — Real Validation Candidate
 
-这是 WB-OPDK 为 v1.0 真实平台验证准备的 **Expert 候选资产**。
+这是 WB-OPDK 的 **已发布 Expert 真实验证案例**。
 
-目标不是把它宣传成已通过 WorkBuddy，而是验证：
+当前已完成：
+
+- Local Schema / Validator ✅
+- WorkBuddy Platform Parse ✅
+- Platform Review ✅
+- Published ✅
+- Runtime Regression：待执行
+
+该案例用于验证：
 
 1. Expert package 结构；
 2. plugin.json 市场字段；
@@ -35,3 +43,16 @@ python3 scripts/new_validation_record.py \
 ```
 
 然后只记录真实发生的 Platform Parse / Runtime / Review 状态。
+
+## Platform Result — 2026-10-08
+
+WorkBuddy 市场页面已显示：
+
+- 内容主编 | AI 内容主编
+- version: v1.0.0
+- 可召唤
+- 开发者信息正常显示
+
+当前“使用量”仍显示暂无数据，因此不会把“已发布”误记为“Runtime 已验证”。
+
+下一步：从市场实际召唤并运行 3 个 quick prompts，回写 Runtime 结果。
