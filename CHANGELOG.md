@@ -2,6 +2,7 @@
 
 ## Unreleased — Working-grade Baseline
 
+- 微信公众号文章全流程发布 v1.0.0 已通过 WorkBuddy 平台审核并正式发布，成为 WB-OPDK 首个完整 Skill 平台生命周期案例
 - 补齐主体认证、个人/非个人服务类目与资质 Gate
 - 增加 Hardware 接入架构、OAuth/Scope、Runtime 和设备安全
 - 增加 Security & Governance：Trust Boundary、凭据、数据日志、Side-effect Policy、Release Gate
