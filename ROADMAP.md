@@ -47,7 +47,7 @@ WB-OPDK 的目标不是复制官方文档，而是把 WorkBuddy 开放平台整�
 - [x] Source Registry + Impact Map Validator
 - [x] Repository Doctor
 - [x] Skill / Expert / Expert Team 已取得真实 Platform Parse 证据
-- [x] Expert / Expert Team 当前均已进入平台审核
+- [x] Skill / Expert / Expert Team 均已通过平台审核并正式发布
 
 质量定义见：
 
