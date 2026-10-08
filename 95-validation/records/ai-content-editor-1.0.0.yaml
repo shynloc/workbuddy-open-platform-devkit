@@ -33,18 +33,21 @@ stages:
     at: null
     notes: []
   platform_review:
-    status: pending
+    status: pass
     at: "2026-10-08"
     notes:
-      - "Current platform status: 审核中 (under review)."
+      - "WorkBuddy Open Platform review passed."
+      - "The Expert is visible as a published market asset."
   published:
-    status: not-run
-    at: null
-    notes: []
+    status: pass
+    at: "2026-10-08"
+    notes:
+      - "AI Content Editor / 内容主编 is published and can be summoned from the WorkBuddy market."
+      - "Marketplace page currently shows 暂无数据 for usage, so runtime usage is not inferred from publication."
 
 evidence:
   - type: manual-note
-    description: "User confirmed that AI Content Editor uploaded successfully and is currently under WorkBuddy platform review."
+    description: "User-provided WorkBuddy market screenshot confirmed 内容主编 | AI 内容主编 v1.0.0 is published and summonable."
     ref: null
     sha256: null
   - type: url
@@ -63,6 +66,6 @@ observations:
       - "20-expert/"
       - "90-templates/expert-template/"
       - "scripts/validate_expert.py"
-    action: "Platform Parse is now confirmed; wait for review result, then perform real WorkBuddy runtime tests."
+    action: "Platform Parse, review, and publication are now confirmed; next step is real marketplace/runtime testing."
 
-status: reviewing
+status: published
