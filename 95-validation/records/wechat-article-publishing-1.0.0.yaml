@@ -7,7 +7,7 @@ asset:
   commit: null
 
 environment:
-  observed_at: "2026-10-07"
+  observed_at: "2026-10-08"
   workbuddy_version: null
   platform: "WorkBuddy Open Platform"
   publisher_type: personal
@@ -32,18 +32,25 @@ stages:
     notes:
       - "No marketplace installation/runtime result is claimed yet."
   platform_review:
-    status: pending
-    at: "2026-10-07"
+    status: pass
+    at: "2026-10-08T09:13:53+08:00"
     notes:
-      - "Platform UI showed the Skill status as 审核中 (under review)."
+      - "WorkBuddy Open Platform review notification confirmed the Skill passed platform review."
+      - "Submission time shown in the notification: 2026-10-07 21:56:08."
   published:
-    status: not-run
-    at: null
-    notes: []
+    status: pass
+    at: "2026-10-08"
+    notes:
+      - "User confirmed the approved Skill was published to the WorkBuddy market."
+      - "WorkBuddy review notification states that after publishing, users can search for and use the Skill in the WorkBuddy market."
 
 evidence:
   - type: manual-note
-    description: "User-provided WorkBuddy Open Platform UI observation: 微信公众号文章全流程发布, v1.0.0, status 审核中."
+    description: "User-provided WorkBuddy Open Platform review notification confirmed 微信公众号文章全流程发布 v1.0.0 passed review at 2026-10-08 09:13:53 and can be published to the WorkBuddy market."
+    ref: null
+    sha256: null
+  - type: manual-note
+    description: "User confirmed the approved Skill has been published."
     ref: null
     sha256: null
 
@@ -54,6 +61,6 @@ observations:
       - "10-skill/"
       - "90-templates/skill-template/"
       - "scripts/validate_skill.py"
-    action: "Keep current Skill package structure as a validated candidate; update this record when the review result arrives."
+    action: "Treat this Skill package structure as review-validated and published evidence; next step is marketplace-install/runtime regression."
 
-status: reviewing
+status: published
