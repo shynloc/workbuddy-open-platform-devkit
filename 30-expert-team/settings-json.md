@@ -91,3 +91,22 @@ settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下
 5. 如果平台下一步对 JSON schema 给出新的错误，再继续基于真实证据修订。
 
 详见：`sources/known-inconsistencies.md`。
+
+## Review / publication evidence — 2026-10-08
+
+修正为 `settings.json` 后，AI 编辑部 Expert Team 已完成：
+
+```text
+Local Validation
+→ Platform Parse
+→ Platform Review
+→ Published
+```
+
+全部通过。
+
+因此当前 WB-OPDK 对 Team 主理人设置文件的执行结论是：
+
+> **plugin root 必须提供 `settings.json`；当前 `{"agent":"<lead>"}` 结构已经随真实 Team 包通过平台审核并发布。**
+
+这仍然不意味着官方旧版 `trading-team.zip` 中的 `setting.json` 应被覆盖或删除；它继续作为上游模板与当前 Runtime 不一致的历史证据保留在 Template Audit 中。
