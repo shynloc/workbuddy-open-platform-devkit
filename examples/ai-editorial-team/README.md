@@ -1,6 +1,6 @@
 # AI Editorial Team — Real Validation Candidate
 
-这是 WB-OPDK 为 v1.0 真实平台验证准备的 **Expert Team 候选资产**。
+这是 WB-OPDK 的 **已发布 Expert Team 真实验证案例**。
 
 团队：
 
@@ -85,4 +85,29 @@ settings.json
 }
 ```
 
-下一次上传应使用修正版候选包；平台是否继续接受其 JSON 内容，以实际解析结果为准。
+修正版随后被 WorkBuddy Open Platform 成功解析、通过平台审核，并正式发布到市场。
+
+因此目前证据已经从“Parser 文件名要求”推进为：
+
+```text
+settings.json
+→ Platform Parse ✅
+→ Platform Review ✅
+→ Published ✅
+```
+
+这说明当前 `settings.json` 规则不仅能通过解析，也已经随该 Team 包完成正式审核发布。
+
+## Published Result — 2026-10-08
+
+WorkBuddy 市场页面已显示：
+
+- 内容编辑制作团队 | AI 编辑部
+- version: v1.0.0
+- 可召唤
+- Team Members 正常展示
+- 开发者信息正常显示
+
+当前使用量仍显示暂无数据，所以 Team orchestration Runtime 尚未打勾。
+
+下一步重点是实际召唤后的 Lead / Member 调度与恢复测试。
