@@ -4,7 +4,7 @@ knowledge_type: DERIVED
 official_sources:
   - workbuddy-third-party-app
   - workbuddy-openapi
-last_verified: 2026-10-08
+last_verified: 2026-10-20
 status: VERIFIED
 ---
 
@@ -43,6 +43,17 @@ status: VERIFIED
 - 轮换时覆盖旧值；
 - 授权撤销/解绑时删除；
 - 不下发设备端。
+
+## 分享私钥
+
+分享能力的私钥不是 `client_secret`。官方写它在浏览器本地生成，平台不保存，弹窗关闭后不能再查看。
+
+- 只放服务端；
+- 与 `kid` 一起轮换，先切新密钥再删旧密钥；
+- 不进网页、桌面安装包或工单；
+- 不把完整真实分享链接写进日志。
+
+同一官方页对 PSS 和 PKCS#1 v1.5 的写法不一致，按 `sources/known-inconsistencies.md` 保留冲突，不要在仓库里选一个当成已核实算法。
 
 ## MCP / Connector Token
 

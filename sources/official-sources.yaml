@@ -1,7 +1,7 @@
 schema_version: 1
 project: WB-OPDK
 policy: official-first
-last_registry_review: 2026-10-08
+last_registry_review: 2026-10-20
 
 sources:
   workbuddy-open-platform-overview:
@@ -44,7 +44,7 @@ sources:
     url: https://open.workbuddy.cn/docs/connector
     authority: official
     category: connector
-    last_verified: 2026-10-08
+    last_verified: 2026-10-20
 
   workbuddy-buddy-app:
     title: Buddy应用
@@ -58,14 +58,14 @@ sources:
     url: https://open.workbuddy.cn/docs/third-party-app
     authority: official
     category: third-party-app
-    last_verified: 2026-10-08
+    last_verified: 2026-10-20
 
   workbuddy-openapi:
     title: Open API 接口
     url: https://open.workbuddy.cn/docs/openapi
     authority: official
     category: open-api
-    last_verified: 2026-10-08
+    last_verified: 2026-10-20
 
   workbuddy-contact:
     title: 联系渠道
@@ -79,11 +79,11 @@ sources:
     url: https://open.workbuddy.cn/docs/service-categories-individual
     authority: official
     category: qualification
-    last_verified: 2026-10-08
+    last_verified: 2026-10-20
 
   workbuddy-service-categories-enterprise:
     title: 服务类目（非个人主体）
     url: https://open.workbuddy.cn/docs/service-categories-enterprise
     authority: official
     category: qualification
-    last_verified: 2026-10-08
+    last_verified: 2026-10-20

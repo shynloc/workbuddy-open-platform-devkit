@@ -6,7 +6,7 @@
       "id": "workbuddy-open-platform-overview",
       "url": "https://open.workbuddy.cn/docs/what-is-open-platform",
       "status": 200,
-      "html_sha256": "1d7f85698c93c1884a7e002c6c076a7d44710c2012f50776609305e3aa9704e7",
+      "html_sha256": "8ddc363f71baf8f28c1e8f54e4238da3c20118db78fb566fa802faa54feb4a13",
       "text_sha256": "6186dea3ac912ccc0900303d595a8e3712ce0e0630f36f21222ee5f9d5463717",
       "visible_text_bytes": 1197,
       "heading_sha256": "1ae62c373863a559c79021cce4fc9482cf6543ab90dcdf47e01062ea00b5e05f",
@@ -17,13 +17,13 @@
         "平台优势"
       ],
       "last_modified": null,
-      "etag": "\"dw2ea06aa82dw4\""
+      "etag": "\"gqs8jhvsy02wo9\""
     },
     {
       "id": "workbuddy-onboarding",
       "url": "https://open.workbuddy.cn/docs/onboarding",
       "status": 200,
-      "html_sha256": "496fd6a2f14f896c5478103cf447141578a669d359a54444e1faa6ab7dcc17de",
+      "html_sha256": "77515cdf785ef25fe047baa4defcd3371f892ca4a3296d8ce0806bce1f76a404",
       "text_sha256": "183beab0067427d62a5267cf1eb8afe448626914daa4f634f3cbb1954f6301a9",
       "visible_text_bytes": 4411,
       "heading_sha256": "042446d2d9b1790a9440d57833edf490aea3649a04d45b6defa7f8a93f0958c8",
@@ -42,13 +42,13 @@
         "重要规则"
       ],
       "last_modified": null,
-      "etag": "\"xa0udc3g3p2nny\""
+      "etag": "\"11v87y2xmuq36g1\""
     },
     {
       "id": "workbuddy-skill",
       "url": "https://open.workbuddy.cn/docs/skill",
       "status": 200,
-      "html_sha256": "383dae13ad7f3fdc1c19683a892360147223bcfd2d9239b9442c118a5e64093d",
+      "html_sha256": "3277bcc22a1a5f0d0721d4b87ab3d7e9780a0552b92fb77a7dd20272977968d1",
       "text_sha256": "5a693512c41c6fae64af4e70db79fc7e00b51d2f7cea1f4040da7795579d9ac2",
       "visible_text_bytes": 3564,
       "heading_sha256": "27ce7113b3f845bf8d0a6cc111206a4dce0c7f05a9208bec388464a797ba425b",
@@ -62,13 +62,13 @@
         "templates — 模板文件"
       ],
       "last_modified": null,
-      "etag": "\"tntd0jrpgh2urw\""
+      "etag": "\"41tkhe0mr43dfv\""
     },
     {
       "id": "workbuddy-expert",
       "url": "https://open.workbuddy.cn/docs/expert",
       "status": 200,
-      "html_sha256": "92f778f89082460ddc143474028cd06fc27dbe8da109303c5601d251b310e606",
+      "html_sha256": "c024b6be40c6531da13e3aa5d2665d291962e7691cb1c517cbcd8eabb58c4a13",
       "text_sha256": "3750f170637228eaa38e78cd1b3260db22a1df3c2a21b442a2bd567bfd7d575c",
       "visible_text_bytes": 15103,
       "heading_sha256": "527227338fed34562582a3a9370375cce820223cece1fca38701d54b76f88569",
@@ -98,13 +98,13 @@
         "模板文件"
       ],
       "last_modified": null,
-      "etag": "\"y4o65ss1rw418g\""
+      "etag": "\"zvpzoj9a0s4kvd\""
     },
     {
       "id": "workbuddy-expert-team",
       "url": "https://open.workbuddy.cn/docs/expert-team",
       "status": 200,
-      "html_sha256": "8c7d9556b159a2137cae4492f787954539b96515717a54f065d224629b76bc2f",
+      "html_sha256": "5ec4c0a3bb91e552268a035e5e14145882a7dd6998a8081904b4fa64032edc4a",
       "text_sha256": "ea7e5e2e8f89e24c49902a96276aabed91685539389a8fe0395b4b6cb6b7d03d",
       "visible_text_bytes": 20515,
       "heading_sha256": "380e5a21b02a5a0ced44d0eb709f110a9389120e53dcdc03b81d6e328614d1dc",
@@ -133,15 +133,15 @@
         "模板文件"
       ],
       "last_modified": null,
-      "etag": "\"dcp93x7it94c0y\""
+      "etag": "\"10742f8qef14ulm\""
     },
     {
       "id": "workbuddy-connector",
       "url": "https://open.workbuddy.cn/docs/connector",
       "status": 200,
-      "html_sha256": "4a2f7011d941f011793cf18a5daad5914983bd68cbbee008cd14b4b069b947f4",
-      "text_sha256": "3cb0ee209a9685e07eab868d6aa6b18194255f85a141767d1a3934ec9e9a2a50",
-      "visible_text_bytes": 20367,
+      "html_sha256": "6d4c8902dd6738fbcc6c0465ee8a29a63a05f696a903b9401c52967cc312f94d",
+      "text_sha256": "24114e1c40c1f5ab8235181b5b3c3e25e1ce5fede0410e840d23890bde727f6a",
+      "visible_text_bytes": 20480,
       "heading_sha256": "c7b6eb5671ce3dc0377f6bdcc107bcf8bf8d71f54a7dcd98179815058e0fb527",
       "headings": [
         "连接器",
@@ -165,13 +165,13 @@
         "提交前检查"
       ],
       "last_modified": null,
-      "etag": "\"u8iwkryrwu48ax\""
+      "etag": "\"xxwrk5sn305n8k\""
     },
     {
       "id": "workbuddy-buddy-app",
       "url": "https://open.workbuddy.cn/docs/buddy-app",
       "status": 200,
-      "html_sha256": "d8aecd58fe26aaaf2ac0fad1dfa3e4e99d36260cd0aa2f96229f5f560af6935f",
+      "html_sha256": "31e1a0b05f39671217ad36fa03f6de906a58d38c5a2e10979317c104f20cb3e8",
       "text_sha256": "68a8df2830e14c201e20836f09fe3c4f490a5471193423fca1b9a4264f484d7c",
       "visible_text_bytes": 12513,
       "heading_sha256": "dd4f11b9383083787cc1273aeaf7ad572eb312978a7244f39dea915220ea821a",
@@ -205,18 +205,19 @@
         "生命周期操作"
       ],
       "last_modified": null,
-      "etag": "\"sb3y351mcb498v\""
+      "etag": "\"xhi8unelsj65wf\""
     },
     {
       "id": "workbuddy-third-party-app",
       "url": "https://open.workbuddy.cn/docs/third-party-app",
       "status": 200,
-      "html_sha256": "ce715da2e56cfca53f4d61345b961ccc79b4135c61c69402407f7f19bb6f7684",
-      "text_sha256": "4214954a219afde4e721b3864ab0fbe8c87b0e95b213f653bb9ebdf929bc9f98",
-      "visible_text_bytes": 7355,
-      "heading_sha256": "bb1fce5c5c318c7a4ca3c8e9af43faa227f36d7b43d2ac894c6aed2090a3a7a1",
+      "html_sha256": "7af3cd18030c105ecc0da626991aee22b7bb11e09590f4a0c4c262f0c4b1016d",
+      "text_sha256": "67f0f9934190068cd5bb1b2b38f45fb98eb93a154fdfcfaffb867e4d842ea041",
+      "visible_text_bytes": 29245,
+      "heading_sha256": "a863079872ca4bc9eaaa004057a1e4ff3103dd249b0b47e47b2a2020c8dfc626",
       "headings": [
         "第三方应用",
+        "硬件接入与积分兑换",
         "接入介绍",
         "平台概述",
         "核心能力",
@@ -229,25 +230,47 @@
         "应用注册与授权认证",
         "硬件接入",
         "应用基本配置",
-        "积分应用",
+        "积分兑换",
         "应用说明",
         "授权认证",
         "Token 类型一览",
         "权限配置列表及关联 API",
         "Scope 权限列表",
         "权限申请指南",
-        "申请步骤"
+        "申请步骤",
+        "分享能力接入",
+        "功能介绍",
+        "接入前准备",
+        "第一步：基础配置",
+        "第二步：应用平台信息",
+        "提交与审核",
+        "生成密钥",
+        "标识冲突与申诉",
+        "使用 WorkBuddy 品牌标识",
+        "常见问题",
+        "PC端开发手册",
+        "能力概览",
+        "快速开始：分享一条文本消息",
+        "PC 端完整链接",
+        "参数类型与消息结构",
+        "传输签名包",
+        "WorkBuddyMessage",
+        "TaskPayload",
+        "ContentBlock 类型",
+        "签名生成：详细步骤",
+        "资源与连接器分享",
+        "错误处理与上线检查"
       ],
       "last_modified": null,
-      "etag": "\"itb0ri1w3c2z80\""
+      "etag": "\"7rbu1vknh45kzs\""
     },
     {
       "id": "workbuddy-openapi",
       "url": "https://open.workbuddy.cn/docs/openapi",
       "status": 200,
-      "html_sha256": "602c5dccd8a71cf16f71b2e1652df5196c1674b32b0089afde0d7c8e8e2c8811",
-      "text_sha256": "3da943df2f004cbfef53702e7440ba031deef5ca8d9e6ed43a3c967e37f35bfd",
-      "visible_text_bytes": 34574,
+      "html_sha256": "a49d8c3bf3c199e890b3d7b0b9fd691cbe5275b2b93d73d07065b47e53668301",
+      "text_sha256": "34fc6a114cfb86296e4624fab73698d6ff31705bd9fd1da1e4e7393dd681acb8",
+      "visible_text_bytes": 34596,
       "heading_sha256": "6e1fe95313e76f8f5d06fd15692214340fdb3374b62efc4f5dfef6a4d9244cc2",
       "headings": [
         "Open API 接口",
@@ -309,13 +332,13 @@
         "返回码规范"
       ],
       "last_modified": null,
-      "etag": "\"q4ftx0a2bh6xky\""
+      "etag": "\"grwufl61x97lit\""
     },
     {
       "id": "workbuddy-contact",
       "url": "https://open.workbuddy.cn/docs/contact",
       "status": 200,
-      "html_sha256": "4e6a180a0f86007c3e5ef702457d98bdcef5f3a30138462d2d47cf5e9f528752",
+      "html_sha256": "737a5e131351b1a868b9cfcd55abfe945c1692d49be22af191de32eb77490f0b",
       "text_sha256": "b127e31eeba5127a49095348cea81072e6d2954e8c4853989c22e9859d8a2b12",
       "visible_text_bytes": 330,
       "heading_sha256": "9ef975f34743d9a95ccd617107c61689460ab5568161b21e08f845a49f6e1630",
@@ -325,15 +348,15 @@
         "官方社群"
       ],
       "last_modified": null,
-      "etag": "\"osk1qha5ab2cw1\""
+      "etag": "\"4ebu3swife2vmz\""
     },
     {
       "id": "workbuddy-service-categories-individual",
       "url": "https://open.workbuddy.cn/docs/service-categories-individual",
       "status": 200,
-      "html_sha256": "98e0a21f48e17d1214eba03f10bc5cde57e73961a26b5d91d8528e3ee4dc7432",
-      "text_sha256": "bd032c3bc3288517e924d457ad0b4208c01190bbedcbe25b01448ed91f1ff83c",
-      "visible_text_bytes": 6733,
+      "html_sha256": "3207af2eb7ded0464ac59aadf521caefcfa1623c680ba734af40ae6bdc51eb80",
+      "text_sha256": "b508dc783f2a8a5e5f02a4b7a782d5249767b0983e87a76d5d4d5ae6e7b7f261",
+      "visible_text_bytes": 6746,
       "heading_sha256": "bbfbb806c89ee00dd8d256c27098b3de3d9735e8c02c136ee2ff1ba009089e6c",
       "headings": [
         "服务类目（个人主体）",
@@ -348,15 +371,15 @@
         "体育"
       ],
       "last_modified": null,
-      "etag": "\"qlj1flpgap2wrs\""
+      "etag": "\"kd2buzglao3g5x\""
     },
     {
       "id": "workbuddy-service-categories-enterprise",
       "url": "https://open.workbuddy.cn/docs/service-categories-enterprise",
       "status": 200,
-      "html_sha256": "71d5094593e6bd9799b203cbcd82c443ef3ec7aa2c2a45cc6003a3f9d6c51c1d",
-      "text_sha256": "d669ed1f901372396bfdfbfc957c24b614972bd7f02ab87403dbf427c0c2d514",
-      "visible_text_bytes": 147708,
+      "html_sha256": "3f364065844d123195bdcd71a3e0ceb040351515efabd23c682ca3825dfd8735",
+      "text_sha256": "3b43bce4beaa24fd9855d47fae4cce147781b501297ab6a7ac870d5e263153cb",
+      "visible_text_bytes": 147721,
       "heading_sha256": "e7995d92eda0e0ef6ceef9eb0108953d331b9db33bc7526744b7e6d540db8b23",
       "headings": [
         "服务类目（非个人主体）",
@@ -385,7 +408,7 @@
         "深度合成"
       ],
       "last_modified": null,
-      "etag": "\"ns6g1vgx3a7mz8\""
+      "etag": "\"186dkbwgygs86c6\""
     }
   ]
 }

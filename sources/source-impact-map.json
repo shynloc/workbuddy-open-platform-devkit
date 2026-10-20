@@ -73,6 +73,7 @@
       "affected": [
         "55-hardware/",
         "60-open-api/third-party-app.md",
+        "60-open-api/share-to-workbuddy.md",
         "60-open-api/oauth-2.1.md",
         "60-open-api/integration-checklist.md",
         "65-security-governance/",

@@ -3,7 +3,7 @@ title: Side-effect Policy
 knowledge_type: DERIVED
 official_sources:
   - workbuddy-third-party-app
-last_verified: 2026-10-08
+last_verified: 2026-10-20
 status: VERIFIED
 ---
 
@@ -36,6 +36,12 @@ status: VERIFIED
 永久删除、支付、权限变更、账号解绑、覆盖不可恢复数据。
 
 必须显式确认，并在服务端再次校验权限。
+
+## Share into WorkBuddy
+
+官方行为：分享把内容预填到任务输入区。输入区已有内容时会覆盖；预填成功不是用户已提交任务。
+
+工程上把它视为会改用户当前草稿的外部可见动作。调用方可以报告「已唤起 / 已预填」，不能报告「任务已提交」。
 
 ## Confirmation quality
 

@@ -4,7 +4,7 @@ knowledge_type: DERIVED
 official_sources:
   - workbuddy-third-party-app
   - workbuddy-openapi
-last_verified: 2026-10-08
+last_verified: 2026-10-20
 status: VERIFIED
 ---
 
@@ -18,6 +18,7 @@ status: VERIFIED
 - OAuth 2.1 authorization code flow；
 - Scope 由应用权限配置和用户授权共同限制；
 - 官方明确要求最小权限。
+- 硬件接入可以按业务申请全部已公开权限。积分兑换只开放积分与权益类 Scope。分享能力不在这张 Scope 表里。
 
 ## Engineering rules
 

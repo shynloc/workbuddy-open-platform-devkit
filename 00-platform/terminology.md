@@ -9,7 +9,7 @@ official_sources:
   - workbuddy-connector
   - workbuddy-buddy-app
   - workbuddy-third-party-app
-last_verified: 2026-10-08
+last_verified: 2026-10-20
 status: VERIFIED
 ---
 
@@ -24,9 +24,11 @@ status: VERIFIED
 | Expert Team | 多角色协作与主理人编排 | plugin.json + settings + 多 agents + avatars |
 | Connector | 外部系统/账号/数据/操作能力接入 | connector-meta + MCP/CLI + icon + Skill |
 | Buddy App | 垂直行业 AI Harness | 平台配置 + modes/scenes/market/connectors/models |
-| Hardware Access | 智能眼镜、车机等硬件接入 WorkBuddy；属于第三方应用类型 | 应用注册 + OAuth 2.1 + Open API |
-| Third-party App | 外部网站/App/SaaS 接入 WorkBuddy | 应用注册 + OAuth 2.1 + Open API |
-| Open API | WorkBuddy 对外能力接口 | OAuth、Local Assistant、Cloud Task、ACP、Artifacts 等 |
+| Hardware Access | 智能眼镜、车机等硬件接入；第三方应用页当前两类 OAuth 应用之一 | 应用注册 + OAuth 2.1 + Open API |
+| 积分兑换 | 用卡券或兑换码为用户兑换 credits；只开放积分与权益类 Scope | OAuth 应用 + `user.credit.exchange` |
+| Share to WorkBuddy | 把文本、图片、音频、文件或资源链接预填到 WorkBuddy 任务输入区 | 分享应用 + 本地 RSA 签名，不是 client_secret |
+| Third-party App | 上面三条的总称。Buddy 应用有自己的文档页，不再列在第三方应用类型表 | 按路径选择 OAuth 应用或分享应用 |
+| Open API | WorkBuddy 对外能力接口 | OAuth、Local Assistant、Cloud Task、ACP、Artifacts、兑换码 |
 
 ## 组合关系
 

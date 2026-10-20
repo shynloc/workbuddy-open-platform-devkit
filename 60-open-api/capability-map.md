@@ -4,7 +4,7 @@ knowledge_type: OFFICIAL
 official_sources:
   - workbuddy-openapi
   - workbuddy-third-party-app
-last_verified: 2026-10-07
+last_verified: 2026-10-20
 status: VERIFIED
 ---
 
@@ -20,7 +20,9 @@ status: VERIFIED
 - 会话产物
 - 积分 / 兑换码核销 API
 
-接入前需要开发者账号、已创建的第三方应用，以及相应 clientId/clientSecret。
+接入前需要开发者账号、已创建的第三方应用，以及相应 clientId/clientSecret。Open API 页仍把示例写成硬件应用或 Buddy 应用；第三方应用页的类型表则是硬件接入和积分兑换。权限上限以应用类型在开放平台的实际可选项为准。
+
+分享到 WorkBuddy 不在这张 Open API 能力图里，见 `share-to-workbuddy.md`。
 
 ## Third-party App 页面当前公开 Scope
 
