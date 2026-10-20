@@ -164,7 +164,9 @@ python3 scripts/validate_connector.py ./work/my-service
 
 ## 我要让自己的产品调用 WorkBuddy
 
-读：
+先看产品是在调用 Open API，还是把内容分享进 WorkBuddy。分享不是 OAuth Scope，读 [Share to WorkBuddy](60-open-api/share-to-workbuddy.md)。
+
+调用 Open API 时读：
 
 - [Third-party App](60-open-api/third-party-app.md)
 - [OAuth 2.1](60-open-api/oauth-2.1.md)

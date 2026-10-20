@@ -2,6 +2,7 @@
 
 ## Unreleased — Working-grade Baseline
 
+- 复核 2026-10-19 Official Source Watch：第三方应用页新增分享能力与 PC 开发手册，OAuth 应用类型改为硬件接入和积分兑换；连接器、Open API 的可见文本变化是 JSON 示例空格，个人/非个人服务类目变化是导航项「收入变现」
 - 微信公众号文章全流程发布 v1.0.0 已通过 WorkBuddy 平台审核并正式发布，成为 WB-OPDK 首个完整 Skill 平台生命周期案例
 - AI 内容主编 v1.0.0 与 AI 编辑部 v1.0.0 已通过 WorkBuddy 平台审核并正式发布，完成 Expert / Expert Team 的真实审核发布闭环
 - 补齐主体认证、个人/非个人服务类目与资质 Gate

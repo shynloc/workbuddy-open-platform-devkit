@@ -4,7 +4,7 @@ knowledge_type: OFFICIAL
 official_sources:
   - workbuddy-third-party-app
   - workbuddy-openapi
-last_verified: 2026-10-08
+last_verified: 2026-10-20
 status: VERIFIED
 ---
 
@@ -35,7 +35,7 @@ Create Hardware App
 - `user.localassistant.invokable`
 - `user.localassistant.readable`
 
-硬件应用官方说明可按业务需要申请全部权限，但仍必须遵循最小权限原则。
+硬件应用官方说明可按业务需要申请全部权限，但仍必须遵循最小权限原则。这个“全部权限”只写在硬件接入类型上。积分兑换类型官方写明仅开放积分与权益类 Scope。
 
 ## Hardware-specific rule
 

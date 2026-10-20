@@ -17,6 +17,8 @@
 - https://open.workbuddy.cn/docs/openapi
 - https://open.workbuddy.cn/docs/third-party-app
 
+这个示例只覆盖 OAuth 授权码。把内容分享进 WorkBuddy 使用另一套应用注册和 RSA 签名，不在这里实现。
+
 ## 官方当前确认的 OAuth 关键点
 
 - Authorization Endpoint：`GET https://www.workbuddy.cn/openapi/v2/authorize`

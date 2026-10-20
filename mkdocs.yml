@@ -99,6 +99,7 @@ nav:
 
   - Open API:
       - Third-party App: 60-open-api/third-party-app.md
+      - Share to WorkBuddy: 60-open-api/share-to-workbuddy.md
       - OAuth 2.1: 60-open-api/oauth-2.1.md
       - Capability Map: 60-open-api/capability-map.md
       - Endpoint Quick Reference: 60-open-api/endpoints-quick-reference.md

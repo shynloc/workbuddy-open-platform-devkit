@@ -7,7 +7,8 @@
 
 ## 已覆盖
 
-- `third-party-app.md` — 应用类型、Scope、OAuth 接入边界
+- `third-party-app.md` — OAuth 应用类型、Scope、凭据
+- `share-to-workbuddy.md` — 分享能力与 PC deeplink 签名包
 - `oauth-2.1.md` — 授权码、Token 与安全基线
 - `capability-map.md` — API 能力域总览
 - `endpoints-quick-reference.md` — 当前 endpoint 快速索引
@@ -21,6 +22,7 @@
 
 ```text
 third-party-app
+→ share-to-workbuddy（仅当产品要把内容分享进 WorkBuddy）
 → oauth-2.1
 → capability-map
 → endpoints-quick-reference

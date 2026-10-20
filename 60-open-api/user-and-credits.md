@@ -4,7 +4,7 @@ knowledge_type: OFFICIAL
 official_sources:
   - workbuddy-openapi
   - workbuddy-third-party-app
-last_verified: 2026-10-07
+last_verified: 2026-10-20
 status: VERIFIED
 ---
 
@@ -48,6 +48,8 @@ Scope: user.credit.readable
 但 `user.credit.readable` 当前未出现在第三方应用页的公开 Scope 列表中。是否可申请应以开放平台应用权限页面为准。
 
 ## 核销兑换码
+
+积分兑换是第三方应用页当前的一类 OAuth 应用，创建入口为「其他 > 积分兑换」，官方写明只开放积分与权益类 Scope。
 
 ```text
 POST /openapi/v2/redemptions

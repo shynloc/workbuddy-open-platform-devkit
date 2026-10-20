@@ -69,19 +69,50 @@ settings.json 不存在或无法读取（Team 型专家必须在 plugin root 下
 
 ### Open API：Token 有效期
 
-第三方应用页当前明确写：
+2026-10-20 复核，两处写法都还在：
 
-- access_token：24 小时
-- refresh_token：60 天
+- 第三方应用页 Token 表：access_token 24 小时，refresh_token 60 天
+- Open API token 接口示例：`expires_in` 为 3600
 
-但 Open API token 接口响应使用 `expires_in`，实际示例与页面概述可能存在差异。
+调用方以 `/openapi/v2/token` 实际响应中的 `expires_in` 为准：
+
+- 客户端不得把 access_token 时长写死；
+- 用响应里的 `expires_in` 驱动缓存与刷新；
+- refresh_token 仍按第三方应用页要求保存在服务端；
+- 如果业务依赖精确 TTL，提交前应向官方确认。
+
+### 第三方应用类型 vs Open API 准备工作 — 2026-10-20
+
+第三方应用页当前写「开放平台当前支持两类第三方应用」：
+
+- 硬件接入
+- 积分兑换
+
+该页类型表不再列出 Buddy 应用，「积分应用」标题已改为「积分兑换」。
+
+同一时期的 Open API 页仍写：
+
+- 准备工作：已创建的第三方应用，如硬件应用或 Buddy 应用
+- 授权参数：回调地址和 scope 必须落在「硬件接入」或「Buddy 应用」已配置的集合内
 
 处理原则：
 
-- 客户端不得把 access_token 时长写死；
-- 以 `/openapi/v2/token` 实际响应中的 `expires_in` 驱动缓存与刷新；
-- refresh_token 的持久化/失效策略应重新核对当前官方页面与实际响应；
-- 如果业务依赖精确 TTL，提交前应向官方确认。
+1. 不把 Buddy 应用从产品地图或 Buddy App 文档里删掉；
+2. 不把 Open API 页的「Buddy 应用」改写成「积分兑换」；
+3. 积分兑换应用的权限上限以第三方应用页为准：仅积分与权益类 Scope。
+
+### 分享签名填充 — 2026-10-20
+
+第三方应用页同一文档里有两种填充描述：
+
+- 「生成密钥」：RSA-2048、PKCS#8 PEM，并写签名算法为 RSAwithSHA256、PSS 填充
+- 「PC端开发手册」的签名步骤：RS256，RSA PKCS#1 v1.5 填充、SHA-256；同页示例代码使用 `RSA_PKCS1_PADDING`
+
+处理原则：
+
+1. 不把其中一句改成唯一官方算法；
+2. 签名步骤和示例彼此一致，密钥生成段与它们不一致；
+3. 生产验签依赖填充方式时，先向官方确认当前验签实现接受哪一种。
 
 ### Open API：user.credit.readable
 
