@@ -4,14 +4,14 @@
   "title": "WB-OPDK Skill Frontmatter",
   "description": "Derived schema for parsed WorkBuddy SKILL.md YAML frontmatter.",
   "type": "object",
-  "required": ["description", "description_zh", "description_en", "version", "author"],
+  "required": ["name", "display_name", "display_name_en", "description", "description_zh", "description_en", "version", "author"],
   "properties": {
     "name": {
       "type": "string",
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
     "display_name": {"type": "string", "minLength": 1},
-    "display_name_en": {"type": "string"},
+    "display_name_en": {"type": "string", "minLength": 1},
     "description": {"type": "string", "minLength": 1},
     "description_zh": {"type": "string", "minLength": 1},
     "description_en": {"type": "string", "minLength": 1},
@@ -22,6 +22,8 @@
     },
     "author": {"type": "string", "minLength": 1},
     "allowed-tools": {"type": "string"},
+    "examples_zh": {"type": "array", "items": {"type": "string"}},
+    "examples_en": {"type": "array", "items": {"type": "string"}},
     "disable-model-invocation": {"type": "boolean"},
     "user-invocable": {"type": "boolean"}
   },

@@ -5,7 +5,7 @@ official_sources:
   - workbuddy-onboarding
   - workbuddy-service-categories-individual
   - workbuddy-service-categories-enterprise
-last_verified: 2026-10-08
+last_verified: 2026-10-26
 status: VERIFIED
 ---
 
@@ -17,6 +17,8 @@ status: VERIFIED
 - 非个人主体（企业/组织等）
 
 主体身份不是“市场展示字段”，它会影响可选服务类目和资质要求。
+
+非个人主体还要区分认证路径：持营业执照的经营主体（含个体工商户）走企业认证；无营业执照的组织走其他组织机构认证，准备统一社会信用代码登记证件，并确认已在腾讯云或微信公众号 / 小程序完成实名或认证。组织认证后还需在「设置 → 开发者信息」设置开发者昵称才能发布。详见 `00-platform/onboarding.md`。
 
 ## 2. 按实际功能判断服务
 

@@ -3,7 +3,7 @@ title: WorkBuddy Skill Specification
 knowledge_type: OFFICIAL
 official_sources:
   - workbuddy-skill
-last_verified: 2026-10-07
+last_verified: 2026-10-26
 status: VERIFIED
 ---
 
@@ -27,6 +27,9 @@ status: VERIFIED
 
 官方当前必填：
 
+- `name`
+- `display_name`
+- `display_name_en`
 - `description`
 - `description_zh`
 - `description_en`
@@ -35,19 +38,20 @@ status: VERIFIED
 
 可选：
 
-- `name`
 - `allowed-tools`
-- `disable-model-invocation`
-- `user-invocable`
+- `examples_zh`
+- `examples_en`
 
-官方示例还包含 `display_name`、`display_name_en`、`category`。
+三项名称字段在当前中英文官方字段表中均为必填。现有模板已经包含三项。
+
+当前两页均未出现 `disable-model-invocation` 和 `user-invocable`。其平台支持状态待核实；不能由文档缺失推断弃用。WB-OPDK 保留对历史配置的接受，详见 `frontmatter-reference.md`。
 
 ### 语义
 
 - `description`：应明确用途和触发词，AI 用来判断何时激活；
 - `allowed-tools`：工具白名单，逗号分隔；
-- `disable-model-invocation: true`：模型不能自动触发，只能用户手动调用；
-- `user-invocable: false`：隐藏菜单，仅供 AI 内部使用。
+- `display_name` / `display_name_en`：市场上的中文 / 英文展示名称；
+- `examples_zh` / `examples_en`：详情页「试试这样用」的中文 / 英文使用案例（可选）。
 
 ## 3. 子资源
 

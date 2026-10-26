@@ -14,6 +14,7 @@ CHECKS=[
     ("Schemas and starters", [sys.executable, SCRIPTS/"validate_schemas.py"]),
     ("Real-world validation records", [sys.executable, SCRIPTS/"validate_validation_records.py"]),
     ("Starter/scaffold smoke tests", [sys.executable, SCRIPTS/"smoke_test_templates.py"]),
+    ("Regression tests", [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"]),
 ]
 
 def run(label,cmd):

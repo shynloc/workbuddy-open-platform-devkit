@@ -2,8 +2,9 @@
 from __future__ import annotations
 import argparse, re
 from pathlib import Path
+import yaml
 
-REQUIRED = ["description", "description_zh", "description_en", "version", "author"]
+REQUIRED = ["name", "display_name", "display_name_en", "description", "description_zh", "description_en", "version", "author"]
 
 def parse_frontmatter(text: str):
     if not text.startswith("---\n"):
@@ -11,11 +12,12 @@ def parse_frontmatter(text: str):
     end = text.find("\n---\n", 4)
     if end < 0:
         return None, "unterminated YAML frontmatter"
-    fm = {}
-    for raw in text[4:end].splitlines():
-        m = re.match(r"^([A-Za-z_][A-Za-z0-9_-]*):\s*(.*)$", raw)
-        if m:
-            fm[m.group(1)] = m.group(2).strip().strip("\"'")
+    try:
+        fm = yaml.safe_load(text[4:end])
+    except yaml.YAMLError as exc:
+        return None, f"invalid YAML frontmatter: {exc}"
+    if not isinstance(fm, dict):
+        return None, "frontmatter must be a YAML mapping"
     return fm, None
 
 def main():
@@ -34,10 +36,10 @@ def main():
             failures.append(err)
         else:
             for k in REQUIRED:
-                if not fm.get(k):
-                    failures.append(f"missing frontmatter field: {k}")
+                if not isinstance(fm.get(k), str) or not fm[k].strip():
+                    failures.append(f"missing or invalid frontmatter field: {k} (non-empty string required)")
             v = fm.get("version", "")
-            if v and not re.fullmatch(r"\d+\.\d+\.\d+", v):
+            if isinstance(v, str) and v and not re.fullmatch(r"\d+\.\d+\.\d+", v):
                 failures.append(f"version is not semver: {v}")
         for ref in re.findall(r"@references/([^\s)\`]+)", text):
             if not (root / "references" / ref).exists():
