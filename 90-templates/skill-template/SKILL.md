@@ -5,6 +5,10 @@ display_name_en: Skill Display Name
 description: 写清技能用途、触发条件与核心输出
 description_zh: 简短中文介绍
 description_en: Brief English introduction
+examples_zh:
+  - "帮我完成示例任务"
+examples_en:
+  - "Help me complete the example task"
 category: writing
 version: 1.0.0
 author: Your Name

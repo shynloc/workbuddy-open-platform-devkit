@@ -76,6 +76,11 @@ def main():
             run(SCRIPTS/"validate_connector.py",dst)
 
         # Scaffold output must also be structurally valid and path-renamed.
+        ss=base/"scaffold-skill"
+        run(SCRIPTS/"scaffold.py","skill","demo-skill",ss)
+        run(SCRIPTS/"validate_skill.py",ss)
+        run(SCRIPTS/"validate_asset_schemas.py",ss)
+
         sx=base/"scaffold-expert"
         run(SCRIPTS/"scaffold.py","expert","demo-expert",sx)
         assert (sx/"agents"/"demo-expert.md").is_file(), "expert agent file was not renamed"

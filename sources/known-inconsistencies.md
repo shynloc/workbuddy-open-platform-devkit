@@ -2,6 +2,10 @@
 
 本文件记录 WorkBuddy 官方文档内部、官方文档与官方模板、或官方文档与当前平台行为之间的已知差异。目的不是替官方选择答案，而是防止 Agent 静默把冲突内容“合理化”。
 
+## 2026-10-26 — Skill 历史字段待核实（共同缺失，不是双语冲突）
+
+中文与英文 Skill 正文均明确要求 `name`、`display_name`、`display_name_en`，两页均未列出 `user-invocable` 与 `disable-model-invocation`。缺失只能说明当前文档未说明，不能推断平台弃用。Schema 与模板保留历史字段；提交前核实平台行为。双语监测以 `missing_in_both` 单独报告此信号，不再把它称为语言不一致。
+
 ## 2026-10-08
 
 ### Expert Team：Lead 设置文件名 — 已由真实平台解析裁决

@@ -9,6 +9,9 @@
 
 ## Frontmatter
 
+- [ ] name
+- [ ] display_name
+- [ ] display_name_en
 - [ ] description
 - [ ] description_zh
 - [ ] description_en
@@ -16,7 +19,8 @@
 - [ ] author
 - [ ] description 清楚写用途/触发场景
 - [ ] allowed-tools 如填写，确实是必要限制
-- [ ] user-invocable / disable-model-invocation 与产品意图一致
+- [ ] examples_zh / examples_en 如提供，为对应语言的案例列表
+- [ ] 如使用历史 user-invocable / disable-model-invocation，在当前平台核实行为；当前双语文档均未列出，不据此认定弃用
 
 ## References
 

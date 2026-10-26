@@ -2,6 +2,9 @@
 
 ## Unreleased — Working-grade Baseline
 
+- 复核 2026-10-26 官方正文：补齐 Skill 三项名称必填字段、可选中英文案例、Schema / YAML Validator / 逐字段失败测试；现有模板名称字段已齐全，不推断已发布 Skill 损坏
+- 双语监测分别报告单侧与共同缺失；保留 user-invocable / disable-model-invocation 历史字段并标明支持状态待核实
+- 补充无营业执照组织经既有腾讯云 / 微信认证的入驻路径；逐页复核九个来源变化后更新 hash baseline，权限标题调整未被误报为 Scope 变更
 - 复核 2026-10-19 Official Source Watch：第三方应用页新增分享能力与 PC 开发手册，OAuth 应用类型改为硬件接入和积分兑换；连接器、Open API 的可见文本变化是 JSON 示例空格，个人/非个人服务类目变化是导航项「收入变现」
 - 微信公众号文章全流程发布 v1.0.0 已通过 WorkBuddy 平台审核并正式发布，成为 WB-OPDK 首个完整 Skill 平台生命周期案例
 - AI 内容主编 v1.0.0 与 AI 编辑部 v1.0.0 已通过 WorkBuddy 平台审核并正式发布，完成 Expert / Expert Team 的真实审核发布闭环

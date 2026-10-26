@@ -1,5 +1,22 @@
 # Maintenance & Validation Scripts
 
+## Offline regression tests
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+覆盖 Skill 八项必填字段逐项缺失、空值、现有模板 / 示例与双语监测的共同缺失、单侧缺失、抓取失败和大小提示。`doctor.py` 和 KB CI 同样执行这些测试。Skill validator 使用 PyYAML 解析 frontmatter，需先安装 `requirements-dev.txt`。
+
+## Bilingual review signals
+
+```bash
+python3 scripts/check_bilingual_docs.py --fail-on-mismatch
+python3 scripts/check_bilingual_docs.py --fail-on-mismatch --fail-on-shared-missing
+```
+
+JSON 报告 v2 的 `missing_in_zh` / `missing_in_en` 仅表示单侧缺失；`missing_in_both` 单独记录双方缺失。`ok` 表示抓取成功且无字面量不一致，`review_required` 也覆盖共同缺失和大小告警。`--fail-on-mismatch` 对单侧缺失及抓取失败返回 2；可加 `--fail-on-shared-missing` 对共同缺失也设门禁。`required_literals` 是监测列表，不是平台必填字段表；共同缺失不证明弃用。
+
 ## Repository Doctor
 
 本地工作级健康检查：

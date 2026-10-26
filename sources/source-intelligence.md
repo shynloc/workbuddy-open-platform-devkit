@@ -22,6 +22,10 @@ WB-OPDK 的 Source Intelligence 目标是：
 - `build_source_change_report.py` — 影响分析和 Review Markdown
 - `.github/workflows/source-watch.yml` — 定时执行
 
+双语监测另见 `bilingual-docs.json` 与 `check_bilingual_docs.py`。报告 v2 区分单侧缺失（mismatch）、双方共同缺失（upstream review）和大小差异（advisory）。共同缺失仍出现在 artifact 的 `missing_in_both` / `review_required`，不能当作平台弃用证据。详见 `scripts/README.md`。
+
+已完成的逐页审查：[2026-10-26 来源复核](reviews/2026-10-26.md)。
+
 ## 重要边界
 
 Source Intelligence **不会自动修改知识库**。

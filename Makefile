@@ -1,4 +1,4 @@
-.PHONY: help setup doctor validate schemas records smoke docs source-check source-review
+.PHONY: help setup doctor validate schemas records smoke test docs source-check source-review
 
 help:
 	@echo "WB-OPDK developer commands:"
@@ -6,6 +6,7 @@ help:
 	@echo "  make doctor        Run working-grade local health checks"
 	@echo "  make validate      Run KB/source/schema/record validation"
 	@echo "  make smoke         Smoke-test starter templates/scaffolds"
+	@echo "  make test          Run offline regression tests"
 	@echo "  make docs          Build HTML knowledge base"
 	@echo "  make source-check  Check current official sources"
 	@echo "  make source-review Compare official sources with baseline"
@@ -31,6 +32,9 @@ validate:
 
 smoke:
 	python3 scripts/smoke_test_templates.py
+
+test:
+	python3 -m unittest discover -s tests -v
 
 docs:
 	python3 scripts/prepare_docs.py
