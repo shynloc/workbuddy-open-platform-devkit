@@ -4,6 +4,7 @@
 from __future__ import annotations
 import argparse, datetime, hashlib, json, re, subprocess
 from pathlib import Path
+from _skill_frontmatter import skill_identity
 
 SKIP_PARTS={".git","__pycache__",".pytest_cache",".mypy_cache",".venv","node_modules","build","dist"}
 SKIP_NAMES={".DS_Store","Thumbs.db","release-manifest.json"}
@@ -24,11 +25,7 @@ def sha256(path):
     return h.hexdigest()
 
 def semver_from_skill(path):
-    text=path.read_text("utf-8")
-    def field(name):
-        m=re.search(rf"(?m)^{re.escape(name)}:\s*[\"']?([^\n\"']+)",text)
-        return m.group(1).strip() if m else None
-    return field("name"),field("version")
+    return skill_identity(path)
 
 def detect(root):
     if (root/"SKILL.md").is_file():

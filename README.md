@@ -81,6 +81,8 @@ Skill / Expert / Expert Team / Connector / Buddy App / Open API
 
 ## Quick Start — 开发者
 
+生成或上传 ZIP 前，先读[上传入口与 ZIP 验收](70-release-engineering/upload-package-guide.md)。原生 Skill 与专家插件的入口、根文件和元数据不同；最终 ZIP 必须解包复验。
+
 如果你想按产品类型一步步走，直接看 **[`DEVELOPER_START.md`](DEVELOPER_START.md)**。
 
 

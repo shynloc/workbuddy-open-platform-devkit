@@ -11,7 +11,7 @@
       "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
     },
     "display_name": {"type": "string", "minLength": 1},
-    "display_name_en": {"type": "string"},
+    "display_name_en": {"type": "string", "minLength": 1},
     "description": {"type": "string", "minLength": 1},
     "description_zh": {"type": "string", "minLength": 1},
     "description_en": {"type": "string", "minLength": 1},

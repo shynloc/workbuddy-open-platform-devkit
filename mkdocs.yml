@@ -125,6 +125,7 @@ nav:
       - Runtime Test Matrix: 70-release-engineering/runtime-test-matrix.md
       - Security Checklist: 70-release-engineering/security-checklist.md
       - Package Validation: 70-release-engineering/package-validation.md
+      - Upload Entry & ZIP Guide: 70-release-engineering/upload-package-guide.md
       - Submission Materials: 70-release-engineering/submission-materials.md
       - Release Manifest: 70-release-engineering/release-manifest.md
       - Release Pipeline: 70-release-engineering/release-pipeline.md

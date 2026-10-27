@@ -9,8 +9,9 @@ Requires:
 """
 
 from __future__ import annotations
-import argparse, json, re, subprocess, sys
+import argparse, hashlib, json, re, subprocess, sys
 from pathlib import Path
+from _skill_frontmatter import skill_identity
 
 ROOT=Path(__file__).resolve().parents[1]
 SCRIPTS=ROOT/"scripts"
@@ -23,11 +24,7 @@ def run(args):
         raise SystemExit(p.returncode)
 
 def parse_skill(path):
-    text=(path/"SKILL.md").read_text("utf-8")
-    def f(k):
-        m=re.search(rf"(?m)^{re.escape(k)}:\s*[\"']?([^\n\"']+)",text)
-        return m.group(1).strip() if m else None
-    return f("name") or path.name, f("version") or "unknown"
+    return skill_identity(path/"SKILL.md")
 
 def detect(path):
     if (path/"SKILL.md").is_file():
@@ -59,7 +56,10 @@ def main():
     if not asset.is_dir():
         raise SystemExit("asset path must be a directory")
 
-    typ,name,version,validator=detect(asset)
+    try:
+        typ,name,version,validator=detect(asset)
+    except (ValueError, OSError) as exc:
+        raise SystemExit(f"Invalid package metadata: {exc}")
     dist=Path(args.dist).resolve()
     dist.mkdir(parents=True,exist_ok=True)
     base=f"{safe_name(name)}-v{safe_name(version)}"
@@ -87,6 +87,7 @@ def main():
     ])
 
     run([sys.executable,SCRIPTS/"pack_release.py",asset,"--out",archive])
+    run([sys.executable,SCRIPTS/"validate_release_zip.py",archive,"--type",typ,"--source",asset])
 
     run([
         sys.executable,SCRIPTS/"generate_submission_notes.py",asset,
@@ -99,6 +100,8 @@ def main():
         "version":version,
         "manifest":str(manifest),
         "archive":str(archive),
+        "archive_sha256":hashlib.sha256(archive.read_bytes()).hexdigest(),
+        "archive_validation":"pass",
         "submission_notes":str(submission),
         "status":"ready-for-platform-parse-and-runtime-test"
     }

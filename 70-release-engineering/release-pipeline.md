@@ -104,11 +104,16 @@ Manifest 用于内部版本审计，不是官方强制上传文件。
 
 ## 8. Package
 
+先读 [上传入口与 ZIP 验收](upload-package-guide.md)，核对类型、实际页面入口和逻辑根。以下使用原生 Skill 示例；专家应改为 expert，团队为 expert-team，Connector 为 connector。
+
 ```bash
 python3 scripts/pack_release.py path/to/package --out dist/release.zip
+python3 scripts/validate_release_zip.py dist/release.zip --type skill --source path/to/package
 ```
 
 ## 9. Submission Materials
+
+记录最终 ZIP SHA256、DevKit commit、实际条目与验证状态；manifest 和提交说明保存在 ZIP 外。只上传资产 ZIP，不再套一层交接目录。源修改后必须重建并复验。
 
 一键 Release Check 现在会额外生成：
 
