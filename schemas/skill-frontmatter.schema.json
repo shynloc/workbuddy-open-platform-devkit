@@ -2,9 +2,9 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/shynloc/workbuddy-open-platform-devkit/schemas/skill-frontmatter.schema.json",
   "title": "WB-OPDK Skill Frontmatter",
-  "description": "Derived schema for parsed WorkBuddy SKILL.md YAML frontmatter.",
+  "description": "Derived schema for parsed WorkBuddy SKILL.md YAML frontmatter. Required keys follow the official field table verified 2026-10-27. disable-model-invocation and user-invocable remain optional properties because this schema does not claim the runtime rejects them after they left the official table.",
   "type": "object",
-  "required": ["description", "description_zh", "description_en", "version", "author"],
+  "required": ["name", "display_name", "display_name_en", "description", "description_zh", "description_en", "version", "author"],
   "properties": {
     "name": {
       "type": "string",
@@ -22,6 +22,8 @@
     },
     "author": {"type": "string", "minLength": 1},
     "allowed-tools": {"type": "string"},
+    "examples_zh": {"type": "array", "items": {"type": "string"}},
+    "examples_en": {"type": "array", "items": {"type": "string"}},
     "disable-model-invocation": {"type": "boolean"},
     "user-invocable": {"type": "boolean"}
   },

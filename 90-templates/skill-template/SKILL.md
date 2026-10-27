@@ -5,11 +5,8 @@ display_name_en: Skill Display Name
 description: 写清技能用途、触发条件与核心输出
 description_zh: 简短中文介绍
 description_en: Brief English introduction
-category: writing
 version: 1.0.0
 author: Your Name
-user-invocable: true
-disable-model-invocation: false
 ---
 
 # 技能名称

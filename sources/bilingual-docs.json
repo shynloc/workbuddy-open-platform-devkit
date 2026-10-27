@@ -5,7 +5,7 @@
       "id": "skill",
       "zh": "https://open.workbuddy.cn/docs/skill",
       "en": "https://open.workbuddy.cn/en/docs/skill",
-      "required_literals": ["SKILL.md", "description_zh", "description_en", "allowed-tools", "user-invocable"]
+      "required_literals": ["SKILL.md", "description_zh", "description_en", "allowed-tools", "examples_zh"]
     },
     {
       "id": "expert",

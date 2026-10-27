@@ -116,7 +116,7 @@ AI 编辑部已经完成：
 
 先验证：
 
-- ≥5 高频场景
+- Top 3–5 高频场景
 - 少量职责清晰 Work Modes
 - Skill / Expert / Connector 市场
 - 模型排序和默认模型

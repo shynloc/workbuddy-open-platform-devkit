@@ -5,7 +5,7 @@ official_sources:
   - workbuddy-onboarding
   - workbuddy-service-categories-individual
   - workbuddy-service-categories-enterprise
-last_verified: 2026-10-08
+last_verified: 2026-10-27
 status: VERIFIED
 ---
 
@@ -13,10 +13,13 @@ status: VERIFIED
 
 ## 1. 先确定发布主体
 
-- 个人主体
-- 非个人主体（企业/组织等）
+入驻页当前把认证分成三条路径，见 `00-platform/onboarding.md`：
 
-主体身份不是“市场展示字段”，它会影响可选服务类目和资质要求。
+- 个人主体
+- 企业主体：持有营业执照，含个体工商户
+- 其他组织机构：无营业执照的事业单位、社会团体、基金会等
+
+主体身份会影响可选服务类目和资质要求。类目文档仍只有两页：个人主体，以及非个人主体。企业认证和组织机构认证发布前都回查非个人主体类目页。
 
 ## 2. 按实际功能判断服务
 

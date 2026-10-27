@@ -9,6 +9,9 @@
 
 ## Frontmatter
 
+- [ ] name
+- [ ] display_name
+- [ ] display_name_en
 - [ ] description
 - [ ] description_zh
 - [ ] description_en
@@ -16,7 +19,7 @@
 - [ ] author
 - [ ] description 清楚写用途/触发场景
 - [ ] allowed-tools 如填写，确实是必要限制
-- [ ] user-invocable / disable-model-invocation 与产品意图一致
+- [ ] examples_zh / examples_en 如填写，与详情页「试试这样用」一致
 
 ## References
 

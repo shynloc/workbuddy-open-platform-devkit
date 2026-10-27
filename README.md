@@ -53,7 +53,7 @@ Skill / Expert / Expert Team / Connector / Buddy App / Open API
 - Buddy 应用：https://open.workbuddy.cn/docs/buddy-app
 - 第三方应用：https://open.workbuddy.cn/docs/third-party-app
 - Open API：https://open.workbuddy.cn/docs/openapi
-- 联系渠道：https://open.workbuddy.cn/docs/contact
+- 联系渠道：https://open.workbuddy.cn/docs/contact （当前页面只保留咨询邮箱 `openworkbuddy@tencent.com`）
 
 完整来源注册表见 [`sources/official-sources.yaml`](sources/official-sources.yaml)。
 

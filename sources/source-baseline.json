@@ -6,9 +6,9 @@
       "id": "workbuddy-open-platform-overview",
       "url": "https://open.workbuddy.cn/docs/what-is-open-platform",
       "status": 200,
-      "html_sha256": "8ddc363f71baf8f28c1e8f54e4238da3c20118db78fb566fa802faa54feb4a13",
-      "text_sha256": "6186dea3ac912ccc0900303d595a8e3712ce0e0630f36f21222ee5f9d5463717",
-      "visible_text_bytes": 1197,
+      "html_sha256": "6c805064d289d298c32e80698e8a9fffa3ffb5c74fd3139e6acb1e0a10ceba8a",
+      "text_sha256": "ffcc0ac02773fe9efd3e6530cd62feeb62dac1f93a4381e898616cecf3238389",
+      "visible_text_bytes": 1155,
       "heading_sha256": "1ae62c373863a559c79021cce4fc9482cf6543ab90dcdf47e01062ea00b5e05f",
       "headings": [
         "开放平台概述",
@@ -17,16 +17,16 @@
         "平台优势"
       ],
       "last_modified": null,
-      "etag": "\"gqs8jhvsy02wo9\""
+      "etag": "\"rijpewdb2x2x6l\""
     },
     {
       "id": "workbuddy-onboarding",
       "url": "https://open.workbuddy.cn/docs/onboarding",
       "status": 200,
-      "html_sha256": "77515cdf785ef25fe047baa4defcd3371f892ca4a3296d8ce0806bce1f76a404",
-      "text_sha256": "183beab0067427d62a5267cf1eb8afe448626914daa4f634f3cbb1954f6301a9",
-      "visible_text_bytes": 4411,
-      "heading_sha256": "042446d2d9b1790a9440d57833edf490aea3649a04d45b6defa7f8a93f0958c8",
+      "html_sha256": "0f65709de0de59b37b98641d819b968307f9bd801767c88ebcb7de73c85b9f1f",
+      "text_sha256": "faf0fd3225ca5707760f89e6ebb8c517902b6b6d383cb4585e377a6a5d919fb7",
+      "visible_text_bytes": 8191,
+      "heading_sha256": "5f15bb4111f079266fb32a4dbd78b1f63aa566a952871d6e3b6230f6656f5b9c",
       "headings": [
         "入驻开放平台",
         "企业认证",
@@ -35,22 +35,25 @@
         "上传企业信息",
         "完成企业验证",
         "认证结果与规则",
-        "认证失败处理",
+        "其他组织机构认证",
+        "上传组织信息",
+        "完成组织验证",
         "个人认证",
         "认证准备",
         "必填信息",
-        "重要规则"
+        "重要规则",
+        "认证失败处理"
       ],
       "last_modified": null,
-      "etag": "\"11v87y2xmuq36g1\""
+      "etag": "\"ckrv1jrl8s3gyn\""
     },
     {
       "id": "workbuddy-skill",
       "url": "https://open.workbuddy.cn/docs/skill",
       "status": 200,
-      "html_sha256": "3277bcc22a1a5f0d0721d4b87ab3d7e9780a0552b92fb77a7dd20272977968d1",
-      "text_sha256": "5a693512c41c6fae64af4e70db79fc7e00b51d2f7cea1f4040da7795579d9ac2",
-      "visible_text_bytes": 3564,
+      "html_sha256": "e74a8cc87d67644518bdb855e2481192f685a07999efc8bf2f90b4de0e2dff91",
+      "text_sha256": "6b640c51537bb6fd1135a88fec143b02631a8e0e601c21fff3ee066cf7c92505",
+      "visible_text_bytes": 3890,
       "heading_sha256": "27ce7113b3f845bf8d0a6cc111206a4dce0c7f05a9208bec388464a797ba425b",
       "headings": [
         "技能",
@@ -62,15 +65,15 @@
         "templates — 模板文件"
       ],
       "last_modified": null,
-      "etag": "\"41tkhe0mr43dfv\""
+      "etag": "\"rtzcuce3gy3eqi\""
     },
     {
       "id": "workbuddy-expert",
       "url": "https://open.workbuddy.cn/docs/expert",
       "status": 200,
-      "html_sha256": "c024b6be40c6531da13e3aa5d2665d291962e7691cb1c517cbcd8eabb58c4a13",
-      "text_sha256": "3750f170637228eaa38e78cd1b3260db22a1df3c2a21b442a2bd567bfd7d575c",
-      "visible_text_bytes": 15103,
+      "html_sha256": "33393d1437c979758dc866887a319ecf34517e7872b8b8bae0946312041ec8bb",
+      "text_sha256": "cdf328afe588530b5a1d18e818e2c76b5c22546fd420241b146e2c342f8a1f99",
+      "visible_text_bytes": 15024,
       "heading_sha256": "527227338fed34562582a3a9370375cce820223cece1fca38701d54b76f88569",
       "headings": [
         "专家",
@@ -98,13 +101,13 @@
         "模板文件"
       ],
       "last_modified": null,
-      "etag": "\"zvpzoj9a0s4kvd\""
+      "etag": "\"kdufxsq1n34leo\""
     },
     {
       "id": "workbuddy-expert-team",
       "url": "https://open.workbuddy.cn/docs/expert-team",
       "status": 200,
-      "html_sha256": "5ec4c0a3bb91e552268a035e5e14145882a7dd6998a8081904b4fa64032edc4a",
+      "html_sha256": "3b0fbe2dfa2e249a58dc22634f25c6f84fa44413964716f27904d0858578e58f",
       "text_sha256": "ea7e5e2e8f89e24c49902a96276aabed91685539389a8fe0395b4b6cb6b7d03d",
       "visible_text_bytes": 20515,
       "heading_sha256": "380e5a21b02a5a0ced44d0eb709f110a9389120e53dcdc03b81d6e328614d1dc",
@@ -133,13 +136,13 @@
         "模板文件"
       ],
       "last_modified": null,
-      "etag": "\"10742f8qef14ulm\""
+      "etag": "\"14awbppys974v6g\""
     },
     {
       "id": "workbuddy-connector",
       "url": "https://open.workbuddy.cn/docs/connector",
       "status": 200,
-      "html_sha256": "6d4c8902dd6738fbcc6c0465ee8a29a63a05f696a903b9401c52967cc312f94d",
+      "html_sha256": "5e606b480ece0a1bdb53d96d889f12a17c711f81d298456a36e4ffced28021ef",
       "text_sha256": "24114e1c40c1f5ab8235181b5b3c3e25e1ce5fede0410e840d23890bde727f6a",
       "visible_text_bytes": 20480,
       "heading_sha256": "c7b6eb5671ce3dc0377f6bdcc107bcf8bf8d71f54a7dcd98179815058e0fb527",
@@ -165,15 +168,15 @@
         "提交前检查"
       ],
       "last_modified": null,
-      "etag": "\"xxwrk5sn305n8k\""
+      "etag": "\"1grizg855z5nte\""
     },
     {
       "id": "workbuddy-buddy-app",
       "url": "https://open.workbuddy.cn/docs/buddy-app",
       "status": 200,
-      "html_sha256": "31e1a0b05f39671217ad36fa03f6de906a58d38c5a2e10979317c104f20cb3e8",
-      "text_sha256": "68a8df2830e14c201e20836f09fe3c4f490a5471193423fca1b9a4264f484d7c",
-      "visible_text_bytes": 12513,
+      "html_sha256": "86bad4a62b4418b0bbf54084d463ed632ae7650f4fd78209a64a845f6df10ee8",
+      "text_sha256": "f0199119c01f453c7645b04eb3c7aeb300bee3d3978e2e535e28d67195bc066d",
+      "visible_text_bytes": 12537,
       "heading_sha256": "dd4f11b9383083787cc1273aeaf7ad572eb312978a7244f39dea915220ea821a",
       "headings": [
         "Buddy应用",
@@ -205,16 +208,16 @@
         "生命周期操作"
       ],
       "last_modified": null,
-      "etag": "\"xhi8unelsj65wf\""
+      "etag": "\"wxiyus0oa366ry\""
     },
     {
       "id": "workbuddy-third-party-app",
       "url": "https://open.workbuddy.cn/docs/third-party-app",
       "status": 200,
-      "html_sha256": "7af3cd18030c105ecc0da626991aee22b7bb11e09590f4a0c4c262f0c4b1016d",
-      "text_sha256": "67f0f9934190068cd5bb1b2b38f45fb98eb93a154fdfcfaffb867e4d842ea041",
-      "visible_text_bytes": 29245,
-      "heading_sha256": "a863079872ca4bc9eaaa004057a1e4ff3103dd249b0b47e47b2a2020c8dfc626",
+      "html_sha256": "29deeed952524555bd8ab43364bad6b2ad5f2b1cab4b8f3153d3d6d2ba46555d",
+      "text_sha256": "c1903615ac224dd83542887b50c0cd1d72f182291a15c9007bc103ffa018df74",
+      "visible_text_bytes": 29385,
+      "heading_sha256": "fb1dd9b81da74535fdadb41d81f0778471e6c262277e25424a8fabd8a31fb651",
       "headings": [
         "第三方应用",
         "硬件接入与积分兑换",
@@ -234,7 +237,7 @@
         "应用说明",
         "授权认证",
         "Token 类型一览",
-        "权限配置列表及关联 API",
+        "权限配置",
         "Scope 权限列表",
         "权限申请指南",
         "申请步骤",
@@ -262,13 +265,13 @@
         "错误处理与上线检查"
       ],
       "last_modified": null,
-      "etag": "\"7rbu1vknh45kzs\""
+      "etag": "\"a9x9aq8f8u5lr8\""
     },
     {
       "id": "workbuddy-openapi",
       "url": "https://open.workbuddy.cn/docs/openapi",
       "status": 200,
-      "html_sha256": "a49d8c3bf3c199e890b3d7b0b9fd691cbe5275b2b93d73d07065b47e53668301",
+      "html_sha256": "e6906279042a93054a2b59f5cd7640a12238bebe72a29a478cd5aabc1041f20c",
       "text_sha256": "34fc6a114cfb86296e4624fab73698d6ff31705bd9fd1da1e4e7393dd681acb8",
       "visible_text_bytes": 34596,
       "heading_sha256": "6e1fe95313e76f8f5d06fd15692214340fdb3374b62efc4f5dfef6a4d9244cc2",
@@ -332,31 +335,30 @@
         "返回码规范"
       ],
       "last_modified": null,
-      "etag": "\"grwufl61x97lit\""
+      "etag": "\"r72kwbis8i7m3p\""
     },
     {
       "id": "workbuddy-contact",
       "url": "https://open.workbuddy.cn/docs/contact",
       "status": 200,
-      "html_sha256": "737a5e131351b1a868b9cfcd55abfe945c1692d49be22af191de32eb77490f0b",
-      "text_sha256": "b127e31eeba5127a49095348cea81072e6d2954e8c4853989c22e9859d8a2b12",
-      "visible_text_bytes": 330,
-      "heading_sha256": "9ef975f34743d9a95ccd617107c61689460ab5568161b21e08f845a49f6e1630",
+      "html_sha256": "e959dd64e49645fcb0cf6dcaef19d23a833a33b3acb1ff929b3392c76133f875",
+      "text_sha256": "a7073c4a3df4c82cffe233254b6cb92e1ceec9ada42e7ed603d21b3ff4e5fc0b",
+      "visible_text_bytes": 225,
+      "heading_sha256": "e32dd280a98ffd40f302c0c9995e94b1a4661fe5764780430c5faf90a7878f5b",
       "headings": [
         "联系渠道",
-        "咨询邮箱",
-        "官方社群"
+        "咨询邮箱"
       ],
       "last_modified": null,
-      "etag": "\"4ebu3swife2vmz\""
+      "etag": "\"22e42vx0w22vff\""
     },
     {
       "id": "workbuddy-service-categories-individual",
       "url": "https://open.workbuddy.cn/docs/service-categories-individual",
       "status": 200,
-      "html_sha256": "3207af2eb7ded0464ac59aadf521caefcfa1623c680ba734af40ae6bdc51eb80",
-      "text_sha256": "b508dc783f2a8a5e5f02a4b7a782d5249767b0983e87a76d5d4d5ae6e7b7f261",
-      "visible_text_bytes": 6746,
+      "html_sha256": "c2ab4b4fa13d3ed9104266f34bcfb5210562c44855067241349e1f7e972b1fda",
+      "text_sha256": "2dfb5b21026ec734341c06ccb60ea89ec8cbb7aecddffa24b9797aaf3dad052d",
+      "visible_text_bytes": 6796,
       "heading_sha256": "bbfbb806c89ee00dd8d256c27098b3de3d9735e8c02c136ee2ff1ba009089e6c",
       "headings": [
         "服务类目（个人主体）",
@@ -371,15 +373,15 @@
         "体育"
       ],
       "last_modified": null,
-      "etag": "\"kd2buzglao3g5x\""
+      "etag": "\"lm1ub5925t3hc4\""
     },
     {
       "id": "workbuddy-service-categories-enterprise",
       "url": "https://open.workbuddy.cn/docs/service-categories-enterprise",
       "status": 200,
-      "html_sha256": "3f364065844d123195bdcd71a3e0ceb040351515efabd23c682ca3825dfd8735",
-      "text_sha256": "3b43bce4beaa24fd9855d47fae4cce147781b501297ab6a7ac870d5e263153cb",
-      "visible_text_bytes": 147721,
+      "html_sha256": "146f323208e9198c8cb4d7ac0ea06fbd6dc9db786b07a3980919732103ec3cc6",
+      "text_sha256": "6e55474a657dc6f7835bb84629eb631960cbadf58f390dd6f78917c26c139e84",
+      "visible_text_bytes": 147771,
       "heading_sha256": "e7995d92eda0e0ef6ceef9eb0108953d331b9db33bc7526744b7e6d540db8b23",
       "headings": [
         "服务类目（非个人主体）",
@@ -408,7 +410,7 @@
         "深度合成"
       ],
       "last_modified": null,
-      "etag": "\"186dkbwgygs86c6\""
+      "etag": "\"uy6a2qqfav87jk\""
     }
   ]
 }

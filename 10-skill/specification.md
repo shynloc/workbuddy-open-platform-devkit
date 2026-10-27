@@ -3,7 +3,7 @@ title: WorkBuddy Skill Specification
 knowledge_type: OFFICIAL
 official_sources:
   - workbuddy-skill
-last_verified: 2026-10-07
+last_verified: 2026-10-27
 status: VERIFIED
 ---
 
@@ -25,8 +25,11 @@ status: VERIFIED
 
 ## 2. Frontmatter
 
-官方当前必填：
+官方字段表当前必填：
 
+- `name`
+- `display_name`
+- `display_name_en`
 - `description`
 - `description_zh`
 - `description_en`
@@ -35,19 +38,21 @@ status: VERIFIED
 
 可选：
 
-- `name`
 - `allowed-tools`
-- `disable-model-invocation`
-- `user-invocable`
+- `examples_zh`
+- `examples_en`
 
-官方示例还包含 `display_name`、`display_name_en`、`category`。
+`description_zh` / `description_en` 写明展示在技能详情页。`examples_zh` / `examples_en` 展示在详情页「试试这样用」。
+
+2026-10-27 的字段表和示例都不再包含 `category`、`disable-model-invocation`、`user-invocable`。中英文页面一致。本仓库不把这三项从历史包里判为非法，也未观察到运行时拒绝它们。字段表以当前官方页为准。
+
+官方示例把 `display_name_en` 写成 `切英文版展示名称`（冒号后没有空格），并把 `example` 写成 `exmaple`。示例缺陷见 `sources/known-inconsistencies.md`。模板使用可提交的英文展示名，不复制这两处笔误。
 
 ### 语义
 
 - `description`：应明确用途和触发词，AI 用来判断何时激活；
 - `allowed-tools`：工具白名单，逗号分隔；
-- `disable-model-invocation: true`：模型不能自动触发，只能用户手动调用；
-- `user-invocable: false`：隐藏菜单，仅供 AI 内部使用。
+- `examples_zh` / `examples_en`：详情页上的使用案例，不是字段表里的必填项。
 
 ## 3. 子资源
 
