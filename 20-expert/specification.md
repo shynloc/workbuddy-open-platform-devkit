@@ -3,7 +3,7 @@ title: WorkBuddy Expert Specification
 knowledge_type: OFFICIAL
 official_sources:
   - workbuddy-expert
-last_verified: 2026-10-07
+last_verified: 2026-10-27
 status: VERIFIED
 ---
 
@@ -82,3 +82,9 @@ my-expert/
 官方当前列出 15 个分类：
 
 01-ProductDesign、02-Engineering、03-GameSpatial、04-DataAI、05-MarketingGrowth、06-ContentCreative、07-SalesCommerce、08-FinanceInvestment、09-OperationsHR、10-ProjectQuality、11-SecurityCompliance、12-IndustryConsultant、13-TencentZone、14-WorldWise、15-Education。
+
+## 6. 解析失败
+
+开放平台解析失败时，官方当前写：对照基础结构和配置文件排查；仍失败则发邮件到 `openworkbuddy@tencent.com`。
+
+同段正文写的是「创建技能过程中」，页面本身是专家文档。2026-10-27 起，这页删掉了「扫描开放平台首页下方的二维码，加入开发者群聊沟通」。技能页仍保留扫码加入社群的句子，联系渠道页已去掉「官方社群」。三处并列记录在 `sources/known-inconsistencies.md`。

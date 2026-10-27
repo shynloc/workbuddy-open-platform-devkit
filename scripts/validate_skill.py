@@ -3,7 +3,16 @@ from __future__ import annotations
 import argparse, re
 from pathlib import Path
 
-REQUIRED = ["description", "description_zh", "description_en", "version", "author"]
+REQUIRED = [
+    "name",
+    "display_name",
+    "display_name_en",
+    "description",
+    "description_zh",
+    "description_en",
+    "version",
+    "author",
+]
 
 def parse_frontmatter(text: str):
     if not text.startswith("---\n"):

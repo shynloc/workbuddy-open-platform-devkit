@@ -3,7 +3,7 @@ title: WorkBuddy Buddy App Specification
 knowledge_type: OFFICIAL
 official_sources:
   - workbuddy-buddy-app
-last_verified: 2026-10-07
+last_verified: 2026-10-27
 status: VERIFIED
 ---
 
@@ -29,7 +29,7 @@ status: VERIFIED
 - 场景胶囊：推荐场景 + 可绑定 Expert/Skill/案例
 - 模型配置
 - 垂直行业市场：Skills / Experts / Connectors / 灵感案例
-- 内嵌已有功能：如 MCP Apps
+- 内嵌已有功能：MCP Apps。同页最佳实践另写「iframe 或 MCP Apps」，两处不要并成一句，见 `sources/known-inconsistencies.md`
 - 以及与上述能力配套的应用级配置
 
 ## 3. WorkBuddy 提供的底座

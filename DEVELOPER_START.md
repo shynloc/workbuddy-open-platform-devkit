@@ -139,7 +139,7 @@ python3 scripts/validate_connector.py ./work/my-service
 先定义：
 
 - 目标行业 / 用户
-- ≥5 高频场景
+- Top 3–5 高频场景
 - 少量职责明显不同的 Work Modes
 - Experts / Skills / Connectors
 - 模型策略

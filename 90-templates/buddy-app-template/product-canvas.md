@@ -6,7 +6,7 @@
 - Role:
 - Core JTBD:
 
-## Top 5 High-frequency Scenarios
+## Top 3–5 High-frequency Scenarios
 
 1.
 2.

@@ -4,7 +4,7 @@ knowledge_type: OFFICIAL
 official_sources:
   - workbuddy-third-party-app
   - workbuddy-openapi
-last_verified: 2026-10-20
+last_verified: 2026-10-27
 status: VERIFIED
 ---
 
@@ -78,4 +78,4 @@ OAuth 应用页当前列出的能力域：
 
 公开列表未变：`user.profile.readable`、`user.contact.readable`、`user.credit.exchange`、`user.task.invokable`、`user.task.readable`、`user.localassistant.invokable`、`user.localassistant.readable`。
 
-积分兑换应用只开放积分与权益类 Scope。硬件应用可以按业务申请全部权限，这不是默认全选的理由。
+这一节的标题已从「权限配置列表及关联 API」改为「权限配置」。权限申请指南现在写明：硬件接入应用可按业务需要申请全部 Scope；积分兑换应用仅开放部分权限（如积分与权益类 `user.credit.exchange`），不提供其他能力域的权限选项。这仍不是默认全选的理由。最小权限原则的三句话还在。
