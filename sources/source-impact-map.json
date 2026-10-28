@@ -27,7 +27,12 @@
         "90-templates/skill-template/",
         "scripts/validate_skill.py",
         "scripts/scaffold.py",
-        "scripts/smoke_test_templates.py"
+        "scripts/smoke_test_templates.py",
+        "AGENTS.md",
+        "70-release-engineering/upload-package-guide.md",
+        "scripts/pack_release.py",
+        "scripts/validate_release_zip.py",
+        "tests/test_release_zip.py"
       ]
     },
     "workbuddy-expert": {
@@ -37,7 +42,12 @@
         "90-templates/expert-template/",
         "scripts/validate_expert.py",
         "scripts/audit_official_templates.py",
-        "sources/official-template-audit-baseline.json"
+        "sources/official-template-audit-baseline.json",
+        "AGENTS.md",
+        "70-release-engineering/upload-package-guide.md",
+        "scripts/pack_release.py",
+        "scripts/validate_release_zip.py",
+        "tests/test_release_zip.py"
       ]
     },
     "workbuddy-expert-team": {
@@ -48,7 +58,12 @@
         "scripts/validate_expert_team.py",
         "scripts/audit_official_templates.py",
         "sources/known-inconsistencies.md",
-        "sources/official-template-audit-baseline.json"
+        "sources/official-template-audit-baseline.json",
+        "AGENTS.md",
+        "70-release-engineering/upload-package-guide.md",
+        "scripts/pack_release.py",
+        "scripts/validate_release_zip.py",
+        "tests/test_release_zip.py"
       ]
     },
     "workbuddy-connector": {
@@ -59,7 +74,12 @@
         "90-templates/connector-mcp-token-template/",
         "90-templates/connector-mcp-oauth-template/",
         "90-templates/connector-cli-template/",
-        "scripts/validate_connector.py"
+        "scripts/validate_connector.py",
+        "AGENTS.md",
+        "70-release-engineering/upload-package-guide.md",
+        "scripts/pack_release.py",
+        "scripts/validate_release_zip.py",
+        "tests/test_release_zip.py"
       ]
     },
     "workbuddy-buddy-app": {

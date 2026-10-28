@@ -12,6 +12,7 @@ from pathlib import Path
 
 import yaml
 from jsonschema import Draft202012Validator
+from _skill_frontmatter import read_frontmatter
 
 ROOT=Path(__file__).resolve().parents[1]
 SCHEMAS=ROOT/"schemas"
@@ -70,7 +71,7 @@ def main():
     ok=True
 
     if typ=="skill":
-        ok &= validate(frontmatter(root/"SKILL.md"),"skill-frontmatter.schema.json","SKILL.md frontmatter")
+        ok &= validate(read_frontmatter(root/"SKILL.md"),"skill-frontmatter.schema.json","SKILL.md frontmatter")
 
     elif typ in {"expert","expert-team"}:
         plugin=root/".codebuddy-plugin"/"plugin.json"

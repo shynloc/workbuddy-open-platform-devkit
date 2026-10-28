@@ -10,13 +10,10 @@ import argparse, json, re
 from pathlib import Path
 
 import yaml
+from _skill_frontmatter import read_frontmatter
 
 def skill_meta(root):
-    text=(root/"SKILL.md").read_text("utf-8")
-    m=re.match(r"^---\n(.*?)\n---\n",text,re.S)
-    if not m:
-        raise ValueError("SKILL.md missing YAML frontmatter")
-    d=yaml.safe_load(m.group(1)) or {}
+    d=read_frontmatter(root/"SKILL.md")
     return {
         "type":"Skill",
         "name":d.get("display_name") or d.get("name") or root.name,

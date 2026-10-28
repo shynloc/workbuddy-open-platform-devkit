@@ -28,6 +28,8 @@ SOP / 方法 → Skill
 
 ## 我要做 Skill
 
+先核对[上传入口与 ZIP 验收](70-release-engineering/upload-package-guide.md)：原生 Skill 走技能入口，专家配置入口要求插件清单，两种结构不要混用。
+
 读：
 
 - [Skill Specification](10-skill/specification.md)
@@ -45,6 +47,7 @@ python3 scripts/scaffold.py skill my-skill ./work/my-skill
 ```bash
 python3 scripts/validate_skill.py ./work/my-skill
 python3 scripts/release_check.py ./work/my-skill --dist ./dist --side-effect-review not-applicable
+python3 scripts/validate_release_zip.py ./dist/my-skill-v1.0.0.zip --type skill --source ./work/my-skill
 ```
 
 ---
@@ -191,6 +194,8 @@ python3 scripts/validate_connector.py ./work/my-service
 ---
 
 ## 发布前统一执行
+
+必须读[上传入口与 ZIP 验收](70-release-engineering/upload-package-guide.md)，确认类型、入口与最终 ZIP；清单、说明和 ZIP 对应同一版本。
 
 无论什么类型，都读：
 

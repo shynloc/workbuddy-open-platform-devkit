@@ -1,5 +1,7 @@
 # Package Validation
 
+先读 [上传入口与实际 ZIP 验收](upload-package-guide.md)。先确认类型与入口，再验证源目录和最终 ZIP。
+
 ## 通用
 
 - [ ] 根目录结构符合对应官方类型
@@ -9,6 +11,8 @@
 - [ ] 不包含 .DS_Store、临时文件、缓存、明文 Secret
 - [ ] version 使用语义化版本
 - [ ] README/说明中的字段与实际配置一致
+- [ ] 最终 ZIP 用 `validate_release_zip.py --type ... --source ...` 解包复验，条目与源文件逐字节一致
+- [ ] 记录 DevKit commit、ZIP SHA256、静态与真实平台验证的各自状态
 
 ## Skill
 

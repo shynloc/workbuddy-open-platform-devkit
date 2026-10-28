@@ -49,7 +49,7 @@ status: VERIFIED
 
 发布前检查：
 
-- ZIP 顶层只有一个 skill 根目录；
+- DevKit 输出一层 skill 包装目录，其下直接是逻辑根，不额外套导出目录；本地也验收平铺逻辑根，平台布局接受范围仍需实测；
 - 根目录有 SKILL.md；
 - frontmatter YAML 可解析；
 - 必填字段齐全；
@@ -57,6 +57,8 @@ status: VERIFIED
 - scripts 运行命令真实可执行；
 - 不含凭据/本地绝对路径；
 - version 使用语义化版本。
+
+核对页面为技能入口，而非专家配置入口。按 `70-release-engineering/upload-package-guide.md` 构建并验收实际交付 ZIP，使用 `validate_release_zip.py --type skill --source <skill-root>` 比对文件内容。
 
 ## 5. Runtime Test
 

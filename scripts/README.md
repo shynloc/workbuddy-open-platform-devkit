@@ -50,12 +50,24 @@ python3 scripts/validate_json_schema.py   path/to/instance.json   schemas/connec
 
 ## Release packages
 
+生成 ZIP 或处理上传失败前，先读 `70-release-engineering/upload-package-guide.md`。`pack_release.py` 现在需要 `requirements-dev.txt`，会验证源配置及实际 ZIP 后才替换目标；输出必须在资产目录外。用明确的类型对最终交付文件复验：
+
+```bash
+python3 scripts/validate_release_zip.py dist/package.zip --type skill --source path/to/skill
+python3 -m unittest discover -s tests -v
+```
+
+`--type` 可选值是 skill、expert、expert-team、connector。归档检查接受一个逻辑根（平铺或单层包装），拒绝额外嵌套、错误入口标记、漏掉隐藏清单、声明路径/大小写错误及内容不一致。静态通过不代表真实平台上传成功。
+
+双语报告 v2 的 `missing_in_zh` / `missing_in_en` 表示单侧缺失，`missing_in_both` 单独表示共同缺失；`review_required` 也覆盖共同缺失和大小提示。`--fail-on-mismatch` 对单侧缺失/抓取失败返回 2；需要共同缺失也失败时加 `--fail-on-shared-missing`。监测列表不是平台必填字段表，两个历史调用字段仍接受且状态待核实。
+
 ```bash
 python3 scripts/validate_skill.py path/to/skill
 python3 scripts/validate_expert.py path/to/expert
 python3 scripts/validate_expert_team.py path/to/team
 python3 scripts/validate_connector.py path/to/connector
 python3 scripts/pack_release.py path/to/package --out dist/package.zip
+python3 scripts/validate_release_zip.py dist/package.zip --type skill --source path/to/package
 ```
 
 这些 Validator 是 WB-OPDK 的工程辅助检查，不替代 WorkBuddy 官方解析器和审核。

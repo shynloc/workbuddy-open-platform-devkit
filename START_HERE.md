@@ -42,6 +42,8 @@
 
 ## 3. 按类型最小加载
 
+涉及 ZIP 或上传失败时，必须先读 `70-release-engineering/upload-package-guide.md`，记录目标类型与实际入口。原生 Skill 的 SKILL.md 与专家插件根清单不同；不要为消除专家入口报错而自动添加插件外壳。
+
 ### Skill
 
 1. `10-skill/specification.md`
@@ -131,9 +133,13 @@ python3 scripts/validate_expert.py <expert-root>
 python3 scripts/validate_expert_team.py <team-root>
 python3 scripts/validate_connector.py <connector-root>
 python3 scripts/pack_release.py <asset-root>
+python3 scripts/release_check.py <asset-root> --dist <outside-asset-dist>
+python3 scripts/validate_release_zip.py <actual-delivered.zip> --type <skill|expert|expert-team|connector> --source <asset-root>
 ```
 
 这些脚本是辅助校验，不替代 WorkBuddy 开放平台最终解析结果。
+
+交付前必须核对实际归档条目、逻辑根、隐藏清单、声明文件和 SHA256，不能只验证源文件夹。
 
 ## 7. 上线后运营
 

@@ -38,7 +38,7 @@ my-team/
 
 `sources/known-inconsistencies.md`
 
-WB-OPDK starter template 当前跟随官方可下载模板使用 `setting.json`。
+WB-OPDK starter 与真实平台解析规则使用 `settings.json`（复数），不跟随旧 ZIP 的单数文件名；见下方真实平台记录。
 
 ## 2. plugin.json
 

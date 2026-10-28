@@ -1,21 +1,10 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, zipfile
+import argparse, os, tempfile, zipfile
 from pathlib import Path
-
-SKIP_NAMES={".DS_Store","Thumbs.db","release-manifest.json"}
-SKIP_PARTS={"__pycache__",".git",".idea",".vscode"}
-SKIP_SUFFIX={".pyc",".log"}
-
-def include(p: Path, root: Path):
-    rel=p.relative_to(root)
-    if any(x in SKIP_PARTS for x in rel.parts):
-        return False
-    if p.name in SKIP_NAMES or p.suffix in SKIP_SUFFIX:
-        return False
-    if p.name.startswith(".env"):
-        return False
-    return p.is_file()
+from _package_files import include
+from validate_asset_schemas import detect
+from validate_release_zip import validate_archive, validate_source
 
 def main():
     ap=argparse.ArgumentParser()
@@ -24,10 +13,28 @@ def main():
     args=ap.parse_args()
     root=Path(args.path).resolve()
     out=Path(args.out or f"{root.name}.zip").resolve()
-    with zipfile.ZipFile(out,"w",zipfile.ZIP_DEFLATED) as z:
-        for p in sorted(root.rglob("*")):
-            if include(p,root):
-                z.write(p,Path(root.name)/p.relative_to(root))
+    if out.is_relative_to(root):
+        raise SystemExit('ZIP output must be outside the asset directory')
+    temporary = None
+    try:
+        typ = detect(root)
+        validate_source(root, typ)
+        if any(p.is_symlink() for p in root.rglob('*')):
+            raise ValueError('source package must not contain symlinks')
+        out.parent.mkdir(parents=True, exist_ok=True)
+        handle, temporary = tempfile.mkstemp(prefix='.'+out.name, suffix='.tmp', dir=out.parent)
+        os.close(handle)
+        with zipfile.ZipFile(temporary,"w",zipfile.ZIP_DEFLATED) as z:
+            for p in sorted(root.rglob("*")):
+                if include(p,root):
+                    z.write(p,Path(root.name)/p.relative_to(root))
+        validate_archive(temporary, typ, root)
+        os.replace(temporary, out)
+    except (ValueError, OSError, zipfile.BadZipFile) as exc:
+        raise SystemExit(f'PACKAGING FAILED: {exc}')
+    finally:
+        if temporary and Path(temporary).exists():
+            Path(temporary).unlink()
     print(out)
     return 0
 
